@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Eagle product gallery</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+        <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="css/demo.css" type="text/css" />
+        <script type="text/javascript" src="js/demo.js"></script>
+
+    	<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+
+		<script type="text/javascript" src="js/wow.min.js"></script>
+
+		<!-- Eagle Gallery -->
+		<link rel="stylesheet" href="eagle.gallery/eagle.gallery.min.css" type="text/css" />
+		<script type="text/javascript" src="eagle.gallery/eagle.gallery.min.js"></script>
+
+		<script>
+			$(document).ready(function() {
+				$('#example1').eagleGallery({
+					miniSliderArrowPos: 'inside',
+					changeMediumStyle: true,
+					autoPlayMediumImg: true,
+					openGalleryStyle: 'transform',
+					bottomControlLine: true
+				});
+
+				$('#example2').eagleGallery({
+					miniSliderArrowStyle: 2,
+					theme: 'light'
+				});
+
+				$('#example3').eagleGallery({
+					miniSliderArrowPos: 'inside',
+					showMediumImg: false,
+					openGalleryStyle: 'transform',
+					bottomControlLine: true,
+					miniSlider: {
+						itemsCustom: [[0, 1],[350, 2], [750, 3], [1050, 4], [1250, 5], [1450, 6]]
+					}
+				});
+
+				new WOW().init();
+			});
+		</script>
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-inverse">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+				            <span class="sr-only">Toggle navigation</span>
+				            <span class="icon-bar"></span>
+				            <span class="icon-bar"></span>
+				        	<span class="icon-bar"></span>
+				        </button>
+				        <a class="navbar-brand" href="/"><img class="img-responsive" src="img/logo-page.png" alt=""></a>
+				    </div>
+
+					<div class="navbar-collapse collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#demo">Demo</a></li>
+							<li><a href="#features">Features</a></li>
+							<li><a href="#howtouse">How to use</a></li>
+							<li><a href="#options">Options</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<div class="container-fluid">
+
+			<h1>Eagle Gallery <span>product page, image, zoom, touch, responsive gallery</span></h1>
+
+			<h2 data-target="demo">demo</h2>
+			
+			<div class="row mb">
+				<div class="col-sm-6 col-md-5">
+					<h3>Dark, autoplay</h3>
+
+					<!-- gallery hear -->
+					<div id="example1" class="eagle-gallery img300">
+						<div class="owl-carousel">
+							<img src="img/pictures/p2-mini.jpg" data-medium-img="img/pictures/p2-medium.jpg" data-big-img="img/pictures/p2-big.jpg" data-title="Mustang Shelby GT500 - big black car with red lines is very beautiful and powerful" alt="">
+
+							<img src="img/pictures/p3-mini.jpg" data-medium-img="img/pictures/p3-medium.jpg" data-big-img="img/pictures/p3-big.jpg" alt="">
+
+							<img src="img/pictures/p1-mini.jpg" data-medium-img="img/pictures/p1-medium.jpg" data-big-img="img/pictures/p1-big.jpg" alt="">
+							
+							<img src="img/pictures/p4-mini.jpg" data-medium-img="img/pictures/p4-medium.jpg" data-big-img="img/pictures/p4-big.jpg" data-title="The R/T Plus is both an athlete and a scholar. 2015 Challenger R/T Plus kicks the HEMI® V8 engine up a notch by adding upgraded technology and features." alt="">
+							
+							<img src="img/pictures/p5-mini.jpg" data-medium-img="img/pictures/p5-medium.jpg" data-big-img="img/pictures/p5-big.jpg" alt="">
+							
+							<img src="img/pictures/p6-mini.jpg" data-medium-img="img/pictures/p6-medium.jpg" data-big-img="img/pictures/p6-big.jpg" alt="">
+						</div>
+					</div>
+					<!-- gallery hear End -->
+
+					<a class="btn-showjs" href="#" data-target="showjs1">Show JS</a>
+					<div class="showjs" data-target="showjs1">
+						$('#example1').eagleGallery({<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;miniSliderArrowPos: 'inside',<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;changeMediumStyle: true,<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;autoPlayMediumImg: true,<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;openGalleryStyle: 'transform',<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;bottomControlLine: true<br>
+						});
+					</div>
+					
+				</div>
+
+				<div class="col-sm-6 col-md-5 col-md-offset-2">
+					<h3>White, errow style: 2</h3>
+
+					<!-- gallery hear -->
+					<div id="example2" class="eagle-gallery img300">
+						<div class="owl-carousel">
+							<img src="img/pictures/p7-mini.jpg" data-medium-img="img/pictures/p7-medium.jpg" data-big-img="img/pictures/p7-big.jpg" data-title="Mustang Shelby GT500 - big black car with red lines is very beautiful and powerful" alt="">
+
+							<img src="img/pictures/p8-mini.jpg" data-medium-img="img/pictures/p8-medium.jpg" data-big-img="img/pictures/p8-big.jpg" alt="">
+							
+							<img src="img/pictures/p9-mini.jpg" data-medium-img="img/pictures/p9-medium.jpg" data-big-img="img/pictures/p9-big.jpg" alt="">
+							
+							<img src="img/pictures/p10-mini.jpg" data-medium-img="img/pictures/p10-medium.jpg" data-big-img="img/pictures/p10-big.jpg" data-title="" alt="">
+							
+							<img src="img/pictures/p11-mini.jpg" data-medium-img="img/pictures/p11-medium.jpg" data-big-img="img/pictures/p11-big.jpg" alt="">
+						</div>
+					</div>
+					<!-- gallery hear End -->
+
+					<a class="btn-showjs" href="#" data-target="showjs2">Show JS</a>
+					<div class="showjs" data-target="showjs2">
+						$('#example2').eagleGallery({<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;miniSliderArrowStyle: 2,<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;theme: 'light'<br>
+						});
+					</div>
+					
+				</div>
+			</div>
+
+			<h3>Without medium image, errow position: inside</h3>
+
+			<div class="row">
+				<div class="col-xs-12">
+					
+					<!-- gallery hear -->
+					<div id="example3" class="eagle-gallery img300">
+						<div class="owl-carousel">
+							<img src="img/pictures/p12-mini.jpg" data-medium-img="img/pictures/p12-big.jpg" data-big-img="img/pictures/p12-big.jpg" data-title="" alt="">
+
+							<img src="img/pictures/p13-mini.jpg" data-medium-img="img/pictures/p13-big.jpg" data-big-img="img/pictures/p13-big.jpg" data-title="" alt="">
+							
+							<img src="img/pictures/p14-mini.jpg" data-medium-img="img/pictures/p14-big.jpg" data-big-img="img/pictures/p14-big.jpg" data-title="" alt="">
+							
+							<img src="img/pictures/p15-mini.jpg" data-medium-img="img/pictures/p15-big.jpg" data-big-img="img/pictures/p15-big.jpg" data-title="" alt="">
+							
+							<img src="img/pictures/p16-mini.jpg" data-medium-img="img/pictures/p16-big.jpg" data-big-img="img/pictures/p16-big.jpg" data-title="" alt="">
+
+							<img src="img/pictures/p17-mini.jpg" data-medium-img="img/pictures/p17-big.jpg" data-big-img="img/pictures/p17-big.jpg" data-title="" alt="">
+						</div>
+					</div>
+					<!-- gallery hear End -->
+
+					<a class="btn-showjs" href="#" data-target="showjs3">Show JS</a>
+					<div class="showjs" data-target="showjs3">
+						$('#example3').eagleGallery({<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;miniSliderArrowPos: 'inside',<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;showMediumImg: false,<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;openGalleryStyle: 'transform',<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;bottomControlLine: true,<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;miniSlider: {<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;itemsCustom: [[0, 1],[350, 2], [750, 3], [1050, 4], [1250, 5], [1450, 6]]<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+						});
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+
+		<div class="rate">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-12">
+						<a href="http://codecanyon.net/item/eagle-gallery-responsive-touch-zoom-product-gallery/13625789">
+							<span class="bg t"></span>
+							<span class="bg r"></span>
+							<span class="bg b"></span>
+							<span class="bg l"></span>
+							<img class="img-responsive" src="img/five-stars.png" alt="">
+						</a>
+						<div class="title">Please, rate, it's very help me!</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="feature">
+			<div class="container-fluid">
+				<h2 data-target="features">Features</h2>
+				<div class="feature-wrap">
+					<ul class="row">
+						<li class="col-sm-6 col-md-4 wow fadeInUp"  data-wow-duration="1.5s">
+							<span class="icon"><i class="fa fa-tablet"></i></span>
+							<span class="title">Fully responsive</span>
+							<span class="text">The gallery is adaptive to the different window width or container. The gallery is flexible.</span>
+						</li>
+
+						<li class="col-sm-6 col-md-4 wow fadeInUp"  data-wow-duration="1.5s">
+							<span class="icon"><i class="fa fa-search-plus"></i></span>
+							<span class="title">Zoomable images</span>
+							<span class="text">Use touch gestures or buttons for zoom image.</span>
+						</li>
+
+						<li class="col-sm-6 col-md-4 wow fadeInUp"  data-wow-duration="1.5s">
+							<span class="icon"><i class="fa fa-hand-pointer-o"></i></span>
+							<span class="title">Touch enabled, gestures</span>
+							<span class="text">The gallery is support multiple touches and gestures.</span>
+						</li>
+
+						<li class="col-sm-6 col-md-4 wow fadeInUp"  data-wow-duration="1.5s">
+							<span class="icon"><i class="fa fa-chrome"></i></span>
+							<span class="title">Compatibility</span>
+							<span class="text">The gallery is supported by all modern browsers on windows, mac, android and iOS.</span>
+						</li>
+
+						<li class="col-sm-6 col-md-4 wow fadeInUp"  data-wow-duration="1.5s">
+							<span class="icon"><i class="fa fa-css3"></i></span>
+							<span class="title">Made with CSS3</span>
+							<span class="text">Gallery use modern css3 transitions and transform for fast work.</span>
+						</li>
+
+						<li class="col-sm-6 col-md-4 wow fadeInUp"  data-wow-duration="1.5s">
+							<span class="icon"><i class="fa fa-heart"></i></span>
+							<span class="title">Bootstrap and Foundation friendly</span>
+							<span class="text">You can use Eagle Gallery with bootstrap or foundation frameworks.</span>
+						</li>
+
+						<li class="col-sm-6 col-md-4 wow fadeInUp"  data-wow-duration="1.5s">
+							<span class="icon"><i class="fa fa-clone"></i></span>
+							<span class="title">Multiple Galleries</span>
+							<span class="text">Can work many galleries in the same time on one page.</span>
+						</li>
+
+						<li class="col-sm-6 col-md-4 wow fadeInUp"  data-wow-duration="1.5s">
+							<span class="icon"><i class="fa fa-picture-o"></i></span>
+							<span class="title">Different effects</span>
+							<span class="text">Gallery has 4 effects for changing medium image and 2 effects for opening gallery.</span>
+						</li>
+
+						<li class="col-sm-6 col-md-4 wow fadeInUp"  data-wow-duration="1.5s">
+							<span class="icon"><i class="fa fa-code"></i></i></span>
+							<span class="title">Easy to use</span>
+							<span class="text">3 simple steps to awesome gallery.</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+
+		<div class="container-fluid">
+
+			<h2 data-target="howtouse">How to use</h2>
+			<div class="row">
+				<div class="col-sm-12">
+					<p>We need make 3 simple steps:</p>
+
+					<p class="steps">1) Include jQuery and EagleGallery scripts in your HTML code. Link the EagleGallery CSS file.</p>
+
+					<div class="html-op">
+						&lt;script <span class="attribute">type=</span><span class="value">&quot;text/javascript&quot;</span> <span class="attribute">src=</span><span class="value">&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&quot;</span>&gt;&lt;/script&gt;<br>
+						&lt;script <span class="attribute">type=</span><span class="value">&quot;text/javascript&quot;</span> <span class="attribute">src=</span><span class="value">&quot;eagle.gallery/eagle.gallery.js&quot;</span>&gt;&lt;/script&gt;<br>
+						&lt;link <span class="attribute">rel=</span><span class="value">&quot;stylesheet&quot;</span> <span class="attribute">href=</span><span class="value">&quot;eagle.gallery/eagle.gallery.css&quot;</span> <span class="attribute">type=</span><span class="value">&quot;text/css&quot;</span>/&gt;
+					</div>
+
+					<p class="steps">2) Create HTML markup</p>
+
+					<div class="html-op">
+						&lt;div <span class="attribute">class=</span><span class="value">&quot;eagle-gallery img300&quot;</span>&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&lt;div <span class="attribute">class=</span><span class="value">&quot;owl-carousel&quot;</span>&gt;<br>
+
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img <span class="attribute">src=</span><span class="value">&quot;img/pictures/p1-mini.jpg&quot;</span> <span class="attribute">data-medium-img=</span><span class="value">&quot;img/pictures/p1-medium.jpg&quot;</span> <span class="attribute">data-big-img=</span><span class="value">&quot;img/pictures/p1-big.jpg&quot;</span> <span class="attribute">data-title=</span><span class="value">&quot;&quot;</span> <span class="attribute">alt=</span><span class="value">&quot;&quot;</span>&gt;<br>
+
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img <span class="attribute">src=</span><span class="value">&quot;img/pictures/p2-mini.jpg&quot;</span> <span class="attribute">data-medium-img=</span><span class="value">&quot;img/pictures/p2-medium.jpg&quot;</span> <span class="attribute">data-big-img=</span><span class="value">&quot;img/pictures/p2-big.jpg&quot;</span> <span class="attribute">data-title=</span><span class="value">&quot;Mustang Shelby GT500 - big black car with red lines is very beautiful and powerful&quot;</span> <span class="attribute">alt=</span><span class="value">&quot;&quot;</span>&gt;<br>
+
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img <span class="attribute">src=</span><span class="value">&quot;img/pictures/p3-mini.jpg&quot;</span> <span class="attribute">data-medium-img=</span><span class="value">&quot;img/pictures/p3-medium.jpg&quot;</span> <span class="attribute">data-big-img=</span><span class="value">&quot;img/pictures/p3-big.jpg&quot;</span> <span class="attribute">data-title=</span><span class="value">&quot;&quot;</span> <span class="attribute">alt=</span><span class="value">&quot;&quot;</span>&gt;<br>
+
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img <span class="attribute">src=</span><span class="value">&quot;img/pictures/p4-mini.jpg&quot;</span> <span class="attribute">data-medium-img=</span><span class="value">&quot;img/pictures/p4-medium.jpg&quot;</span> <span class="attribute">data-big-img=</span><span class="value">&quot;img/pictures/p4-big.jpg&quot;</span> <span class="attribute">data-title=</span><span class="value">&quot;The R/T Plus is both an athlete and a scholar. 2015 Challenger R/T Plus kicks the HEMI® V8 engine up a notch by adding upgraded technology and features.&quot;</span> <span class="attribute">alt=</span><span class="value">&quot;&quot;</span>&gt;<br>
+
+						&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+						&lt;/div&gt;
+					</div>
+
+					* you can use one big image, such as:
+					<div class="html-op">
+						&lt;img <span class="attribute">src=</span><span class="value">&quot;img/pictures/p4-big.jpg&quot;</span> <span class="attribute">data-medium-img=</span><span class="value">&quot;img/pictures/p4-big.jpg&quot;</span> <span class="attribute">data-big-img=</span><span class="value">&quot;img/pictures/p4-big.jpg&quot;</span> <span class="attribute">data-title=</span><span class="value">&quot;&quot;</span> <span class="attribute">alt=</span><span class="value">&quot;&quot;</span>&gt;<br>
+					</div>
+
+					<p>* class <span class="class-color">img300</span> - this is the height of viewport medium img. You can use my classes <span class="class-color">img200</span>, <span class="class-color">img250</span>, ... , <span class="class-color">img650</span>, <span class="class-color">img700</span> or remove it and set up your own height in css.</p>
+
+					<p class="steps">3) Call the plugin</p>
+					<div class="html-op">
+						$(document).ready(function(){<br>
+            				&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="value">&quot;.eagle-gallery&quot;</span>).eagleGallery();<br>
+						});
+					</div>
+				</div>
+			</div>
+
+			<h2 data-target="options">Options</h2>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="option-name">maxZoom</div>
+					Maximum range of scaling
+					<div class="html-op">
+						<span class="attribute">default</span>: <span class="value">4</span><br>
+					</div>
+
+					<div class="option-name">miniSliderArrowPos</div>
+					The position of the navigation arrows of mini slider
+					<div class="html-op">
+						<span class="attribute">default</span>: <span class="value">'outside'</span> || <span class="value">'inside'</span><br>
+					</div>
+
+					<div class="option-name">miniSliderArrowStyle</div>
+					Style of the navigation arrows of mini slider
+					<div class="html-op">
+						<span class="attribute">default</span>: <span class="value">1</span> || <span class="value">2</span><br>
+					</div>
+
+					<div class="option-name">showMediumImg</div>
+					Show or not medium image
+					<div class="html-op">
+						<span class="attribute">default</span>: <span class="value">true</span> || <span class="value">false</span><br>
+					</div>
+
+					<div class="option-name">changeMediumStyle</div>
+					Add style to changing medium image
+					<div class="html-op">
+						<span class="attribute">default</span>: <span class="value">false</span> || <span class="value">true</span>, <span class="value">'slideIn'</span>, <span class="value">'slideOut'</span>, <span class="value">'scaleIn'</span> or <span class="value">'scaleOut'</span><br>
+					</div>
+
+					<div class="option-name">changeMediumSpeed</div>
+					Speed of changing medium image in millisecond (if changeMediumStyle not false)
+					<div class="html-op">
+						<span class="attribute">default</span>: <span class="value">600</span><br>
+					</div>
+
+					<div class="option-name">autoPlayMediumImg</div>
+					Automatically change medium image - <span class="size16">Change to any integer for example <span class="attribute">autoPlayMediumImg: 5000</span> to play every 5 seconds. If you set <span class="attribute">autoPlayMediumImg: true</span> default speed will be 5 seconds.</span>
+					<div class="html-op">
+						<span class="attribute">default</span>: <span class="value">false</span> || <span class="value">true</span>, integer<br>
+					</div>
+
+					<div class="option-name">hideOneThumb</div>
+					Hide thumbnails of mini-slider if one item.
+					<div class="html-op">
+						<span class="attribute">default</span>: <span class="value">true</span> || <span class="value">false</span><br>
+					</div>
+
+					<div class="option-name">openGalleryStyle</div>
+					Add style to opening gallery
+					<div class="html-op">
+						<span class="attribute">default</span>: <span class="value">'show'</span> || <span class="value">'transform'</span> +2300ms to openGallerySpeed<br>
+					</div>
+
+					<div class="option-name">openGallerySpeed</div>
+					Speed of opening and hiding gallery in milliseconds
+					<div class="html-op">
+						<span class="attribute">default</span>: <span class="value">300</span><br>
+					</div>
+
+					<div class="option-name">hideControlsSpeed</div>
+					Speed of opening and hiding controls in milliseconds
+					<div class="html-op">
+						<span class="attribute">default</span>: <span class="value">200</span><br>
+					</div>
+
+					<div class="option-name">theme</div>
+					Color scheme of gallery
+					<div class="html-op">
+						<span class="attribute">default</span>: <span class="value">'dark'</span> || <span class="value">'light'</span><br>
+					</div>
+
+					<div class="option-name">bottomControlLine</div>
+					Change style of the zoom control on the line
+					<div class="html-op">
+						<span class="attribute">default</span>: <span class="value">false</span> || <span class="value">true</span><br>
+					</div>
+
+					<p>For my gallery I use OWL Carousel - this is a beautiful, fast and <a target="_blank" href="http://owlgraphic.com/owlcarousel/#faq">free</a> plugin. That's why options of slideSpeed, paginationSpeed, number of item on different media-queries you can see on <a target="_blank" href="http://owlgraphic.com/owlcarousel/#customizing">this page</a></p>
+
+					<p>Eagle Gallery default options</p>
+					<div class="html-op">
+						<span class="attribute">maxZoom</span>: <span class="value">4</span>,<br>
+				        <span class="attribute">miniSliderArrowPos</span>: <span class="value">'outside'</span>,<br>
+				        <span class="attribute">miniSliderArrowStyle</span>: <span class="value">1</span>,<br>
+						<span class="attribute">showMediumImg</span>: <span class="value">true</span>,<br>
+						<span class="attribute">changeMediumStyle</span>: <span class="value">false</span>,<br>
+						<span class="attribute">changeMediumSpeed</span>: <span class="value">600</span>,<br>
+						<span class="attribute">changeMediumStyle</span>: <span class="value">false</span>,<br>
+						<span class="attribute">autoPlayMediumImg</span>: <span class="value">false</span>,<br>
+						<span class="attribute">hideOneThumb</span>: <span class="value">true</span>,<br>
+						<span class="attribute">openGallerySpeed</span>: <span class="value">300</span>,<br>
+						<span class="attribute">hideControlsSpeed</span>: <span class="value">200</span>,<br>
+						<span class="attribute">theme</span>: <span class="value">'dark'</span>,<br>
+						<span class="attribute">bottomControlLine</span>: <span class="value">false</span>,<br>
+						<span class="attribute">miniSlider</span>: {<br>
+
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">navigation</span>: <span class="value">true</span>,<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">pagination</span>: <span class="value">false</span>,<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">navigationText</span>: <span class="value">false</span>,<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">rewindNav</span>: <span class="value">false	</span>,<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">theme</span>: <span class="value">'mini-slider'</span>,<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">responsiveBaseWidth</span>: <span class="value">'.eagle-gallery'</span>,<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">itemsCustom</span>: <span class="value">[[0, 1],[250, 2], [450, 3], [650, 4], [850, 5], [1050, 6], [1250, 7], [1450, 8]]</span>,<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">margin</span>: <span class="value">10</span><br>
+
+						},<br>
+						<span class="attribute">gallerySlider</span>: {<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">singleItem</span>: <span class="value">true</span>,<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">navigation</span>: <span class="value">false</span>,<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">pagination</span>: <span class="value">false</span>,<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">rewindNav</span>: <span class="value">false</span>,<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">addClassActive</span>: <span class="value">true</span>,<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">theme</span>: <span class="value">'gallery-slider'</span><br>
+						}
+						
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="rate">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-12">
+						<a href="http://codecanyon.net/item/eagle-gallery-responsive-touch-zoom-product-gallery/13625789">
+							<span class="bg t"></span>
+							<span class="bg r"></span>
+							<span class="bg b"></span>
+							<span class="bg l"></span>
+							<img class="img-responsive" src="img/five-stars.png" alt="">
+						</a>
+						<div class="title">Please, rate, it's very help me!</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="to-top"></div>
+	</body>
+</html>
