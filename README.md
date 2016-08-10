@@ -39,6 +39,7 @@
   * same seller product
   * select color size
 - Contact us page
+- AUTOMATED EMAILS (Registration , product ordered , payment ,messages etc)
 
 #### Backend
 - Featured seller in admin
