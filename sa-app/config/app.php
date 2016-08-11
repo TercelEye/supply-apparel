@@ -154,7 +154,7 @@ return [
          * Package Service Providers...
          */
 
- 		Laravel\Socialite\SocialiteServiceProvider::class,
+ 		
         /*
          * Application Service Providers...
          */
@@ -162,6 +162,8 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+		
+		Laravel\Socialite\SocialiteServiceProvider::class,
 
     ],
 
@@ -178,7 +180,7 @@ return [
 
     'aliases' => [
 	
-		'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+		
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
@@ -209,6 +211,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+		'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 
