@@ -29,6 +29,6 @@ class ProdcutSize extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('product_size');
     }
 }

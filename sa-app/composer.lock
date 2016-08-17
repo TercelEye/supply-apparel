@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "17305a6dd494a69fabd54bf6e8fffe9d",
-    "content-hash": "8590ceeb93631fa1815928de23258a58",
+    "hash": "245748ab1bfc5748ebc4cbcf2a84205d",
+    "content-hash": "3b040b380e3e8998f12958c5329551af",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -312,12 +312,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "794681955c0592255e02c0cce260f960243d627e"
+                "reference": "706382af2fd670264791614a65383b98b2fae68b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/794681955c0592255e02c0cce260f960243d627e",
-                "reference": "794681955c0592255e02c0cce260f960243d627e",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/706382af2fd670264791614a65383b98b2fae68b",
+                "reference": "706382af2fd670264791614a65383b98b2fae68b",
                 "shasum": ""
             },
             "require": {
@@ -431,7 +431,66 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-08-16 01:40:12"
+            "time": "2016-08-17 00:27:14"
+        },
+        {
+            "name": "laravelcollective/html",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaravelCollective/html.git",
+                "reference": "c4c87916c34e04aa9d4e860315ab1858304d786a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/c4c87916c34e04aa9d4e860315ab1858304d786a",
+                "reference": "c4c87916c34e04aa9d4e860315ab1858304d786a",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "5.3.*",
+                "illuminate/routing": "5.3.*",
+                "illuminate/session": "5.3.*",
+                "illuminate/support": "5.3.*",
+                "illuminate/view": "5.3.*",
+                "php": ">=5.6.4"
+            },
+            "require-dev": {
+                "illuminate/database": "5.3.*",
+                "mockery/mockery": "~0.9.4",
+                "phpunit/phpunit": "~5.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Collective\\Html\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                },
+                {
+                    "name": "Adam Engebretson",
+                    "email": "adam@laravelcollective.com"
+                }
+            ],
+            "description": "HTML and Form Builders for the Laravel Framework",
+            "homepage": "http://laravelcollective.com",
+            "time": "2016-08-04 03:49:50"
         },
         {
             "name": "league/flysystem",
