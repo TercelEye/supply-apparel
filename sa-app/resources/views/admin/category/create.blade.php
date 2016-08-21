@@ -21,7 +21,7 @@
 
 
                		{!! Form::model($category, ['action' => 'CategoryController@store']) !!}
-                    	@include("admin.category.form_fields",['obj'=>$category])
+                    	@include("admin.category.form_fields")
                     	<button class="btn btn-success" type="submit">Add new Category!</button>
 					{!! Form::close() !!}
                 </div>

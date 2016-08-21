@@ -26,13 +26,9 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $parent_categories = \App\Category::pluck('title');
-            
-            
+       $parent_categories = \App\Category::pluck('title'); // get parents categories   
        $category = new \App\Category;
-
        return view('admin.category.create',compact('category','parent_categories'));
-        
     }
 
     /**
@@ -58,7 +54,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        
+        return redirect("category/".$id."/edit");
     }
 
     /**
@@ -69,7 +65,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     { 
-       $parent_categories = \App\Category::pluck('title');
+        $parent_categories = \App\Category::where("id",'!=',$id)->pluck('title');
         $category = \App\Category::findOrFail($id);
         return view('admin.category.edit',compact('category','parent_categories','id'));
     }
@@ -87,9 +83,9 @@ class CategoryController extends Controller
             'title' => 'required',
         ]);
         $category = \App\Category::find($id);
-        $category->title = $request->title;
-        $category->parent_id = $request->parent_id;
-        $category->save();
+        // $category->title = $request->title;
+        // $category->parent_id = $request->parent_id;
+        $category->update($request->all());
         return redirect()->back();
     }
 
