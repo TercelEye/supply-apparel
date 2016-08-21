@@ -63,10 +63,9 @@
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="w_best_sellers">
                                 <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-offset-0">
+                                    <div class="row best_sellers_women"></div>
                                     <div class="row">
-
-                                        @include("componets.product.gridview")
-                                        
+                                        <a href="#" class="btn_show_more">Show More</a>
                                     </div>
                                 </div>
                             </div>
@@ -76,11 +75,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <a href="#" class="btn_show_more">Show More</a>
-                    </div>
+                   
                 </div>
             </div>
+
+
             <div class="row category_block">
                 <h2>Apparel For Men</h2>
                 <h5>Style yourself with the best fashion apparel for men</h5>
@@ -773,4 +772,23 @@
         </div>
     </section>
 </main>
+
+
+
 @endsection
+
+
+@push('scripts')
+   <script type="text/javascript">
+
+   function load_products(url,class_name){
+        $.post(url, function( response ) {
+          $(class_name).append( response.html );
+        });
+   }
+    $(document).ready(function(){
+        //get best sellers
+        load_products("{{ url('women/best-sellers') }} ",".best_sellers_women");
+    });
+</script>
+@endpush

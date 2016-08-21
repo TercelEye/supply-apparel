@@ -23,4 +23,7 @@ Route::get('/home', 'HomeController@index');
 
 Route::group(['middleware' => 'web'], function () {
 	Route::resource('category','CategoryController');
+	//homepage filters
+	Route::post('women/best-sellers','HomeController@best_sellers_women');
 });
+

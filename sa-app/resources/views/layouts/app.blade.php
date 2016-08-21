@@ -4,16 +4,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Supply</title>
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Supply </title>
     <link href="{{ url('assets') }}/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url('assets') }}/css/style.css">
+    <link href="{{ url('assets') }}/css/style.css" rel="stylesheet">
+    
 </head> 
 <body>
 @include("layouts.header")
 
-@yield("content")
-
+    @yield("content")
 
 <footer>
     <div class="container">
@@ -76,6 +76,18 @@
         </div>
     </div>
 </footer>
+
 <script src="{{ url('assets') }}/js/base-min.js"></script>
+
+
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+});
+</script>
+
+  @stack('scripts')
 </body>
 </html>

@@ -4,8 +4,9 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
+        <h2>Categories</h2>
             <div class="panel panel-default">
-                <div class="panel-heading">Category</div>
+                <div class="panel-heading">New Category</div>
 
                 <div class="panel-body">
 
@@ -28,5 +29,5 @@
             </div>
         </div>
     </div><!--- end row -->
-
+</div>
 @endsection

@@ -1,8 +1,9 @@
+ @foreach($products as $product)
  <div class="item col-md-3 col-sm-4 col-xs-6">
     <div class="item_block">
         <div class="item_header">
             <a href="#"><i
-                    class="item_icon"></i><span>Sally's Boutique</span></a>
+                    class="item_icon"></i><span>{{$product->shop->shop_name }}</span></a>
         </div>
         <div class="item_body">
             <div class="wishlist_add">
@@ -20,8 +21,9 @@
                 <span class="glyphicon glyphicon-star"></span>
                 <p>(39 Reviews)</p>
             </div>
-            <div class="name_block">Olivine Heels</div>
-            <div class="price_block">$45</div>
+            <div class="name_block">{{$product->title }}</div>
+            <div class="price_block">${{ $product->price }}</div>
         </div>
     </div>
 </div>
+@endforeach
