@@ -30,11 +30,25 @@ class HomeController extends Controller
         return view('home');
     }
 
-
+    /*
+        Homepage women section 
+    */
     public function best_sellers_women(){
-        $products = Product::paginate(15);
+        $products = Product::paginate(5);
         $html = View::make('componets.product.gridview',compact('products'));
-        $result = ['nex_url'=>$products->nextPageUrl(),'html'=>$html->render()];
+        $result = ['next_url'=>$products->nextPageUrl(),'html'=>$html->render()];
+        return Response::json($result);
+    }
+    public function new_arrivals_women(){
+        $products = Product::latest()->paginate(5);
+        $html = View::make('componets.product.gridview',compact('products'));
+        $result = ['next_url'=>$products->nextPageUrl(),'html'=>$html->render()];
+        return Response::json($result);
+    } 
+    public function must_haves_women(){
+        $products = Product::latest()->paginate(5);
+        $html = View::make('componets.product.gridview',compact('products'));
+        $result = ['next_url'=>$products->nextPageUrl(),'html'=>$html->render()];
         return Response::json($result);
     }
 }

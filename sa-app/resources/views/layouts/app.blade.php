@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Supply </title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
     <link href="{{ url('assets') }}/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ url('assets') }}/css/style.css" rel="stylesheet">
+    <link href="{{ url('assets') }}/libs/toastr-master/build/toastr.min.css" rel="stylesheet">
     
 </head> 
 <body>
@@ -78,7 +80,7 @@
 </footer>
 
 <script src="{{ url('assets') }}/js/base-min.js"></script>
-
+<script src="{{ url('assets') }}/libs/toastr-master/build/toastr.min.js"></script>
 
 <script type="text/javascript">
     $.ajaxSetup({
@@ -86,6 +88,65 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
 });
+</script>
+
+<script type="text/javascript">
+    $('#login-form button[type=submit]').click(function(e){
+ 
+
+    var $btn = $(this).button('loading');
+
+    e.preventDefault();
+
+    if($('#login-form #login--email').hasClass('has-error')){
+        $('#login-form #login--email').removeClass('has-error');
+    }
+
+    if($('#login-form #login--password').hasClass('has-error')){
+        $('#login-form #login--password').removeClass('has-error');
+    }
+
+    var form = jQuery(this).parents("form:first");
+    var dataString = form.serialize();
+    var formAction = form.attr('action');
+
+    $.ajax({
+        type: "POST",
+        url : formAction,
+        data : dataString,
+        success : function(json){
+            $btn.button('reset');
+            if(json.auth == true){
+                //login success
+                toastr.success(json.message)
+                location.reload();
+                
+           }else {
+                //login failed
+                toastr.error(json.message,'Error!')
+                $('#login-form .email_block').addClass('has-error');
+                $("#login-form input[name='password']'").val("sadasdas");
+                $('#login-form .password_block').addClass('has-error');
+                    
+           }
+
+        },
+        error : function(data){
+         
+
+            setTimeout(
+                function()
+                {
+
+                    $btn.button('reset');
+
+                }, 1500);
+
+        }
+
+    },"json");
+});
+
 </script>
 
   @stack('scripts')

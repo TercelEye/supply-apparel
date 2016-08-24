@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 
 Route::auth();
+Route::get('logout', 'Auth\AuthController@getLogout');
+Route::post('user/login','UserController@login');
 Route::get('auth/facebook', 'Auth\AuthController@redirectToFacebook');
 Route::get('auth/facebook/callback', 'Auth\AuthController@handleFacebookCallback');
 
@@ -23,7 +25,14 @@ Route::get('/home', 'HomeController@index');
 
 Route::group(['middleware' => 'web'], function () {
 	Route::resource('category','CategoryController');
-	//homepage filters
-	Route::post('women/best-sellers','HomeController@best_sellers_women');
+
+	
+	
 });
 
+//Homepage filters
+Route::group(['prefix' => 'women','middleware' => 'web'], function () {
+    Route::post('best-sellers','HomeController@best_sellers_women');
+    Route::post('new-arrivals','HomeController@new_arrivals_women');
+    Route::post('must-haves','HomeController@must_haves_women');
+});

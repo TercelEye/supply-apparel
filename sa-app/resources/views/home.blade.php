@@ -65,13 +65,30 @@
                                 <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-offset-0">
                                     <div class="row best_sellers_women"></div>
                                     <div class="row">
-                                        <a href="#" class="btn_show_more">Show More</a>
+                                        <a href="#" data-class-name=".best_sellers_women" data-url="" class="btn_show_more">Show More</a>
                                     </div>
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="w_new_arrivals">
+                                <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-offset-0">
+                                    <div class="row new_arrivals_women"></div>
+                                    <div class="row">
+                                        <a href="#" data-class-name=".new_arrivals_women" data-url="" class="btn_show_more">Show More</a>
+                                    </div>
+                                </div>
+
                             </div>
                             <div role="tabpanel" class="tab-pane" id="w_must_haves">
+
+   <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-offset-0">
+                                    <div class="row must_haves_women"></div>
+                                    <div class="row">
+                                        <a href="#" data-class-name=".must_haves_women" data-url="" class="btn_show_more">Show More</a>
+                                    </div>
+                                </div>
+
+
+
                             </div>
                         </div>
                     </div>
@@ -781,14 +798,35 @@
 @push('scripts')
    <script type="text/javascript">
 
+   $('.btn_show_more').click(function(event) {
+       event.preventDefault();
+       var url = $(this).attr('data-url');
+       var class_name = $(this).data('class-name');
+       load_products(url,class_name)
+   });
+
    function load_products(url,class_name){
-        $.post(url, function( response ) {
-          $(class_name).append( response.html );
-        });
+      var load_more = $(class_name).closest('.tab-pane').find('.btn_show_more');
+       var $btn = $(load_more).button('loading');
+    
+
+         $.post( url, { name: "terceleye.com", })
+          .done(function( response ) {
+                $(class_name).append( response.html);
+                $(load_more).attr('data-url', response.next_url);
+                //console.log("url -- "+url+"  ---- "+response.next_url)
+                if(response.next_url == null){
+                    $(load_more).fadeOut('fast');
+                }
+                $btn.button('reset');
+          });
+
    }
     $(document).ready(function(){
         //get best sellers
         load_products("{{ url('women/best-sellers') }} ",".best_sellers_women");
+        load_products("{{ url('women/new-arrivals') }} ",".new_arrivals_women");
+        load_products("{{ url('women/must-haves') }} ",".must_haves_women");
     });
 </script>
 @endpush

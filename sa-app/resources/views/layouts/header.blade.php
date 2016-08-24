@@ -1,6 +1,6 @@
 <div id="loginModal" class="modal fade login_modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
-        <form action="{{ url('/login') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ url('user/login') }}" method="post" id="login-form" enctype="multipart/form-data">
          {{ csrf_field() }}
             <div class="form-group">
                 <a href="{{ url('auth/facebook') }}" class="btn_facebook">
@@ -142,9 +142,25 @@
             <div class="container">
                 <a href="{{ url('')}}"><div class="logo"></div></a>
                 <div class="auth_section">
+                <a href="#" class="btn_create_boutique">Create a boutique</a>
+
+                  @if (!Auth::guest())
+                    <a href="#" class="btn_auth">{{ Auth::user()->name }}</a>
+                    <a href="{{ url('logout') }}"  onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();" class="btn_auth btn_logout">Logout</a>
+
+                  
+
+                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+
+
+                   @else 
                     <a href="#" class="btn_create_boutique">Create a boutique</a>
                     <a href="#" class="btn_auth" data-toggle="modal" data-target="#registerModal">Sign Up</a>
                     <a href="#" class="btn_auth" data-toggle="modal" data-target="#loginModal">Login</a>
+                   @endif 
                 </div>
             </div>
         </div>
