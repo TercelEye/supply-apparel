@@ -9,7 +9,7 @@
             <div class="wishlist_add">
                 <span class="heart"></span>
                 <span class="clickable_block"
-                      title="Add to wishlist"></span>
+                      title="Add to wishlist" onclick="add_to_favorite({{$product->id}})"></span>
             </div>
         </div>
         <div class="item_footer">

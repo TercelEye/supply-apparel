@@ -25,9 +25,6 @@ Route::get('/home', 'HomeController@index');
 
 Route::group(['middleware' => 'web'], function () {
 	Route::resource('category','CategoryController');
-
-	
-	
 });
 
 //Homepage filters
@@ -36,3 +33,6 @@ Route::group(['prefix' => 'women','middleware' => 'web'], function () {
     Route::post('new-arrivals','HomeController@new_arrivals_women');
     Route::post('must-haves','HomeController@must_haves_women');
 });
+
+Route::post('favorites/{product}','FavoriteController@toggle');
+

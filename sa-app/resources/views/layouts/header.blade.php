@@ -157,7 +157,6 @@
 
 
                    @else 
-                    <a href="#" class="btn_create_boutique">Create a boutique</a>
                     <a href="#" class="btn_auth" data-toggle="modal" data-target="#registerModal">Sign Up</a>
                     <a href="#" class="btn_auth" data-toggle="modal" data-target="#loginModal">Login</a>
                    @endif 

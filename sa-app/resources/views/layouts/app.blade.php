@@ -149,6 +149,18 @@
 
 </script>
 
+<script type="text/javascript">
+    function add_to_favorite(id){
+         $.post("{{url("favorites")}}/"+id, { name: "", })
+          .done(function( response ) {
+              if(response.guest == "true"){
+                $("loginModal").modal('show');
+              }
+          });
+    }
+
+</script>
+
   @stack('scripts')
 </body>
 </html>
