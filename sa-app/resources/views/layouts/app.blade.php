@@ -153,8 +153,8 @@
     function add_to_favorite(id){
          $.post("{{url("favorites")}}/"+id, { name: "", })
           .done(function( response ) {
-              if(response.guest == "true"){
-                $("loginModal").modal('show');
+              if(response.guest == true){
+                $("#loginModal").modal('show');
               }
           });
     }

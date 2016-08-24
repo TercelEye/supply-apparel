@@ -12,9 +12,11 @@ class FavoriteController extends Controller
 {
     public function toggle(Product $product){
     	$guest =true;
-        $user = Auth::user();
-        $user->favorites()->toggle($product);
-
+    	if(!Auth::guest()){
+        	$user = Auth::user();
+        	$user->favorites()->toggle($product);
+        	$guest =false;
+    	}
         return ['guest'=>$guest];
     }
 }

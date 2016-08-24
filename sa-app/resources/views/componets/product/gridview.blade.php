@@ -1,10 +1,13 @@
  @foreach($products as $product)
  <div class="item col-md-3 col-sm-4 col-xs-6">
     <div class="item_block">
+   
+
         <div class="item_header"> 
+
             <a href="#"><i
                     class="item_icon"></i><span>{{$product->shop->shop_name }}</span></a>
-        </div>
+     </div>
         <div class="item_body">
             <div class="wishlist_add">
                 <span class="heart"></span>
