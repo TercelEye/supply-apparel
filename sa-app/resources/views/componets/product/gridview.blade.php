@@ -3,7 +3,7 @@
     <div class="item_block">
    
 
-        <div class="item_header"> 
+        <div class="item_header">
 
             <a href="#"><i
                     class="item_icon"></i><span>{{$product->shop->shop_name }}</span></a>

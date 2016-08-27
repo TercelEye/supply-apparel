@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Supply Apparel </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
-    <link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -339,7 +337,7 @@
                         <div class="row">
                             <div class="container">
                                 <div class="row">
-                                    <a href="#" class="back">
+                                    <a href="add_product_step_1.html" class="back">
                                         <i class="fa fa-angle-left"></i>
                                         <span>Back to product_details</span>
                                     </a>
@@ -384,7 +382,7 @@
                                             <div class="radio_block">
                                                 <div class="radio">
                                                     <input type="radio" name="local_choice" id="local_free"
-                                                           value="free" checked>
+                                                           value="free">
                                                     <label for="local_free">Free</label>
                                                 </div>
                                                 <div class="radio">
@@ -393,8 +391,8 @@
                                                     <label for="local_charged">Charged</label>
                                                 </div>
                                                 <div class="input_block">
-                                                    <label for="intern_charged_value">$</label>
-                                                    <input type="text" name="charged_value" id="intern_charged_value"/>
+                                                    <label for="local_charged_value">$</label>
+                                                    <input type="text" name="charged_value" id="local_charged_value"/>
                                                 </div>
                                             </div>
                                             <div class="delivery_block">
@@ -405,20 +403,24 @@
                                         <div class="international_block">
                                             <h4>INTERNATIONAL (Deliveries to other countries)
                                                 <div class="checkbox">
-                                                    <input id="intern_delivery" type="checkbox" class="international_shipping">
-                                                    <label for="intern_delivery">International delivery is not available for this product
+                                                    <input id="intern_delivery" type="checkbox"
+                                                           class="international_shipping">
+                                                    <label for="intern_delivery">International delivery is not available
+                                                        for this product
                                                     </label>
                                                 </div>
                                             </h4>
                                             <div class="radio_block">
                                                 <div class="radio">
-                                                    <input type="radio" name="international_choice" id="international_free"
-                                                           value="free" checked>
+                                                    <input type="radio" name="international_choice"
+                                                           id="international_free"
+                                                           value="free">
                                                     <label for="international_free"> Free </label>
                                                 </div>
 
                                                 <div class="radio">
-                                                    <input type="radio" name="international_choice" id="international_charged"
+                                                    <input type="radio" name="international_choice"
+                                                           id="international_charged"
                                                            value="charged" class="charged_shipping">
                                                     <label for="international_charged"> Charged</label>
                                                 </div>
@@ -438,9 +440,11 @@
                                             <input type="text" name="logistics_provider"/>
                                         </div>
                                     </div>
-                                    <a href="#" class="btn_pusblish">Publish</a>
-                                    <a href="add_product_step_1.html" class="btn_add_publish">Publish & Add Another
-                                        Apparel</a>
+                                    <div class="buttons_block">
+                                        <a href="#" class="btn_pusblish">Publish</a>
+                                        <a href="add_product_step_1.html" class="btn_add_publish">Publish & Add Another
+                                            Apparel</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

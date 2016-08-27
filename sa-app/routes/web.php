@@ -34,5 +34,19 @@ Route::group(['prefix' => 'women','middleware' => 'web'], function () {
     Route::post('must-haves','HomeController@must_haves_women');
 });
 
+//Seller
+Route::get('create-boutique','ShopController@landing_page');
+
+Route::get('boutique-register','SellerRegisterController@index');
+Route::post('boutique-register','SellerRegisterController@store');
+
+Route::group(['prefix' => 'seller','middleware' => 'web'], function () {
+	
+
+    Route::get('create-boutique','HomeController@best_sellers_women');
+    Route::get('profile','HomeController@new_arrivals_women');
+    Route::get('contact-details','HomeController@must_haves_women');
+});
+
 Route::post('favorites/{product}','FavoriteController@toggle');
 
