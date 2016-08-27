@@ -158,14 +158,17 @@ $(document.body).on('click', '.wishlist_add .clickable_block' ,function(){
 
    // jQuery(".wishlist_add .clickable_block").click(function(event) {
        //alert($(this).parent('.wishlist_add').toggleClass('active'));
-       $(this).parent('.wishlist_add').toggleClass('active');
+       var icon = $(this);
+       
        var id = $(this).attr('data-id');
        
        $.post("{{url("favorites")}}/"+id, { secure_id: "{{uniqid()}}", })
           .done(function( response ) {
               if(response.guest == true){
                 $("#loginModal").modal('show');
-              }
+              }else{
+                $(icon).parent('.wishlist_add').toggleClass('active');
+             }
           });
     });
 

@@ -6,7 +6,7 @@
         <div class="item_header">
 
             <a href="#"><i
-{{ $product->favorite()->user_id }}                    class="item_icon"></i><span>{{$product->shop->shop_name }}</span></a>
+                   class="item_icon"></i><span>{{$product->shop->shop_name }}</span></a>
      </div>
         <div class="item_body">
             <div class="wishlist_add">
