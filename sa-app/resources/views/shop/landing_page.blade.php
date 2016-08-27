@@ -12,7 +12,7 @@
                             Setup your very own online store in less than a minute and increase your earning potential
                             with our thriving community of buyers.
                         </p>
-                        <a href="create_boutique_step_1.html" class="btn_create_boutique">Create A Boutique</a>
+                        <a href="{{ url("become-seller") }}" class="btn_create_boutique">Create A Boutique</a>
                     </div>
                 </div>
             </div>
@@ -100,7 +100,7 @@
                         <div class="col-sm-12">
                             <div class="big_block">
                                 <h2>Increase your earning potential.</h2>
-                                <a href="create_boutique_step_1.html" class="btn_create_boutique">Create A Boutique</a>
+                                <a href="{{ url("become-seller") }}" class="btn_create_boutique">Create A Boutique</a>
                                 <div class="icon"></div>
                             </div>
                         </div>

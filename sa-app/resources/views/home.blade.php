@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+
+
 <main class="index_page">
     <section class="section_1">
         <div class="container">
@@ -30,7 +32,7 @@
                                         products to millions
                                         around the world.
                                     </p>
-                                    <a href="#" class="btn_start_now">Start now</a>
+                                    <a href="{{ url('create-boutique') }}" class="btn_start_now">Start now</a>
                                 </div>
                             </div>
                         </div>

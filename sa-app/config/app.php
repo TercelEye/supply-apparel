@@ -168,7 +168,7 @@ return [
          */
 
         Collective\Html\HtmlServiceProvider::class,
-
+        'Webpatser\Countries\CountriesServiceProvider',
         /*
          * Application Service Providers...
          */
@@ -226,7 +226,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
-
+        'Countries' => 'Webpatser\Countries\CountriesFacade',
     ],
 
 ];

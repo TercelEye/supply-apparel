@@ -13,11 +13,11 @@ class Product extends Model
 		return $this->belongsToMany('\App\Size')->withTimestamps();	
 	}
 	public function shop(){
-		return $this->hasOne('\App\Shop','id','shop_id');	
+		return $this->hasOne(Shop::class,'id','shop_id');	
 	}
-
-	public function favorite(){
-		return $this->hasOne('\App\Favorite','product_id','id');
-		
-	}
+ 	public function user_favorites(){
+ 		$user_id = (!Auth::guest() ? Auth::user()->id :0);
+        return $this->belongsToMany(Product::class,'favorites')->where('user_id',$user_id);;
+    }
+	
 }

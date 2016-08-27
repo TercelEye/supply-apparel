@@ -38,19 +38,19 @@ class HomeController extends Controller
         Homepage women section 
     */
     public function best_sellers_women(){
-        $products = Product::paginate(4);
+        $products = Product::paginate(8);
         $html = View::make('componets.product.gridview',compact('products'));
         $result = ['next_url'=>$products->nextPageUrl(),'html'=>$html->render()];
         return Response::json($result);
     }
     public function new_arrivals_women(){
-        $products = Product::latest()->paginate(4);
+        $products = Product::latest()->paginate(8);
         $html = View::make('componets.product.gridview',compact('products'));
         $result = ['next_url'=>$products->nextPageUrl(),'html'=>$html->render()];
         return Response::json($result);
     } 
     public function must_haves_women(){
-        $products = Product::latest()->paginate(4);
+        $products = Product::latest()->paginate(8);
         $html = View::make('componets.product.gridview',compact('products'));
         $result = ['next_url'=>$products->nextPageUrl(),'html'=>$html->render()];
         return Response::json($result);

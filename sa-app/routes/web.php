@@ -23,9 +23,6 @@ Route::get('auth/facebook/callback', 'Auth\AuthController@handleFacebookCallback
 
 Route::get('/home', 'HomeController@index');
 
-Route::group(['middleware' => 'web'], function () {
-	Route::resource('category','CategoryController');
-});
 
 //Homepage filters
 Route::group(['prefix' => 'women','middleware' => 'web'], function () {
@@ -34,16 +31,17 @@ Route::group(['prefix' => 'women','middleware' => 'web'], function () {
     Route::post('must-haves','HomeController@must_haves_women');
 });
 
-//Seller
-Route::get('create-boutique','ShopController@landing_page');
 
-Route::get('boutique-register','SellerRegisterController@index');
-Route::post('boutique-register','SellerRegisterController@store');
+	Route::resource('category','CategoryController');
+	//Seller
+	Route::get('create-boutique','ShopController@landing_page');
+	Route::get('become-seller','BecomeSellerController@index');
+	Route::post('become-seller','BecomeSellerController@store');
+
+Route::get('my-shop/type','CreateShopController@shop_type');
+Route::post('become-seller','BecomeSellerController@store');
 
 Route::group(['prefix' => 'seller','middleware' => 'web'], function () {
-	
-
-    Route::get('create-boutique','HomeController@best_sellers_women');
     Route::get('profile','HomeController@new_arrivals_women');
     Route::get('contact-details','HomeController@must_haves_women');
 });

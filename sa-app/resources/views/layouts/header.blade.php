@@ -142,7 +142,7 @@
             <div class="container">
                 <a href="{{ url('')}}"><div class="logo"></div></a>
                 <div class="auth_section">
-                <a href="#" class="btn_create_boutique">Create a boutique</a>
+                <a href="{{ url('create-boutique')}}" class="btn_create_boutique">Create a boutique</a>
 
                   @if (!Auth::guest())
                     <a href="#" class="btn_auth">{{ Auth::user()->name }}</a>

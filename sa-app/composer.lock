@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "807f93e000c1e64361bf2aef327d9644",
-    "content-hash": "3b040b380e3e8998f12958c5329551af",
+    "hash": "c6a584307fef06e9ab370c99d6866da3",
+    "content-hash": "967bf5232e996476673af0d01981d57e",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -308,16 +308,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.3.3",
+            "version": "v5.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "4dbb8bc3897068c392d405bad078f22611f0d95c"
+                "reference": "7159ffbadc79558a42ece2cdd1ec2e7e13105b5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/4dbb8bc3897068c392d405bad078f22611f0d95c",
-                "reference": "4dbb8bc3897068c392d405bad078f22611f0d95c",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/7159ffbadc79558a42ece2cdd1ec2e7e13105b5d",
+                "reference": "7159ffbadc79558a42ece2cdd1ec2e7e13105b5d",
                 "shasum": ""
             },
             "require": {
@@ -431,7 +431,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-08-26 11:47:28"
+            "time": "2016-08-26 21:40:26"
         },
         {
             "name": "laravelcollective/html",
@@ -1914,6 +1914,58 @@
                 "environment"
             ],
             "time": "2016-06-14 14:14:52"
+        },
+        {
+            "name": "webpatser/laravel-countries",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webpatser/laravel-countries.git",
+                "reference": "2a310c0ff1b112d3710223d3bd51e8a30c5a304d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webpatser/laravel-countries/zipball/2a310c0ff1b112d3710223d3bd51e8a30c5a304d",
+                "reference": "2a310c0ff1b112d3710223d3bd51e8a30c5a304d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "laravel-library",
+            "autoload": {
+                "psr-0": {
+                    "Webpatser\\Countries": "src/"
+                },
+                "classmap": [
+                    "src/commands"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christoph Kempen",
+                    "email": "christoph@downsized.nl",
+                    "homepage": "http://downsized.nl/",
+                    "role": "developer"
+                },
+                {
+                    "name": "Paul Kievits",
+                    "role": "developer"
+                }
+            ],
+            "description": "Laravel Countries is a bundle for Laravel, providing Almost ISO 3166_2, 3166_3, currency, Capital and more for all countries.",
+            "homepage": "https://github.com/webpatser/laravel-countries",
+            "keywords": [
+                "countries",
+                "iso_3166_2",
+                "iso_3166_3",
+                "laravel"
+            ],
+            "time": "2016-02-25 10:29:59"
         }
     ],
     "packages-dev": [
@@ -3484,7 +3536,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "webpatser/laravel-countries": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

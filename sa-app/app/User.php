@@ -2,7 +2,9 @@
 
 namespace App;
 
+use \App\Role;
 use \App\Product;
+use \App\Shop;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -30,5 +32,13 @@ class User extends Authenticatable
 
     public function favorites(){
         return $this->belongsToMany(Product::class,'favorites');
+    }
+
+    public function roles(){
+        return  $this->belongsToMany('\App\Role', 'user_roles', 'user_id', 'role_id');
+    }
+
+    public function shop(){
+        return $this->hasOne(Shop::class,'shops','owner_id');
     }
 }
