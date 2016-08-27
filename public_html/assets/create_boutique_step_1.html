@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Supply Apparel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="index_page">
+    <div class="container-fluid website_head">
+        <div class="row">
+            <div class="container">
+                <a href="index.html">
+                    <div class="logo"></div>
+                </a>
+                <div class="auth_section">
+                    <a href="#" class="btn_create_boutique">Create a boutique</a>
+                    <a href="#" class="btn_auth" data-toggle="modal" data-target="#registerModal">Sign Up</a>
+                    <a href="#" class="btn_auth" data-toggle="modal" data-target="#loginModal">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#website_navbar_collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <ul class="mobile_right_nav visible-xs">
+                    <li class="dropdown language_dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">English <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">French</a></li>
+                            <li><a href="#">English</a></li>
+                            <li><a href="#">German</a></li>
+                            <li><a href="#">Arabian</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown currency_dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">USD <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">EUR</a></li>
+                            <li><a href="#">USD</a></li>
+                            <li><a href="#">GBP</a></li>
+                        </ul>
+                    </li>
+                    <li class="icons"><a href="#"><span class="wishlist_icon" title="Wishlist"></span></a></li>
+                    <li class="icons"><a href="#"><span class="cart_icon" data-product="1" title="Cart"></span></a></li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="website_navbar_collapse">
+                <ul class="nav navbar-nav navbar-right hidden-xs">
+                    <li class="dropdown language_dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">English <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">French</a></li>
+                            <li><a href="#">English</a></li>
+                            <li><a href="#">German</a></li>
+                            <li><a href="#">Arabian</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown currency_dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">USD <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">EUR</a></li>
+                            <li><a href="#">USD</a></li>
+                            <li><a href="#">GBP</a></li>
+                        </ul>
+                    </li>
+                    <li class="icons"><a href="#"><span class="wishlist_icon" title="Wishlist"></span></a></li>
+                    <li class="icons"><a href="#"><span class="cart_icon" data-product="1" title="Cart"></span></a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="dropdown women_dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">Women</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <ul class="list-unstyled">
+                                    <li><a class="" href="#">Coats & Jackets</a></li>
+                                    <li><a class="" href="#">Dresses</a></li>
+                                    <li><a class="" href="#">Jeans</a></li>
+                                    <li><a class="" href="#">Jumpsuits</a></li>
+                                    <li><a class="" href="#">Shirts & Blouses</a></li>
+                                </ul>
+                                <ul class="list-unstyled">
+                                    <li><a class="" href="#">Tops & T-Shirts</a></li>
+                                    <li><a class="" href="#">Trousers & Leggings</a></li>
+                                    <li><a class="" href="#">Shorts & skirts</a></li>
+                                    <li><a class="" href="#">Lingerie & Nightware</a></li>
+                                    <li><a class="" href="#">Shoes</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown men_dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">Men</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <ul class="list-unstyled">
+                                    <li><a class="" href="#">Coats & Jackets</a></li>
+                                    <li><a class="" href="#">Hats & Caps</a></li>
+                                    <li><a class="" href="#">Jeans</a></li>
+                                    <li><a class="" href="#">Sweatshirts</a></li>
+                                    <li><a class="" href="#">Shirts</a></li>
+                                </ul>
+                                <ul class="list-unstyled">
+                                    <li><a class="" href="#">T-Shirts & Polos</a></li>
+                                    <li><a class="" href="#">Suits & Blazers</a></li>
+                                    <li><a class="" href="#">Shorts & skirts</a></li>
+                                    <li><a class="" href="#">Brief & Underwear</a></li>
+                                    <li><a class="" href="#">Shoes</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown kids_dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">Kids</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <ul class="list-unstyled col-sm-6 with_divider no_margin">
+                                    <div class="row">
+                                        <li>
+                                            <h2>Girls</h2>
+                                            <ul class="list-unstyled col-md-6 col-sm-12 no_margin">
+                                                <li><a class="" href="#">Coats & Jackets</a></li>
+                                                <li><a class="" href="#">Dresses</a></li>
+                                                <li><a class="" href="#">Jeans</a></li>
+                                                <li><a class="" href="#">Jumpsuits</a></li>
+                                                <li><a class="" href="#">Pajamas</a></li>
+                                            </ul>
+                                            <ul class="list-unstyled col-md-6 col-sm-12 no_margin">
+                                                <li><a class="" href="#">T-Shits</a></li>
+                                                <li><a class="" href="#">Bottoms</a></li>
+                                                <li><a class="" href="#">Shorts & Skirts</a></li>
+                                                <li><a class="" href="#">Sweaters</a></li>
+                                                <li><a class="" href="#">Shoes</a></li>
+                                            </ul>
+                                        </li>
+                                    </div>
+
+                                </ul>
+                                <ul class="list-unstyled col-sm-6  no_margin">
+                                    <div class="row">
+                                        <li>
+                                            <h2>Boys</h2>
+                                            <ul class="list-unstyled col-md-6 col-sm-12 no_margin">
+                                                <li><a class="" href="#">Coats & Jackets</a></li>
+                                                <li><a class="" href="#">Hats & Caps</a></li>
+                                                <li><a class="" href="#">Sweatshirts</a></li>
+                                                <li><a class="" href="#">Shirts</a></li>
+                                            </ul>
+                                            <ul class="list-unstyled col-md-6 col-sm-12 no_margin">
+                                                <li><a class="" href="#">T-Shirts & Polos</a></li>
+                                                <li><a class="" href="#">Suits & Blazers</a></li>
+                                                <li><a class="" href="#">Shorts & Trousers</a></li>
+                                                <li><a class="" href="#">Brief & Underwear</a></li>
+                                                <li><a class="" href="#">Shoes</a></li>
+                                            </ul>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown boutiques_dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">Boutiques</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <ul class="list-unstyled col-md-6 col-sm-7 with_divider no_margin">
+                                    <li>
+                                        <div class="row">
+                                            <ul class="list-unstyled with_divider col-sm-6 no_margin">
+                                                <h2>Boutique Type</h2>
+                                                <li><a class="" href="#">Own Labels</a></li>
+                                                <li><a class="" href="#">Pre-owned</a></li>
+                                                <li><a class="" href="#">Multi Brand</a></li>
+                                            </ul>
+                                            <ul class="list-unstyled col-sm-6 no_margin">
+                                                <h2>Categories</h2>
+                                                <li><a class="" href="#">Men</a></li>
+                                                <li><a class="" href="#">Women</a></li>
+                                                <li><a class="" href="#">Kids</a></li>
+                                            </ul>
+                                        </div>
+
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled col-md-6 col-sm-5 no_margin">
+                                    <li>
+                                        <h2>Featured Boutiques</h2>
+                                        <ul class="list-unstyled col-md-6 col-sm-12 no_margin">
+                                            <li><a class="" href="#">Labels & Love</a></li>
+                                            <li><a class="" href="#">Forever 21</a></li>
+                                            <li><a class="" href="#">Brown Leather</a></li>
+
+                                        </ul>
+                                        <ul class="list-unstyled col-md-6 col-sm-12 no_margin">
+                                            <li><a class="" href="#">Sophia & Sons</a></li>
+                                            <li><a class="" href="#">Trouser Hub</a></li>
+                                            <li><a class="" href="#">T-shirt Bangkok</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown look_dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">Look Books</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <ul class="list-unstyled col-md-6 col-sm-7 with_divider no_margin">
+                                    <li>
+                                        <div class="row">
+                                            <ul class="list-unstyled with_divider col-sm-6  no_margin">
+                                                <h2>Boutique Type</h2>
+                                                <li><a class="" href="#">Own Labels</a></li>
+                                                <li><a class="" href="#">Pre-owned</a></li>
+                                                <li><a class="" href="#">Multi Brand</a></li>
+                                            </ul>
+                                            <ul class="list-unstyled col-sm-6  no_margin">
+                                                <h2>Categories</h2>
+                                                <li><a class="" href="#">Men</a></li>
+                                                <li><a class="" href="#">Women</a></li>
+                                                <li><a class="" href="#">Kids</a></li>
+                                            </ul>
+                                        </div>
+
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled col-md-6 col-sm-5 no_margin">
+                                    <li>
+                                        <h2>Featured Look Books</h2>
+                                        <ul class="list-unstyled col-md-6 col-sm-12 no_margin">
+                                            <li><a class="" href="#">Labels & Love</a></li>
+                                            <li><a class="" href="#">Forever 21</a></li>
+                                            <li><a class="" href="#">Brown Leather</a></li>
+
+                                        </ul>
+                                        <ul class="list-unstyled col-md-6 col-sm-12 no_margin">
+                                            <li><a class="" href="#">Sophia & Sons</a></li>
+                                            <li><a class="" href="#">Trouser Hub</a></li>
+                                            <li><a class="" href="#">T-shirt Bangkok</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<main class="owner_create_step_1">
+    <section class="section_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-offset-0">
+                    <div class="row">
+                        <h2>Create a Boutique</h2>
+                        <h5>Sell your product to millions around the world</h5>
+                        <form action="" method="post">
+                            <div class="form-group">
+                                <h3>Boutique type</h3>
+                                <div class="boutique_type_select">
+                                    <input type="hidden" name="boutique_type" id="boutique_type"/>
+                                    <div class="type" data-type="1">Own-label</div>
+                                    <div class="type" data-type="2">Pre-owned</div>
+                                    <div class="type" data-type="3">multi-brand</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <h3>Product type</h3>
+                                <div class="product_type_select">
+                                    <input type="hidden" name="product_type" id="product_type"/>
+                                    <div class="type" data-type="1"><i class="men"></i>Men</div>
+                                    <div class="type" data-type="2"><i class="women"></i>Women</div>
+                                    <div class="type" data-type="3"><i class="kids"></i>Kids</div>
+                                    <div class="type" data-type="4">All</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <h3>your country</h3>
+                                <div class="country_select">
+                                    <i class="icon"></i>
+                                    <select name="country" id="create_boutique_country">
+                                        <option value="1">Moldova</option>
+                                        <option value="2" selected>United States of America</option>
+                                        <option value="3">United Arab Emirates</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <a href="create_boutique_step_2.html" class="btn-step">Continue</a>
+                            <div class="information">
+                                <h5>$2000</h5>
+                                <p>That's how much you can earn every week</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section_2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-offset-0">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="information_item">
+                                <div class="icon safety"></div>
+                                <h4>Trust & Safety</h4>
+                                <p>We have your best interest and financial safety in mind so you can sell on our
+                                    marketplace
+                                    effortlessly.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="information_item">
+                                <div class="icon logistics"></div>
+                                <h4>100% Logistics Assistance</h4>
+                                <p>
+                                    We help you update the logistics of every sale, keeping you and your customers
+                                    informed
+                                    throughout the process.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="information_item">
+                                <div class="icon secure"></div>
+                                <h4>Secure Payments</h4>
+                                <p>
+                                    Every payment made on our platform is secured so you can grow your business while we
+                                    do all
+                                    the heavy lifting.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2 col-xs-4 menu_quick_links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-2  col-xs-4 menu_browsing">
+                <h3>Browsing Menu</h3>
+                <ul>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Kids</a></li>
+                    <li><a href="#">Boutiques</a></li>
+                    <li><a href="#">Look Books</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-2 col-xs-4 menu_help">
+                <h3>Help</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Track Orders</a></li>
+                    <li><a href="#">FAQ's</a></li>
+                    <li><a href="#">Shipping & Delivery</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-2 col-xs-4 menu_social">
+                <h3>Connect with Us</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Google +</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Pinterest</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4 col-xs-8  menu_payments_newsletter">
+                <h3>Newsletter Sign Up</h3>
+                <div class="newsletter_block">
+                    <p>Subscribe to our newsletter to get the latest news about
+                        our sales and promotions</p>
+                    <form action="" method="post">
+                        <input type="email" name="email" placeholder="Your Email Address"/>
+                        <input type="submit" value="Submit"/>
+                    </form>
+                </div>
+                <div class="payments_block">
+                    <div class="payment visa"></div>
+                    <div class="payment mastercard"></div>
+                    <div class="payment paypal"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="js/base-min.js"></script>
+</body>
+</html>
