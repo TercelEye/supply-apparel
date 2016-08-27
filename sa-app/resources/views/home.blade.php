@@ -822,7 +822,7 @@
           });
 
    }
-    $(document).ready(function(){
+ jQuery(document).ready(function($) {
         //get best sellers
         load_products("{{ url('women/best-sellers') }} ",".best_sellers_women");
         load_products("{{ url('women/new-arrivals') }} ",".new_arrivals_women");
