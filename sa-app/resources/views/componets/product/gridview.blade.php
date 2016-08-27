@@ -6,13 +6,13 @@
         <div class="item_header">
 
             <a href="#"><i
-                    class="item_icon"></i><span>{{$product->shop->shop_name }}</span></a>
+{{ $product->favorite()->user_id }}                    class="item_icon"></i><span>{{$product->shop->shop_name }}</span></a>
      </div>
         <div class="item_body">
             <div class="wishlist_add">
                 <span class="heart"></span>
-                <span class="clickable_block"
-                      title="Add to wishlist" onclick="add_to_favorite({{$product->id}})"></span>
+                <a data-id="{{ $product->id }}" class="clickable_block"
+                      title="Add to wishlist"></a>
             </div>
         </div>
         <div class="item_footer">

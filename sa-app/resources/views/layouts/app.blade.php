@@ -10,7 +10,11 @@
     <link href="{{ url('assets') }}/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ url('assets') }}/css/style.css" rel="stylesheet">
     <link href="{{ url('assets') }}/libs/toastr-master/build/toastr.min.css" rel="stylesheet">
-    
+    <style type="text/css">
+        .wishlist_add.active {
+            opacity: 1 !important;
+        }
+    </style>
 </head> 
 <body>
 @include("layouts.header")
@@ -87,7 +91,7 @@
         }
 });
 </script>
-
+@stack('scripts')
 <script type="text/javascript">
     $('#login-form button[type=submit]').click(function(e){
  
@@ -148,17 +152,25 @@
 </script>
 
 <script type="text/javascript">
-    function add_to_favorite(id){
-         $.post("{{url("favorites")}}/"+id, { name: "", })
+
+$(document.body).on('click', '.wishlist_add .clickable_block' ,function(){
+
+
+   // jQuery(".wishlist_add .clickable_block").click(function(event) {
+       //alert($(this).parent('.wishlist_add').toggleClass('active'));
+       $(this).parent('.wishlist_add').toggleClass('active');
+       var id = $(this).attr('data-id');
+       
+       $.post("{{url("favorites")}}/"+id, { secure_id: "{{uniqid()}}", })
           .done(function( response ) {
               if(response.guest == true){
                 $("#loginModal").modal('show');
               }
           });
-    }
+    });
 
 </script>
 
-  @stack('scripts')
+  
 </body>
 </html>
