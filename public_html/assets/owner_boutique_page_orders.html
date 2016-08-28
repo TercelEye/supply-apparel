@@ -4,172 +4,105 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Supply Apparel</title>
+    <title>Supply Apparel </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div id="loginModal" class="modal fade login_modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <form action="" method="post" enctype="multipart/form-data">
-            <div class="form-group">
-                <a href="#" class="btn_facebook">
-                    <i></i>
-                    <span>Log in with Facebook</span>
-                </a>
-            </div>
-            <div class="form-group">
-                <a href="#" class="btn_google">
-                    <i></i>
-                    <span>Log in with Google</span>
-                </a>
-            </div>
-            <div class="form-group">
-                <div class="divider_line">or</div>
-            </div>
-            <div class="form-group email_block">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Email Address" name="email">
-                    <div class="input-group-addon"><i class="email_icon"></i></div>
-                </div>
-            </div>
-            <div class="form-group password_block">
-                <div class="input-group">
-                    <input type="password" class="form-control" placeholder="Password" name="password">
-                    <div class="input-group-addon"><i class="password_icon"></i></div>
-                </div>
-            </div>
-            <div class="form-group forgot_pass_block">
-                <div class="checkbox">
-                    <input name="remember" id="check_item" type="checkbox">
-                    <label for="check_item">Remember me</label>
-                </div>
-                <a href="#" class="btn_forgot_pass fourth_modal open_modal" data-modal="reset_password_modal">Forgot
-                    password?</a>
-            </div>
-            <div class="form-group submit_block">
-                <button type="submit" class="btn_login">Log In</button>
-            </div>
-            <div class="form-group sign_up_block">
-                <p>Don't have an account?</p>
-                <a href="#" class="btn_signup seconds_modal open_modal" data-modal="loginModal">Sign Up</a>
-            </div>
-        </form>
-    </div>
-</div>
-<div id="registerModal" class="modal fade register_modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <form action="" method="post" enctype="multipart/form-data">
-            <div class="form-group">
-                <a href="#" class="btn_facebook">
-                    <i></i>
-                    <span>Log in with Facebook</span>
-                </a>
-            </div>
-            <div class="form-group">
-                <a href="#" class="btn_google">
-                    <i></i>
-                    <span>Log in with Google</span>
-                </a>
-            </div>
-            <div class="form-group">
-                <div class="divider_line">or</div>
-            </div>
-            <div class="form-group submit_block">
-                <a href="#" data-modal="registerModal" class="btn_login third_modal open_modal">Sign up with email</a>
-            </div>
-            <div class="form-group agrement_block">
-                <p>
-                    By signing up, I agree to Supply Apparel’s
-                    <a href="#">Terms of Service</a>,
-                    <a href="#">Payment Terms</a>, <a href="#">Privacy Policy</a>, and <a href="#">Refund Policy</a>.
-                </p>
-            </div>
-            <div class="form-group sign_up_block">
-                <p>Already a member?</p>
-                <a href="#" data-modal="registerModal" class="btn_signup first_modal open_modal">Log in</a>
-            </div>
-        </form>
-    </div>
-</div>
-<div id="register_mail_Modal" class="modal fade register_mail_modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <form action="" method="post" enctype="multipart/form-data">
-            <div class="form-group first_block">
-                <p>
-                    Sign up with
-                    <a href="#">Facebook</a> or
-                    <a href="#">Google</a>
-                </p>
-            </div>
-            <div class="form-group">
-                <div class="divider_line">or</div>
-            </div>
-            <div class="form-group name_block">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Full name" name="name">
-                    <div class="input-group-addon"><i class="name_icon"></i></div>
-                </div>
-            </div>
-            <div class="form-group email_block">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Email Address" name="email">
-                    <div class="input-group-addon"><i class="email_icon"></i></div>
-                </div>
-            </div>
-            <div class="form-group password_block">
-                <div class="input-group">
-                    <input type="password" class="form-control" placeholder="Password" name="password">
-                    <div class="input-group-addon"><i class="password_icon"></i></div>
-                </div>
-            </div>
-            <div class="form-group date_block">
-                <div class="input-group">
-                    <input type="text" readonly class="form-control" id="register_date_birth"  placeholder="Date of Birth" name="birthdate">
-                    <div class="input-group-addon"><i class="date_icon"></i></div>
-                </div>
-            </div>
-            <div class="form-group agrement_block">
-                <p>
-                    By signing up, I agree to Supply Apparel’s
-                    <a href="#">Terms of Service</a>,
-                    <a href="#">Payment Terms</a>, <a href="#">Privacy Policy</a>, and <a href="#">Refund Policy</a>.
-                </p>
-            </div>
-            <div class="form-group submit_block">
-                <button type="submit" class="btn_login">Sign up with email</button>
-            </div>
-
-            <div class="form-group sign_up_block">
-                <p>Already a member?</p>
-                <a href="#" data-modal="register_mail_Modal" class="btn_signup first_modal open_modal">Log in</a>
-            </div>
-        </form>
-    </div>
-</div>
-<div id="reset_password_modal" class="modal fade reset_password_modal" tabindex="-1" role="dialog">
+<div id="shipped_modal" class="modal fade shipped_modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <form action="" method="post" enctype="multipart/form-data">
             <div class="form-group title_block">
-                <span>Reset Password</span>
+                <span>View Details</span>
             </div>
             <div class="form-group first_block">
+                <h4>Shipping Date</h4>
+                <input type="text" name="shipping_date" value="04 - November - 2015">
+            </div>
+            <div class="form-group">
+                <h4>Tracking Number</h4>
+                <input type="text" name="tracking_number" value="0189902990384">
+            </div>
+            <div class="form-group">
+                <h4>Logistics Provider</h4>
+                <input type="text" name="logistics_provider" value="DedEX">
+            </div>
+        </form>
+    </div>
+</div>
+<div id="delivered_modal" class="modal fade delivered_modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="form-group title_block">
+                <span>View Details</span>
+            </div>
+            <div class="form-group first_block">
+                <h4>Delivery Date</h4>
+                <input type="text" name="delivery_date" value="04 - November - 2015">
+            </div>
+            <div class="form-group">
+                <h4>Tracking Number</h4>
+                <input type="text" name="tracking_number" value="0189902990384">
+            </div>
+            <div class="form-group">
+                <h4>Logistics Provider</h4>
+                <input type="text" name="logistics_provider" value="DedEX">
+            </div>
+        </form>
+    </div>
+</div>
+<div id="update_modal" class="modal fade update_modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="form-group title_block">
+                <span>Update Order</span>
+            </div>
+            <div class="form-group first_block">
+                <h4>Tracking Number</h4>
+                <input type="text" name="tracking_number" placeholder="Enter Tracking Number">
+            </div>
+            <div class="form-group">
+                <h4>Logistics Provider</h4>
+                <input type="text" name="logistics_provider" placeholder="Enter Logistics Provider">
+            </div>
+            <div class="form-group save_block">
+                <button type="submit" class="btn_update">Update</button>
+            </div>
+            <div class="form-group terms_block">
                 <p>
-                    Enter the email address associated with your account, and we’ll email you a link to reset your
-                    password.
+                    Clicking on “update” will sent the customer a notification about the shipping details.
                 </p>
             </div>
-            <div class="form-group email_block">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Email Address" name="email">
-                    <div class="input-group-addon"><i class="email_icon"></i></div>
+        </form>
+    </div>
+</div>
+<div id="reject_modal" class="modal fade reject_modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="form-group title_block">
+                <span>Reject Order</span>
+            </div>
+            <div class="form-group first_block">
+                <h4>Reason for Rejecting Order</h4>
+                <div class="ui selection dropdown" id="reject_reason_select">
+                    <input type="hidden" name="reason">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Out Of Stock</div>
+                    <div class="menu">
+                        <div class="item active selected" data-value="1">Out Of Stock</div>
+                        <div class="item" data-value="2">Problem with Logistics</div>
+                        <div class="item" data-value="0">Order Placed by Mistake</div>
+                    </div>
                 </div>
             </div>
-            <div class="form-group sign_up_block">
-                <button type="button" class="btn_login btn_send">Send Reset Link</button>
-                <div class="loader"></div>
-                <button type="button" class="btn_login btn_sent">
-                    <i class="glyphicon glyphicon-ok"></i> Email Sent
-                </button>
+            <div class="form-group save_block">
+                <button type="submit" class="btn_reject_order">Reject Order</button>
+            </div>
+            <div class="form-group terms_block">
+                <p>
+                    Clicking on “Reject Order” will send the a refund to the customer and a notification about the
+                    status.
+                </p>
             </div>
         </form>
     </div>
@@ -178,7 +111,9 @@
     <div class="container-fluid website_head">
         <div class="row">
             <div class="container">
-                <a href="index.html"><div class="logo"></div></a>
+                <a href="index.html">
+                    <div class="logo"></div>
+                </a>
                 <div class="auth_section">
                     <a href="#" class="btn_create_boutique">Create a boutique</a>
                     <a href="#" class="btn_auth" data-toggle="modal" data-target="#registerModal">Sign Up</a>
@@ -340,7 +275,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown boutiques_dropdown">
+                    <li class="dropdown boutiques_dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                            aria-haspopup="true" aria-expanded="false">Boutiques</a>
                         <ul class="dropdown-menu">
@@ -431,31 +366,238 @@
         </div>
     </nav>
 </header>
-<main class="index_page">
-    <section class="section_reset_password">
+<main class="boutique_orders">
+    <section class="section_1 owner_menu">
         <div class="container">
             <div class="row">
-                <div class="modal_block" role="document">
-                    <form action="index.html" method="post" enctype="multipart/form-data">
-                        <div class="form-group title_block">
-                            <span>Reset Password</span>
+                <div class="col-lg-10 col-lg-offset-1 col-md-12 col-md-offset-0">
+                    <ul class="list-inline account_menu">
+                        <li>
+                            <div class="icon"></div>
+                        </li>
+                        <li><a href="owner_boutique_page_empty.html"><i class="boutique"></i><span>Boutique</span></a>
+                        </li>
+                        <li class="active"><a href="owner_boutique_page_orders.html"><i
+                                class="orders"></i><span>Orders</span></a></li>
+                        <li><a href="#"><i class="messages"></i><span>Messages</span></a></li>
+                        <li><a href="owner_boutique_page_settings.html"><i class="settings"></i><span>Settings</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section_2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 col-md-12 col-md-offset-0">
+                    <ul class="nav nav-tabs orders_tabs" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#products_bought" aria-controls="bought" role="tab"
+                               data-toggle="tab">Products Bought</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#products_sold" aria-controls="sold" role="tab" data-toggle="tab">Products Sold</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="products_bought">
+                            <div class="row">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th>Product Bought</th>
+                                            <th>Boutique</th>
+                                            <th>Delivery Address</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="product_block">
+                                                <div class="product_item">
+                                                    <div class="photo"></div>
+                                                    <div class="details">
+                                                        <div class="name">The Twill Snap Backpack</div>
+                                                        <div class="type">Reverse Denim + Brown Leather</div>
+                                                        <div class="quantity">Quantity: 1</div>
+                                                    </div>
+                                                    <div class="price">$235</div>
+                                                </div>
+                                            </td>
+                                            <td>The Summer Show Collection</td>
+                                            <td>203, Silicon Oasis, New Heights Ave, Dubai, UAE, 401202</td>
+                                            <td class="status"><!--  shipped |  decision    -->
+                                                Purchased
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="product_block">
+                                                <div class="product_item">
+                                                    <div class="photo"></div>
+                                                    <div class="details">
+                                                        <div class="name">The Twill Snap Backpack</div>
+                                                        <div class="type">Reverse Denim + Brown Leather</div>
+                                                        <div class="quantity">Quantity: 1</div>
+                                                    </div>
+                                                    <div class="price">$235</div>
+                                                </div>
+                                            </td>
+                                            <td>The Summer Show Collection</td>
+                                            <td>203, Silicon Oasis, New Heights Ave, Dubai, UAE, 401202</td>
+                                            <td class="status shipped"> <!-- shipped |  decision    -->
+                                                <span>Shipped</span>
+                                                <a data-toggle="modal" data-id="3" data-target="#shipped_modal"
+                                                   class="btn_view">View Details</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="product_block">
+                                                <div class="product_item">
+                                                    <div class="photo"></div>
+                                                    <div class="details">
+                                                        <div class="name">The Twill Snap Backpack</div>
+                                                        <div class="type">Reverse Denim + Brown Leather</div>
+                                                        <div class="quantity">Quantity: 1</div>
+                                                    </div>
+                                                    <div class="price">$235</div>
+                                                </div>
+                                            </td>
+                                            <td>The Summer Show Collection</td>
+                                            <td>203, Silicon Oasis, New Heights Ave, Dubai, UAE, 401202</td>
+                                            <td class="status shipped"><!-- shipped |  decision    -->
+                                                <span>Shipped</span>
+                                                <a data-toggle="modal" data-id="2" data-target="#shipped_modal"
+                                                   class="btn_view">View Details</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="product_block">
+                                                <div class="product_item">
+                                                    <div class="photo"></div>
+                                                    <div class="details">
+                                                        <div class="name">The Twill Snap Backpack</div>
+                                                        <div class="type">Reverse Denim + Brown Leather</div>
+                                                        <div class="quantity">Quantity: 1</div>
+                                                    </div>
+                                                    <div class="price">$235</div>
+                                                </div>
+                                            </td>
+                                            <td>The Summer Show Collection</td>
+                                            <td>203, Silicon Oasis, New Heights Ave, Dubai, UAE, 401202</td>
+                                            <td class="status shipped"><!-- shipped |  decision    -->
+                                                <span>Delivered</span>
+                                                <a data-toggle="modal" data-id="1" data-target="#delivered_modal"
+                                                   class="btn_view">View Details</a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group first_block">
-                            <input type="password" class="form-control" placeholder="New Password" name="new_password">
+                        <div role="tabpanel" class="tab-pane" id="products_sold">
+                            <div class="row">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th>Product Sold</th>
+                                            <th>Customer</th>
+                                            <th>Delivery Address</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="product_block">
+                                                <div class="product_item">
+                                                    <div class="photo"></div>
+                                                    <div class="details">
+                                                        <div class="name">The Twill Snap Backpack</div>
+                                                        <div class="type">Reverse Denim + Brown Leather</div>
+                                                        <div class="quantity">Quantity: 1</div>
+                                                    </div>
+                                                    <div class="price">$235</div>
+                                                </div>
+                                            </td>
+                                            <td>John Snow</td>
+                                            <td>203, Silicon Oasis, New Heights Ave, Dubai, UAE, 401202</td>
+                                            <td class="status decision"><!--  shipped |  decision  -->
+                                                <a data-id="4" class="btn_accept">Accept</a>
+                                                <a data-toggle="modal" data-id="4" data-target="#reject_modal"
+                                                   class="btn_reject">Reject</a>
+                                                <span class="hidden">Accepted</span>
+                                                <a data-toggle="modal" data-id="4" data-target="#update_modal"
+                                                   class="btn_view hidden">Update Order</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="product_block">
+                                                <div class="product_item">
+                                                    <div class="photo"></div>
+                                                    <div class="details">
+                                                        <div class="name">The Twill Snap Backpack</div>
+                                                        <div class="type">Reverse Denim + Brown Leather</div>
+                                                        <div class="quantity">Quantity: 1</div>
+                                                    </div>
+                                                    <div class="price">$235</div>
+                                                </div>
+                                            </td>
+                                            <td>Elizabeth Mcurry</td>
+                                            <td>203, Silicon Oasis, New Heights Ave, Dubai, UAE, 401202</td>
+                                            <td class="status shipped"> <!-- shipped |  decision    -->
+                                                <span>Accepted</span>
+                                                <a data-toggle="modal" data-id="3" data-target="#update_modal"
+                                                   class="btn_view">Update Order</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="product_block">
+                                                <div class="product_item">
+                                                    <div class="photo"></div>
+                                                    <div class="details">
+                                                        <div class="name">The Twill Snap Backpack</div>
+                                                        <div class="type">Reverse Denim + Brown Leather</div>
+                                                        <div class="quantity">Quantity: 1</div>
+                                                    </div>
+                                                    <div class="price">$235</div>
+                                                </div>
+                                            </td>
+                                            <td>Michael Bender</td>
+                                            <td>203, Silicon Oasis, New Heights Ave, Dubai, UAE, 401202</td>
+                                            <td class="status shipped"><!-- shipped |  decision    -->
+                                                <span>Shipped</span>
+                                                <a data-toggle="modal" data-id="2" data-target="#shipped_modal"
+                                                   class="btn_view">View Details</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="product_block">
+                                                <div class="product_item">
+                                                    <div class="photo"></div>
+                                                    <div class="details">
+                                                        <div class="name">The Twill Snap Backpack</div>
+                                                        <div class="type">Reverse Denim + Brown Leather</div>
+                                                        <div class="quantity">Quantity: 1</div>
+                                                    </div>
+                                                    <div class="price">$235</div>
+                                                </div>
+                                            </td>
+                                            <td>The Summer Show Collection</td>
+                                            <td>203, Silicon Oasis, New Heights Ave, Dubai, UAE, 401202</td>
+                                            <td class="status shipped"><!-- shipped |  decision    -->
+                                                <span>Delivered</span>
+                                                <a data-toggle="modal" data-id="1" data-target="#delivered_modal"
+                                                   class="btn_view">View Details</a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group confirm_block">
-                            <input type="password" class="form-control" placeholder="Confirm Password" name="confirm_passowrd">
-                        </div>
-                        <div class="form-group save_block">
-                            <button type="submit" class="btn_login">Save and continue</button>
-                        </div>
-                        <div class="form-group terms_block">
-                            <p>
-                                By clicking “Save and Continue,” you confirm that you
-                                accept the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
-                            </p>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
