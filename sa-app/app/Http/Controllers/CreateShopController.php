@@ -16,9 +16,10 @@ class CreateShopController extends Controller
 		 $this->middleware('auth');
 		if(Auth::guest()){
 			return redirect('become-seller');
-			echo "DD";
 		}
 	}
+
+
 	/** create shop first step */
     public function shop_type(){
     	$product_types = ProductType::all();
@@ -32,6 +33,8 @@ class CreateShopController extends Controller
 	            'boutique_type' => 'required',
 	            'password' => 'required',
 	    ]);
+
+	    
 
 	}
 }

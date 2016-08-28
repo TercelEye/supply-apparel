@@ -7,6 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-offset-0">
+                    @include('shared.errors')
                     <div class="row">
                         <h2>Create a Boutique</h2>
                         <h5>Sell your product to millions around the world</h5>
@@ -41,7 +42,8 @@
                                     </select>
                                 </div>
                             </div>
-                            <a href="create_boutique_step_2.html" class="btn-step">Continue</a>
+
+                            <a href="#" onclick="$(this).closest('form').submit();" class="btn-step">Continue</a>
                             <div class="information">
                                 <h5>$2000</h5>
                                 <p>That's how much you can earn every week</p>

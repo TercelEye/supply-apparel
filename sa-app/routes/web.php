@@ -32,14 +32,17 @@ Route::group(['prefix' => 'women','middleware' => 'web'], function () {
 });
 
 
-	Route::resource('category','CategoryController');
-	//Seller
-	Route::get('create-boutique','ShopController@landing_page');
-	Route::get('become-seller','BecomeSellerController@index');
-	Route::post('become-seller','BecomeSellerController@store');
+Route::resource('category','CategoryController');
+//Seller
+Route::get('create-boutique','ShopController@landing_page');
+Route::get('become-seller','BecomeSellerController@index');
+Route::post('become-seller','BecomeSellerController@store');
 
 Route::get('my-shop/type','CreateShopController@shop_type');
-Route::post('become-seller','BecomeSellerController@store');
+Route::post('my-shop/type','CreateShopController@shop_type_store');
+
+Route::get('shop/add-product','ProductsController@index');
+Route::post('shop/add-product','ProductsController@store');
 
 Route::group(['prefix' => 'seller','middleware' => 'web'], function () {
     Route::get('profile','HomeController@new_arrivals_women');
