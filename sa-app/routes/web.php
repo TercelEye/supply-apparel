@@ -49,6 +49,9 @@ Route::post('my-shop/profile','CreateShopController@profile_store');
 Route::get('my-shop/contact-details','CreateShopController@contact');
 Route::post('my-shop/contact-details','CreateShopController@contact_store');
 
+Route::get('membership/plans','MembershipPlansController@index');
+Route::post('membership/plans/{plan}','MembershipPlansController@store');
+
 
 // add product
 Route::get('shop/add-product','ProductsController@index');

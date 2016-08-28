@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Session;
 use Redirect;
+use Illuminate\Support\Str;
+use Validator;
 use Auth;
 use \App\ProductType;
 use \App\BoutiqueType;
+use \App\Shop;
 use App\Http\Requests;
 
 class CreateShopController extends Controller
@@ -70,25 +73,46 @@ class CreateShopController extends Controller
 	}
 
 	public function contact_store(Request $request){
-		$this->validate($request, [
+		
+
+		$validator = Validator::make($request->all(), [
 	            'number_prefix' => 'required',
-	            'contact_number' => 'required|digit:10',
+	            'contact_number' => 'required',
 	            'email_address' => 'required|email',
-	            'facebook_url' => 'required|url',
-	            'twitter_url' => 'required|url',
-	            'instagram_url' => 'required|url',
-	            'pinterest_url' => 'required|url',
+	            'facebook_url' => 'url',
+	            'twitter_url' => 'url',
+	            'instagram_url' => 'url',
+	            'pinterest_url' => 'url',
 	    ]);
 
+	    $validator->after(function($validator) {
+		    if (Auth::guest()) {
+		        $validator->errors()->add('Erro', '401 unauthorized. you are not loged in');
+		    }
+		});
+
+		  if ($validator->fails()) {
+            return redirect()->back()
+                        ->withErrors($validator)
+                        ->withInput();
+        }
 		//session
 		$shop=$request->session()->get('shop');
 	    $shop['number_prefix'] = $request->number_prefix; 
 	    $shop['contact_number'] =  $request->contact_number; 
 	    $shop['email_address'] = $request->email_address;
-	    $shop['fb_url'] = $request->fb_url;
+	    $shop['facebook_url'] = $request->facebook_url;
+	    $shop['twitter_url'] = $request->twitter_url;
+	    $shop['instagram_url'] = $request->instagram_url;
+	    $shop['pinterest_url'] = $request->pinterest_url;
+	    $shop['plan_id'] = 1;
+	    $shop['status'] = 1;
+	    $shop['owner_id'] = Auth::user()->id;
+	    $shop['shop_slug'] = Str::slug($shop['shop_name']);
+	   // dd($shop);
 
-	    $request->session()->put('shop', $shop);
-	    
-	    return redirect('my-shop/contact');
+	    $shop_model = Shop::create($shop);
+	   
+	    return redirect('membership/plans');
 	}
 }
