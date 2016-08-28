@@ -15,19 +15,19 @@
                                 <h3>Boutique type</h3>
                                 <div class="boutique_type_select">
                                     <input type="hidden" name="boutique_type" id="boutique_type"/>
-                                    <div class="type" data-type="1">Own-label</div>
-                                    <div class="type" data-type="2">Pre-owned</div>
-                                    <div class="type" data-type="3">multi-brand</div>
+                                    @foreach($boutique_types as $row)
+                                        <div class="type" data-type="1">{{$row->name}}</div>
+                                    @endforeach
                                 </div>
                             </div>
                             <div class="form-group">
                                 <h3>Product type</h3>
                                 <div class="product_type_select">
                                     <input type="hidden" name="product_type" id="product_type"/>
-                                    <div class="type" data-type="1"><i class="men"></i>Men</div>
-                                    <div class="type" data-type="2"><i class="women"></i>Women</div>
-                                    <div class="type" data-type="3"><i class="kids"></i>Kids</div>
-                                    <div class="type" data-type="4">All</div>
+                                    @foreach($product_types as $row)
+                                    <div class="type" data-type="{{ $row->id }}"><i class="{{ $row->icon }}"></i>{{$row->name }}</div>
+                                    @endforeach
+                                   
                                 </div>
                             </div>
                             <div class="form-group">

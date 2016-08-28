@@ -19,14 +19,18 @@ class CreateShopsTable extends Migration
 			$table->string('shop_name');
 			$table->string('shop_slug')->unique();
 			$table->text('description');
-			$table->string('cover_image')->nullable();;
-			$table->string('social_fb')->nullable();;
-			$table->string('social_tw')->nullable();;
-			$table->string('followers_count')->nullable();;
-			$table->string('brand_type')->nullable();;
-			$table->string('gender_type')->nullable();;
-			$table->string('country')->nullable();;
+			$table->string('cover_image')->nullable();
+			$table->string('social_fb')->nullable();
+			$table->string('social_tw')->nullable();
 			$table->boolean('status');
+            $table->integer('country_id')->unsigned();
+            $table->foreign('country_id')->references('id')->on('countries');
+
+            $table->integer('boutique_type')->unsigned();
+            $table->foreign('boutique_type')->references('id')->on('boutique_types');
+            $table->integer('product_type')->unsigned();
+            $table->foreign('product_type')->references('id')->on('product_types');
+
             $table->timestamps();
         });
     }

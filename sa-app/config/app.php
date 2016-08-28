@@ -169,6 +169,8 @@ return [
 
         Collective\Html\HtmlServiceProvider::class,
         'Webpatser\Countries\CountriesServiceProvider',
+        Srmklive\PayPal\Providers\PayPalServiceProvider::class,
+        
         /*
          * Application Service Providers...
          */
@@ -227,6 +229,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Countries' => 'Webpatser\Countries\CountriesFacade',
+        'PayPal' => Srmklive\PayPal\Facades\PayPal::class,
     ],
 
 ];

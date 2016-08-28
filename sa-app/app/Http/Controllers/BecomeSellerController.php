@@ -17,7 +17,8 @@ class BecomeSellerController extends Controller
             //if already registered user
            $user = Auth::user(); 
            $this->make_as_seller($user);
-           return redirect("");
+           //redirect to create shop
+           return redirect("my-shop/type");
         }
         return view('shop.register');
     }
@@ -35,6 +36,11 @@ class BecomeSellerController extends Controller
             'password' => bcrypt($request->password),
         ]);
         $this->make_as_seller($user);
+        //login as seller
+        Auth::login($user);
+        //redirect to create shop
+        return redirect("my-shop/type");
+
     }
     //make user as seller 
     private function make_as_seller($user){
