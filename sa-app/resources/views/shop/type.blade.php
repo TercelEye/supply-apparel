@@ -7,11 +7,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-offset-0">
-                    @include('shared.errors')
+                   
                     <div class="row">
                         <h2>Create a Boutique</h2>
                         <h5>Sell your product to millions around the world</h5>
                         <form action="" method="post">
+                         {{ csrf_field() }}
+                         <div class="row">
+                             <div class="col-md-6">
+                                  @include('shared.errors')
+                             </div>
+                         </div>
+                         
                             <div class="form-group">
                                 <h3>Boutique type</h3>
                                 <div class="boutique_type_select">
@@ -35,7 +42,8 @@
                                 <h3>your country</h3>
                                 <div class="country_select">
                                     <i class="icon"></i>
-                                    <select name="country" id="create_boutique_country">
+                                    <select name="country_id" id="create_boutique_country">
+                                        <option value="" disabled="" selected="">select your country</option>
                                     	@foreach(Countries::all() as $country)
                                         <option value="{{$country->id}}">{{$country->name}}</option>
                                         @endforeach

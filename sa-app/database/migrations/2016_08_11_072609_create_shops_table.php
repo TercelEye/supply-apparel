@@ -19,9 +19,17 @@ class CreateShopsTable extends Migration
 			$table->string('shop_name');
 			$table->string('shop_slug')->unique();
 			$table->text('description');
+            $table->string('number_prefix');
+            $table->string('contact_number');
+            $table->string('email_address');
+
 			$table->string('cover_image')->nullable();
-			$table->string('social_fb')->nullable();
-			$table->string('social_tw')->nullable();
+
+			$table->string('facebook_url')->nullable();
+            $table->string('twitter_url')->nullable();
+            $table->string('instagram_url')->nullable();
+			$table->string('pinterest_url')->nullable();
+            
 			$table->boolean('status');
             $table->integer('country_id')->unsigned();
             $table->foreign('country_id')->references('id')->on('countries');
@@ -30,6 +38,9 @@ class CreateShopsTable extends Migration
             $table->foreign('boutique_type')->references('id')->on('boutique_types');
             $table->integer('product_type')->unsigned();
             $table->foreign('product_type')->references('id')->on('product_types');
+
+            $table->integer('plan_id')->unsigned();
+            $table->foreign('plan_id')->references('id')->on('plans');
 
             $table->timestamps();
         });
