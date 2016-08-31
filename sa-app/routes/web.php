@@ -54,8 +54,7 @@ Route::post('membership/plans/{plan}','MembershipPlansController@store');
 
 
 // add product
-Route::get('shop/add-product','ProductsController@index');
-Route::post('shop/add-product','ProductsController@store');
+Route::resource('seller/product','CreateProductController');
 
 Route::group(['prefix' => 'seller','middleware' => 'web'], function () {
    
