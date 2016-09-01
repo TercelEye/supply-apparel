@@ -5,7 +5,6 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
-                <form action="" method="post">
                     <div class="row">
                         <div class="container">
                             <div class="row">
@@ -19,13 +18,13 @@
                                     </a>
                                     <div class="form-group name_block">
                                         <h3>GIVE YOUR BLOG POST A TITLE</h3>
-                                        <input type="text" name="title" id="name"/>
+                                        <input type="text" value="{{$blog->title or ''}}" name="title" id="name"/>
                                     </div>
                                     <div class="form-group description_block">
                                         <h3>WRITE YOUR BLOG POST</h3>
-                                        <textarea id="editor1" name="text" rows="10" cols="80"></textarea>
+                                        <textarea id="editor1" name="text" rows="10" cols="80">{{$blog->text or ''}}</textarea>
                                     </div>
-                                    <div class="form-group file_blockpp">
+                                   <div class="form-group file_block">
                                         <h3>UPLOAD A PHOTO FOR YOUR BLOG POST (minimum size 504 x 504 px)</h3>
                                         <div class="file_input">
                                             <label title="Upload photo" for="photo"><i></i></label>
@@ -40,7 +39,6 @@
                             </div>
                         </div>
                     </div>
-                </form>
             </div>
         </div>
     </div>
