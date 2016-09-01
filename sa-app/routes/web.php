@@ -57,8 +57,7 @@ Route::get('blog/create','CreateBlogController@index');
 Route::post('blog/create','CreateBlogController@create');
 
 // add product
-Route::get('shop/add-product','ProductsController@index');
-Route::post('shop/add-product','ProductsController@store');
+Route::resource('seller/product','CreateProductController');
 
 Route::group(['prefix' => 'seller','middleware' => 'web'], function () {
    
