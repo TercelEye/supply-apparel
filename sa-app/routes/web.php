@@ -52,16 +52,19 @@ Route::post('my-shop/contact-details','CreateShopController@contact_store');
 Route::get('membership/plans','MembershipPlansController@index');
 Route::post('membership/plans/{plan}','MembershipPlansController@store');
 
-// blog
-Route::get('blog/create','CreateBlogController@index');
-Route::post('blog/create','CreateBlogController@create');
+
+
+Route::group(['middleware' => 'web'], function () {
+   // blog
+	Route::get('blog/create','CreateBlogController@index');
+	Route::post('blog/create','CreateBlogController@create');
+
+});
 
 // add product
 Route::resource('seller/product','CreateProductController');
 
-Route::group(['prefix' => 'seller','middleware' => 'web'], function () {
-   
-});
+
 
 Route::post('favorites/{product}','FavoriteController@toggle');
 
