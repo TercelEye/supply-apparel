@@ -39,6 +39,6 @@ class User extends Authenticatable
     }
 
     public function shop(){
-        return $this->hasOne(Shop::class,'shops','owner_id');
+        return $this->hasOne(Shop::class,'owner_id','id');
     }
 }

@@ -16,16 +16,7 @@
                                         <span>Back to my account</span>
                                     </a>
 
-                                    <div class="form-group name_block">
-                                        <h3>SELECT CATEGORY</h3>
-                                        <SELECT>
-                                        @foreach($ProdcutType as $row)
-                                        	<OPTION value="{{$row->id}}"> {{$row->name}}</OPTION>
-                                        @endforeach
-                                        </SELECT>
-                                        <input type="text" name="name" id="name"/>
-                                    </div>
-
+                                   
                                     <div class="form-group name_block">
                                         <h3>PRODUCT'S NAME</h3>
                                         <input type="text" name="name" id="name"/>

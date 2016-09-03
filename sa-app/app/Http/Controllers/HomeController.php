@@ -38,19 +38,63 @@ class HomeController extends Controller
         Homepage women section 
     */
     public function best_sellers_women(){
-        $products = Product::paginate(8);
+        $products = Product::active()->ofType('women')->paginate(8);
         $html = View::make('componets.product.gridview',compact('products'));
         $result = ['next_url'=>$products->nextPageUrl(),'html'=>$html->render()];
         return Response::json($result);
     }
     public function new_arrivals_women(){
-        $products = Product::latest()->paginate(8);
+        $products = Product::active()->ofType('women')->latest()->paginate(8);
         $html = View::make('componets.product.gridview',compact('products'));
         $result = ['next_url'=>$products->nextPageUrl(),'html'=>$html->render()];
         return Response::json($result);
     } 
     public function must_haves_women(){
-        $products = Product::latest()->paginate(8);
+        $products = Product::active()->ofType('women')->latest()->paginate(8);
+        $html = View::make('componets.product.gridview',compact('products'));
+        $result = ['next_url'=>$products->nextPageUrl(),'html'=>$html->render()];
+        return Response::json($result);
+    }
+
+      /*
+        Homepage men section 
+    */
+    public function best_sellers_men(){
+        $products = Product::active()->ofType('men')->paginate(8);
+        $html = View::make('componets.product.gridview',compact('products'));
+        $result = ['next_url'=>$products->nextPageUrl(),'html'=>$html->render()];
+        return Response::json($result);
+    }
+    public function new_arrivals_men(){
+        $products = Product::active()->ofType('men')->latest()->paginate(8);
+        $html = View::make('componets.product.gridview',compact('products'));
+        $result = ['next_url'=>$products->nextPageUrl(),'html'=>$html->render()];
+        return Response::json($result);
+    } 
+    public function must_haves_men(){
+        $products = Product::active()->ofType('men')->latest()->paginate(8);
+        $html = View::make('componets.product.gridview',compact('products'));
+        $result = ['next_url'=>$products->nextPageUrl(),'html'=>$html->render()];
+        return Response::json($result);
+    }
+
+    /*
+        Homepage kids section 
+    */
+    public function best_sellers_kids(){
+        $products = Product::active()->ofType('kids')->paginate(8);
+        $html = View::make('componets.product.gridview',compact('products'));
+        $result = ['next_url'=>$products->nextPageUrl(),'html'=>$html->render()];
+        return Response::json($result);
+    }
+    public function new_arrivals_kids(){
+        $products = Product::active()->ofType('kids')->latest()->paginate(8);
+        $html = View::make('componets.product.gridview',compact('products'));
+        $result = ['next_url'=>$products->nextPageUrl(),'html'=>$html->render()];
+        return Response::json($result);
+    } 
+    public function must_haves_kids(){
+        $products = Product::active()->ofType('kids')->latest()->paginate(8);
         $html = View::make('componets.product.gridview',compact('products'));
         $result = ['next_url'=>$products->nextPageUrl(),'html'=>$html->render()];
         return Response::json($result);
