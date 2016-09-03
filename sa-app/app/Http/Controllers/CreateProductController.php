@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use \App\Category;
+use \App\Brand;
+use \App\Product;
 use App\Http\Requests;
 
 class CreateProductController extends Controller
@@ -17,7 +19,9 @@ class CreateProductController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('shop.create_product',compact('categories'));
+        $brands = Brand::all();
+        $product = new Product;
+        return view('shop.create_product',compact('categories','brands','product'));
     }
 
     /**
@@ -38,7 +42,9 @@ class CreateProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'name'=>'reqired',
+        ]);
     }
 
     /**

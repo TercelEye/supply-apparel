@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+<<<<<<< HEAD
 use \App\Blog;
 use Validator;
 use Auth;
+=======
+>>>>>>> 07a2781e74e98ac06cf91af711b18cba1f59e64a
 
 class CreateBlogController extends Controller
 {
+
     public function index()
     {
     	//$blog = new Blog;
@@ -23,7 +27,11 @@ class CreateBlogController extends Controller
 			// 'photo' => 'required',		
 			'text' => 'required',
 		]);
+<<<<<<< HEAD
 		$userid = Auth::user()->id;
+=======
+	
+>>>>>>> 07a2781e74e98ac06cf91af711b18cba1f59e64a
 		$blog = new \App\Blog;
 		$blog->title = $request->title; 
 		$blog->userid = $userid;
@@ -32,7 +40,13 @@ class CreateBlogController extends Controller
 		$blog->status = 0;
 		$blog->order = 0;
 		$blog->save();
+<<<<<<< HEAD
 		return redirect('blog/view');
+=======
+		//
+		return redirect('shop.list');
+
+>>>>>>> 07a2781e74e98ac06cf91af711b18cba1f59e64a
     }
 
 public function edit(Request $request)

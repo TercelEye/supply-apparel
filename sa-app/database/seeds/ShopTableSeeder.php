@@ -11,7 +11,7 @@ class ShopTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Product::class, 50)->create();
+        factory(App\Product::class, 5)->create();
 
     }
 }

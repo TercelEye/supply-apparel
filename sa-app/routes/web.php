@@ -52,21 +52,9 @@ Route::post('my-shop/contact-details','CreateShopController@contact_store');
 Route::get('membership/plans','MembershipPlansController@index');
 Route::post('membership/plans/{plan}','MembershipPlansController@store');
 
-// blog
 
 
-// add product
-Route::resource('seller/product','CreateProductController');
 
-Route::group(['middleware' => ['web','auth']], function () {
-	Route::get('blog/edit','CreateBlogController@edit');
-	Route::post('blog/edit','CreateBlogController@update');
-	Route::get('blog/view','CreateBlogController@view');
-	Route::get('blog/delete','CreateBlogController@delete');
 
-	Route::get('blog/create','CreateBlogController@index');
-	Route::post('blog/create','CreateBlogController@create');
-});
 
-Route::post('favorites/{product}','FavoriteController@toggle');
 
