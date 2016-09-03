@@ -51,7 +51,7 @@ class ProductImageController extends Controller
     	$product->is_active =1;
     	$product->save();
     	if($request->submit == "publish"){
-    		return redirect('seller/product');
+    		return redirect('seller');
     	}
     	return redirect('seller/product/create');
     }

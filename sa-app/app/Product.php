@@ -4,12 +4,31 @@ namespace App;
 use Auth;
 use \App\Shop;
 use \App\Size;
+use \App\Colour;
 use \App\ProductType;
 use \App\Favorite;
 use Illuminate\Database\Eloquent\Model;
 use \App\ProductImage;
+use Cviebrock\EloquentSluggable\Sluggable;
+
 class Product extends Model
 {
+    use Sluggable;
+
+       /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
+    }
+
     public function sizes(){
 
         return $this->belongsToMany(Size::class,'product_size','product_id','size_id') 
@@ -17,6 +36,13 @@ class Product extends Model
     
 		//return $this->belongsToMany('\App\Size')->withTimestamps();	
 	}
+    public function colours(){
+
+        return $this->belongsToMany(Colour::class,'product_colour_images','product_id','size_id') 
+        ->withTimestamps();
+    
+        //return $this->belongsToMany('\App\Size')->withTimestamps();   
+    }
 	public function shop(){
 		return $this->hasOne(Shop::class,'id','shop_id');	
 	}

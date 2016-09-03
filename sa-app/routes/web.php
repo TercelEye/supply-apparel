@@ -77,6 +77,9 @@ Route::post('seller/store-product-color/{image}','ProductImageController@store_p
 Route::post('seller/product/publish/{product}','ProductImageController@publish_product');
 
 
+Route::group(['middleware' => ['web','auth']], function () {
+	Route::get('seller','SellerController@index'); //dashboard
+});
 
 // Blog functions
 Route::group(['middleware' => ['web','auth']], function () {
@@ -88,3 +91,6 @@ Route::group(['middleware' => ['web','auth']], function () {
 	Route::get('blog/create','CreateBlogController@index');
 	Route::post('blog/create','CreateBlogController@create');
 });
+
+//products
+Route::get('product/{product}','ProductsController@single_product');

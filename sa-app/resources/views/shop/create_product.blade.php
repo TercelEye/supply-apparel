@@ -22,7 +22,7 @@
                         <div class="row">
                             <div class="container">
                                 <div class="row">
-                                    <a href="#" class="back">
+                                    <a href="{{ url('seller')}}" class="back">
                                         <i class="fa fa-angle-left"></i>
                                         <span>Back to my account</span>
                                     </a>

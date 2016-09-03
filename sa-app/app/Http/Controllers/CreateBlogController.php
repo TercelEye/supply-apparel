@@ -40,9 +40,6 @@ class CreateBlogController extends Controller
 
 		return redirect('blog/view');
 
-		//
-		return redirect('shop.list');
-
     }
 
 public function edit(Request $request)

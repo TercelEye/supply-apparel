@@ -10,6 +10,9 @@
     <link href="{{ url('assets') }}/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ url('assets') }}/css/style.css" rel="stylesheet">
     <link href="{{ url('assets') }}/libs/toastr-master/build/toastr.min.css" rel="stylesheet">
+
+    
+
     <style type="text/css">
         .wishlist_add.active {
             opacity: 1 !important;
@@ -81,7 +84,22 @@
     </div>
 </footer>
 
-<script src="{{ url('assets') }}/js/base-min.js"></script>
+
+{{-- <script src="{{ url('assets') }}/libs/jquery/jquery.min.js"></script> --}}
+<script src="{{ url('lib') }}/jquery-1.10.2.js"></script>
+<script src="{{ url('lib') }}/zoom/eagle.gallery/eagle.gallery.min.js"></script>
+
+<script src="{{ url('assets') }}/libs/jquery_ui/jquery-ui.min.js"></script>
+<script src="{{ url('assets') }}/libs/bootstrap/js/bootstrap.min.js"></script>
+<script src="{{ url('assets') }}/libs/date_picker/picker.js"></script>
+<script src="{{ url('assets') }}/libs/semantic/components/dropdown.min.js"></script>
+<script src="{{ url('assets') }}/libs/semantic/components/transition.min.js"></script>
+<script src="{{ url('assets') }}/js/custom.js"></script>
+
+
+
+<link rel="stylesheet" type="text/css" href="{{ url('lib') }}/zoom/eagle.gallery/eagle.gallery.min.css">
+
 <script src="{{ url('assets') }}/libs/toastr-master/build/toastr.min.js"></script>
 
 <script type="text/javascript">
@@ -181,7 +199,7 @@ if (url.match('#')) {
 
 // Change hash for page-reload
 $('.nav-tabs a').on('shown.bs.tab', function (e) {
-    window.location.hash = e.target.hash;
+    // window.location.hash = e.target.hash;
 })
 </script>
 

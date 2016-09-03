@@ -29,7 +29,7 @@ $product_image = (isset($product->images->first()->name)? url($product->images->
                 <span class="glyphicon glyphicon-star"></span>
                 <p>(39 Reviews)</p>
             </div>
-            <a href="#"><div class="name_block">{{$product->title }}</div></a>
+            <a href="{{ url('product/'.$product->slug) }}"><div class="name_block">{{$product->title }}</div></a>
             @if($product->is_sale ==1)
                 <div class="price_block">${{ $product->price_discounts }} <s> ${{ $product->price }}</s>  </div>
             @else 

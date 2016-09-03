@@ -41,4 +41,10 @@ class User extends Authenticatable
     public function shop(){
         return $this->hasOne(Shop::class,'owner_id','id');
     }
+     public function scopeHasRole($query,$name)
+    {
+        $type_id = Role::where('name',$name)->first()->id;
+        return $query->where('product_type_id', $type_id);
+    }
+    
 }

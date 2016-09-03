@@ -169,7 +169,7 @@ return [
 
         Collective\Html\HtmlServiceProvider::class,
         'Webpatser\Countries\CountriesServiceProvider',
-
+        Cviebrock\EloquentSluggable\ServiceProvider::class,
         
         /*
          * Application Service Providers...
