@@ -11,7 +11,7 @@
 
 
 <div class="col-md-8">
-    
+    @include('products.image-gallery',['images'=>$product->images])
 </div><!-- end col -->
 
                         {{-- <div class="col-sm-2">

@@ -94,3 +94,4 @@ Route::group(['middleware' => ['web','auth']], function () {
 
 //products
 Route::get('product/{product}','ProductsController@single_product');
+Route::get('product/{product}/image-gallery','ProductsController@colours');
