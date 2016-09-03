@@ -121,235 +121,35 @@
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="m_best_sellers">
                                 <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-offset-0">
+                                   <div class="row best_sellers_men"></div>
                                     <div class="row">
-                                        <div class="item col-md-3 col-sm-4 col-xs-6">
-                                            <div class="item_block">
-                                                <div class="item_header">
-                                                    <a href="#"><i
-                                                            class="item_icon"></i><span>Sally's Boutique</span></a>
-                                                </div>
-                                                <div class="item_body">
-                                                    <div class="wishlist_add">
-                                                        <span class="heart"></span>
-                                                        <span class="clickable_block"
-                                                              title="Add to wishlist"></span>
-                                                    </div>
-                                                </div>
-                                                <div class="item_footer">
-                                                    <div class="rewiew_block">
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <p>(39 Reviews)</p>
-                                                    </div>
-                                                    <div class="name_block">Olivine Heels</div>
-                                                    <div class="price_block">$45</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item col-md-3 col-sm-4 col-xs-6">
-                                            <div class="item_block">
-                                                <div class="item_header">
-                                                    <a href="#"><i
-                                                            class="item_icon"></i><span>Sally's Boutique</span></a>
-                                                </div>
-                                                <div class="item_body">
-                                                    <div class="wishlist_add">
-                                                        <span class="heart"></span>
-                                                        <span class="clickable_block"
-                                                              title="Add to wishlist"></span>
-                                                    </div>
-                                                </div>
-                                                <div class="item_footer">
-                                                    <div class="rewiew_block">
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <p>(39 Reviews)</p>
-                                                    </div>
-                                                    <div class="name_block">Olivine Heels</div>
-                                                    <div class="price_block">$45</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item col-md-3 col-sm-4 col-xs-6">
-                                            <div class="item_block">
-                                                <div class="item_header">
-                                                    <a href="#"><i
-                                                            class="item_icon"></i><span>Sally's Boutique</span></a>
-                                                </div>
-                                                <div class="item_body">
-                                                    <div class="wishlist_add">
-                                                        <span class="heart"></span>
-                                                        <span class="clickable_block"
-                                                              title="Add to wishlist"></span>
-                                                    </div>
-                                                </div>
-                                                <div class="item_footer">
-                                                    <div class="rewiew_block">
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <p>(39 Reviews)</p>
-                                                    </div>
-                                                    <div class="name_block">Olivine Heels</div>
-                                                    <div class="price_block">$45</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item col-md-3 col-sm-4 col-xs-6">
-                                            <div class="item_block">
-                                                <div class="item_header">
-                                                    <a href="#"><i
-                                                            class="item_icon"></i><span>Sally's Boutique</span></a>
-                                                </div>
-                                                <div class="item_body">
-                                                    <div class="wishlist_add">
-                                                        <span class="heart"></span>
-                                                        <span class="clickable_block"
-                                                              title="Add to wishlist"></span>
-                                                    </div>
-                                                </div>
-                                                <div class="item_footer">
-                                                    <div class="rewiew_block">
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <p>(39 Reviews)</p>
-                                                    </div>
-                                                    <div class="name_block">Olivine Heels</div>
-                                                    <div class="price_block">$45</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item col-md-3 col-sm-4 col-xs-6">
-                                            <div class="item_block">
-                                                <div class="item_header">
-                                                    <a href="#"><i
-                                                            class="item_icon"></i><span>Sally's Boutique</span></a>
-                                                </div>
-                                                <div class="item_body">
-                                                    <div class="wishlist_add">
-                                                        <span class="heart"></span>
-                                                        <span class="clickable_block"
-                                                              title="Add to wishlist"></span>
-                                                    </div>
-                                                </div>
-                                                <div class="item_footer">
-                                                    <div class="rewiew_block">
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <p>(39 Reviews)</p>
-                                                    </div>
-                                                    <div class="name_block">Olivine Heels</div>
-                                                    <div class="price_block">$45</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item col-md-3 col-sm-4 col-xs-6">
-                                            <div class="item_block">
-                                                <div class="item_header">
-                                                    <a href="#"><i
-                                                            class="item_icon"></i><span>Sally's Boutique</span></a>
-                                                </div>
-                                                <div class="item_body">
-                                                    <div class="wishlist_add">
-                                                        <span class="heart"></span>
-                                                        <span class="clickable_block"
-                                                              title="Add to wishlist"></span>
-                                                    </div>
-                                                </div>
-                                                <div class="item_footer">
-                                                    <div class="rewiew_block">
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <p>(39 Reviews)</p>
-                                                    </div>
-                                                    <div class="name_block">Olivine Heels</div>
-                                                    <div class="price_block">$45</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item col-md-3 col-sm-4 col-xs-6">
-                                            <div class="item_block">
-                                                <div class="item_header">
-                                                    <a href="#"><i
-                                                            class="item_icon"></i><span>Sally's Boutique</span></a>
-                                                </div>
-                                                <div class="item_body">
-                                                    <div class="wishlist_add">
-                                                        <span class="heart"></span>
-                                                        <span class="clickable_block"
-                                                              title="Add to wishlist"></span>
-                                                    </div>
-                                                </div>
-                                                <div class="item_footer">
-                                                    <div class="rewiew_block">
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <p>(39 Reviews)</p>
-                                                    </div>
-                                                    <div class="name_block">Olivine Heels</div>
-                                                    <div class="price_block">$45</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item col-md-3 col-sm-4 col-xs-6">
-                                            <div class="item_block">
-                                                <div class="item_header">
-                                                    <a href="#"><i
-                                                            class="item_icon"></i><span>Sally's Boutique</span></a>
-                                                </div>
-                                                <div class="item_body">
-                                                    <div class="wishlist_add">
-                                                        <span class="heart"></span>
-                                                        <span class="clickable_block"
-                                                              title="Add to wishlist"></span>
-                                                    </div>
-                                                </div>
-                                                <div class="item_footer">
-                                                    <div class="rewiew_block">
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <p>(39 Reviews)</p>
-                                                    </div>
-                                                    <div class="name_block">Olivine Heels</div>
-                                                    <div class="price_block">$45</div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <a href="#" data-class-name=".best_sellers_men" data-url="" class="btn_show_more">Show More</a>
                                     </div>
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="m_new_arrivals">
+                             <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-offset-0">
+
+                            <div class="row new_arrivals_men"></div>
+                            
+                                    <div class="row">
+                                        <a href="#" data-class-name=".new_arrivals_men" data-url="" class="btn_show_more">Show More</a>
+                                    </div>
+
+                                    </div><!-- end col  -->
                             </div>
                             <div role="tabpanel" class="tab-pane" id="m_must_haves">
+                               <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-offset-0">
+                                    <div class="row must_haves_men"></div>
+                                    <div class="row">
+                                        <a href="#" data-class-name=".must_haves_men" data-url="" class="btn_show_more">Show More</a>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <a href="#" class="btn_show_more">Show More</a>
-                    </div>
+                  
                 </div>
             </div>
             <div class="row category_block">
@@ -373,230 +173,37 @@
                         </ul>
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="k_best_sellers">
-                                <div class="col-lg-10 col-lg-offset-1 col-md-12 col-md-offset-0">
+                                <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-offset-0">
+                                   <div class="row best_sellers_kids"></div>
                                     <div class="row">
-                                        <div class="item col-md-3 col-sm-4 col-xs-6">
-                                            <div class="item_block">
-                                                <div class="item_header">
-                                                    <a href="#"><i
-                                                            class="item_icon"></i><span>Sally's Boutique</span></a>
-                                                </div>
-                                                <div class="item_body">
-                                                    <div class="wishlist_add">
-                                                        <span class="heart"></span>
-                                                        <span class="clickable_block"
-                                                              title="Add to wishlist"></span>
-                                                    </div>
-                                                </div>
-                                                <div class="item_footer">
-                                                    <div class="rewiew_block">
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <p>(39 Reviews)</p>
-                                                    </div>
-                                                    <div class="name_block">Olivine Heels</div>
-                                                    <div class="price_block">$45</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item col-md-3 col-sm-4 col-xs-6">
-                                            <div class="item_block">
-                                                <div class="item_header">
-                                                    <a href="#"><i
-                                                            class="item_icon"></i><span>Sally's Boutique</span></a>
-                                                </div>
-                                                <div class="item_body">
-                                                    <div class="wishlist_add">
-                                                        <span class="heart"></span>
-                                                        <span class="clickable_block"
-                                                              title="Add to wishlist"></span>
-                                                    </div>
-                                                </div>
-                                                <div class="item_footer">
-                                                    <div class="rewiew_block">
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <p>(39 Reviews)</p>
-                                                    </div>
-                                                    <div class="name_block">Olivine Heels</div>
-                                                    <div class="price_block">$45</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item col-md-3 col-sm-4 col-xs-6">
-                                            <div class="item_block">
-                                                <div class="item_header">
-                                                    <a href="#"><i
-                                                            class="item_icon"></i><span>Sally's Boutique</span></a>
-                                                </div>
-                                                <div class="item_body">
-                                                    <div class="wishlist_add">
-                                                        <span class="heart"></span>
-                                                        <span class="clickable_block"
-                                                              title="Add to wishlist"></span>
-                                                    </div>
-                                                </div>
-                                                <div class="item_footer">
-                                                    <div class="rewiew_block">
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <p>(39 Reviews)</p>
-                                                    </div>
-                                                    <div class="name_block">Olivine Heels</div>
-                                                    <div class="price_block">$45</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item col-md-3 col-sm-4 col-xs-6">
-                                            <div class="item_block">
-                                                <div class="item_header">
-                                                    <a href="#"><i
-                                                            class="item_icon"></i><span>Sally's Boutique</span></a>
-                                                </div>
-                                                <div class="item_body">
-                                                    <div class="wishlist_add">
-                                                        <span class="heart"></span>
-                                                        <span class="clickable_block"
-                                                              title="Add to wishlist"></span>
-                                                    </div>
-                                                </div>
-                                                <div class="item_footer">
-                                                    <div class="rewiew_block">
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <p>(39 Reviews)</p>
-                                                    </div>
-                                                    <div class="name_block">Olivine Heels</div>
-                                                    <div class="price_block">$45</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item col-md-3 col-sm-4 col-xs-6">
-                                            <div class="item_block">
-                                                <div class="item_header">
-                                                    <a href="#"><i
-                                                            class="item_icon"></i><span>Sally's Boutique</span></a>
-                                                </div>
-                                                <div class="item_body">
-                                                    <div class="wishlist_add">
-                                                        <span class="heart"></span>
-                                                        <span class="clickable_block"
-                                                              title="Add to wishlist"></span>
-                                                    </div>
-                                                </div>
-                                                <div class="item_footer">
-                                                    <div class="rewiew_block">
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <p>(39 Reviews)</p>
-                                                    </div>
-                                                    <div class="name_block">Olivine Heels</div>
-                                                    <div class="price_block">$45</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item col-md-3 col-sm-4 col-xs-6">
-                                            <div class="item_block">
-                                                <div class="item_header">
-                                                    <a href="#"><i
-                                                            class="item_icon"></i><span>Sally's Boutique</span></a>
-                                                </div>
-                                                <div class="item_body">
-                                                    <div class="wishlist_add">
-                                                        <span class="heart"></span>
-                                                        <span class="clickable_block"
-                                                              title="Add to wishlist"></span>
-                                                    </div>
-                                                </div>
-                                                <div class="item_footer">
-                                                    <div class="rewiew_block">
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <p>(39 Reviews)</p>
-                                                    </div>
-                                                    <div class="name_block">Olivine Heels</div>
-                                                    <div class="price_block">$45</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item col-md-3 col-sm-4 col-xs-6">
-                                            <div class="item_block">
-                                                <div class="item_header">
-                                                    <a href="#"><i
-                                                            class="item_icon"></i><span>Sally's Boutique</span></a>
-                                                </div>
-                                                <div class="item_body">
-                                                    <div class="wishlist_add">
-                                                        <span class="heart"></span>
-                                                        <span class="clickable_block"
-                                                              title="Add to wishlist"></span>
-                                                    </div>
-                                                </div>
-                                                <div class="item_footer">
-                                                    <div class="rewiew_block">
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <p>(39 Reviews)</p>
-                                                    </div>
-                                                    <div class="name_block">Olivine Heels</div>
-                                                    <div class="price_block">$45</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item col-md-3 col-sm-4 col-xs-6">
-                                            <div class="item_block">
-                                                <div class="item_header">
-                                                    <a href="#"><i
-                                                            class="item_icon"></i><span>Sally's Boutique</span></a>
-                                                </div>
-                                                <div class="item_body">
-                                                    <div class="wishlist_add">
-                                                        <span class="heart"></span>
-                                                        <span class="clickable_block"
-                                                              title="Add to wishlist"></span>
-                                                    </div>
-                                                </div>
-                                                <div class="item_footer">
-                                                    <div class="rewiew_block">
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <span class="glyphicon glyphicon-star"></span>
-                                                        <p>(39 Reviews)</p>
-                                                    </div>
-                                                    <div class="name_block">Olivine Heels</div>
-                                                    <div class="price_block">$45</div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <a href="#" data-class-name=".best_sellers_kids" data-url="" class="btn_show_more">Show More</a>
                                     </div>
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="k_new_arrivals">
+                             <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-offset-0">
+
+                            <div class="row new_arrivals_kids"></div>
+                            
+                                    <div class="row">
+                                        <a href="#" data-class-name=".new_arrivals_kids" data-url="" class="btn_show_more">Show More</a>
+                                    </div>
+
+                                    </div><!-- end col  -->
+
                             </div>
                             <div role="tabpanel" class="tab-pane" id="k_must_haves">
+
+                            <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-offset-0">
+
+                            <div class="row must_haves_kids"></div>
+                            
+                                    <div class="row">
+                                        <a href="#" data-class-name=".must_haves_kids" data-url="" class="btn_show_more">Show More</a>
+                                    </div>
+
+                                    </div><!-- end col  -->
+
                             </div>
                         </div>
                     </div>
@@ -829,6 +436,15 @@
         load_products("{{ url('women/best-sellers') }} ",".best_sellers_women");
         load_products("{{ url('women/new-arrivals') }} ",".new_arrivals_women");
         load_products("{{ url('women/must-haves') }} ",".must_haves_women");
+
+        load_products("{{ url('men/best-sellers') }} ",".best_sellers_men");
+        load_products("{{ url('men/new-arrivals') }} ",".new_arrivals_men");
+        load_products("{{ url('men/must-haves') }} ",".must_haves_men");        
+
+        load_products("{{ url('kids/best-sellers') }} ",".best_sellers_kids");
+        load_products("{{ url('kids/new-arrivals') }} ",".new_arrivals_kids");
+        load_products("{{ url('kids/must-haves') }} ",".must_haves_kids");
+
     });
 </script>
 @endpush

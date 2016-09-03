@@ -38,11 +38,21 @@ class ProductImageController extends Controller
 
     public function store_product_color(\App\ProductImage $image,Request $request){
     	$colour_id = $request->colour_id;
-    	$product_color_aded = $image->colours->contain($colour_id);
+    	$product_color_aded = $image->colours->contains($colour_id);
     	//delte colur from product image
-
+    	$image->colours()->detach();
     	//add colour
 		$colour = Colour::find($colour_id);
-		$image->colour->attach($colour);
+		//dd($colour);
+		$image->colours()->attach($colour->id);
+    }
+
+    public function publish_product(\App\Product $product,Request $request){
+    	$product->is_active =1;
+    	$product->save();
+    	if($request->submit == "publish"){
+    		return redirect('seller/product');
+    	}
+    	return redirect('seller/product/create');
     }
 }

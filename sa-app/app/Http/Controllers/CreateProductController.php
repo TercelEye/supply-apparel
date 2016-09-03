@@ -33,7 +33,7 @@ class CreateProductController extends Controller
     {
       	$categories = Category::all();
         $brands = Brand::all();
-        $product_type = ProductType::all();
+        $product_type = ProductType::all()->where('name','!=','All');
         $sizes = Size::all();
         $product = new Product;
         return view('shop.create_product',compact('categories','brands','product','product_type','sizes'));
@@ -84,6 +84,8 @@ class CreateProductController extends Controller
     	return $category->id;
     }
 
+   
+
     /**
      * Store a newly created resource in storage.
      *
@@ -108,7 +110,7 @@ class CreateProductController extends Controller
         $product->shop_id = $shop_id;
         $product->price_discounts = ($request->price_discounts == ""?0 : $request->price_discounts );
         $product->is_sale = ($request->is_sale==""?0:$request->is_sale);
-        $product->shipping_local_price = ($request->shipping_local_price==''?'ss':$request->shipping_local_price);
+        $product->shipping_local_price = ($request->shipping_local_price==''?'0':$request->shipping_local_price);
         $product->shipping_local_duration = ($request->shipping_local_duration==""?0:$request->shipping_local_duration);
         $product->shipping_int_disabled = ($request->shipping_int_disabled==""?0:$request->shipping_int_disabled);
         $product->shipping_int_price = $request->shipping_int_price;
@@ -120,7 +122,10 @@ class CreateProductController extends Controller
         $product->is_active = 0;
         $product->save();
 
-        return redirect()->back();
+        $sizes_array = $request->product_size;
+        $product->sizes()->sync($sizes_array);
+
+        return redirect('seller/product/images/'.$product->id);
     }
 
     /**
@@ -142,7 +147,12 @@ class CreateProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = Category::all();
+        $brands = Brand::all();
+        $product_type = ProductType::all()->where('name','!=','All');
+        $sizes = Size::all();
+        $product = Product::find($id);
+        return view('shop.create_product',compact('categories','brands','product','product_type','sizes'));
     }
 
     /**
@@ -154,7 +164,27 @@ class CreateProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+        $product->description = $request->description;
+        $product->title = $request->title;
+        $product->price = $request->price;
+        $product->price_discounts = ($request->price_discounts == ""?0 : $request->price_discounts );
+        $product->is_sale = ($request->is_sale==""?0:$request->is_sale);
+        $product->shipping_local_price = ($request->shipping_local_price==''?'0':$request->shipping_local_price);
+        $product->shipping_local_duration = ($request->shipping_local_duration==""?0:$request->shipping_local_duration);
+        $product->shipping_int_disabled = ($request->shipping_int_disabled==""?0:$request->shipping_int_disabled);
+        $product->shipping_int_price = $request->shipping_int_price;
+        $product->shipping_int_duration = ($request->shipping_int_duration==""?0:$request->shipping_int_duration);
+        $product->logistic_provider = $request->logistic_provider;
+        $product->product_type_id = $request->product_type_id;
+        $product->brand_id = $this->create_brand($request->brand_id);
+        $product->category_id = $this->create_category($request->category_id);;
+        $product->save();
+
+        $sizes_array = $request->product_size;
+        $product->sizes()->sync($sizes_array);
+
+        return redirect('seller/product/images/'.$product->id);
     }
 
     /**

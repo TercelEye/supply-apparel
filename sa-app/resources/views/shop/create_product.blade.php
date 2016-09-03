@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <form action="{{ url('seller/product')}}" method="post" enctype="multipart/form-data">
+  <form action="{{ url('seller/product/'.$product->id)}}" method="post" enctype="multipart/form-data">
 <main class="add_product_step_1">
     <section class="section_1">
         <div class="container-fluid">
@@ -10,8 +10,12 @@
                 <div class="col-sm-12">
                   
                     {{ csrf_field() }}
-                    {{ method_field('POST') }}
 
+                    @if($product->id !="")
+                        {{ method_field('PUT') }}
+                    @else 
+                        {{ method_field('POST') }}
+                    @endif
 
                     	@include("shared.errors")
 
@@ -27,7 +31,7 @@
                                         <h3>SELECT CATEGORY</h3>
                                         <select class="form-control" name="product_type_id" style="max-width:200px;">
                                         @foreach($product_type as $row)
-                                            <OPTION value="{{$row->id}}"> {{$row->name}}</OPTION>
+                                            <option {{($product->product_type_id == $row->id?"selected":"")}} value="{{$row->id}}"> {{$row->name}}</option>
                                         @endforeach
                                         </select>
                                         
@@ -52,7 +56,7 @@
                                          <select style="width: 300px;padding: 10px 12px 8px;height:50px;" name="category_id" class="form-control multiple_select" >
                                          	<option></option>
                                          	@foreach($categories as $category)
-                                         	<option  value="{{$category->id}}">{{$category->title}}</option>
+                                         	<option {{($product->category_id == $category->id?"selected":"")}}   value="{{$category->id}}">{{$category->title}}</option>
                                          	@endforeach
 										</select>
 										                      
@@ -71,7 +75,7 @@
                                             <select style="width: 300px;padding: 10px 12px 8px;height:50px;" name="brand_id" class="form-control multiple_select" >
                                          	<option></option>
                                          	@foreach($brands as $brand)
-                                         	<option value="{{$brand->id}}">{{$brand->name}}</option>
+                                         	<option {{($product->brand_id == $brand->id?"selected":"")}}   value="{{$brand->id}}">{{$brand->name}}</option>
                                          	@endforeach
 										</select>
                                         </div>
@@ -86,7 +90,7 @@
                                         <h3>SIZE</h3>
                                         <select style="max-width:250px;" class="form-control multiple_select" name="product_size[]" multiple="">
                                             @foreach($sizes as $size)
-                                                <option value="{{$size->id}}">{{$size->title}}</option>
+                                                <option {{ ($product->sizes->contains($size->id)?"selected":"")}} value="{{$size->id}}">{{$size->title}}</option>
                                             @endforeach
                                         </select>
                                         <div class="size_list">
@@ -127,19 +131,19 @@
                                         <h4>PRICE</h4>
                                         <div class="price_block">
                                             <label for="price">$</label>
-                                            <input type="text" name="price" id="price">
+                                            <input value="{{$product->price}}" type="text" name="price" id="price">
                                         </div>
                                         <div class="sale_block">
                                             <label class="checkbox_label">Product on sale?</label>
                                             <label class="switch">
-                                                <input type="checkbox" value="1" name="is_sale" class="switch-input">
+                                                <input {{ ($product->is_sale == 1 ? "checked":"")}} type="checkbox" value="1" name="is_sale" class="switch-input">
                                                 <span class="switch-label" data-on="1" data-off="0"></span>
                                                 <span class="switch-handle"></span>
                                             </label>
                                         </div>
                                         <div class="discount_block">
                                             <label for="discount_price">Discount Price : $</label>
-                                            <input type="text" name="discount_price" id="price_discounts">
+                                            <input type="text" value="{{$product->discount_price}}"  name="discount_price" id="price_discounts">
                                         </div>
                                     </div>
                                 </div>
@@ -162,23 +166,23 @@
                                             <h4>LOCAL (For deliveries within the same country)</h4>
                                             <div class="radio_block">
                                                 <div class="radio">
-                                                    <input type="radio" name="shipping_local_price" id="local_free"
+                                                    <input {{ ($product->shipping_local_price == 0 ? "checked":"")}} type="radio" name="shipping_local_price" id="local_free"
                                                            value="0">
                                                     <label for="local_free">Free</label>
                                                 </div>
                                                 <div class="radio">
-                                                    <input type="radio" name="shipping_local_price" value="0" id="local_charged"
+                                                    <input {{ ($product->shipping_local_price != 0 ? "checked":"")}} type="radio" name="shipping_local_price" value="0" id="local_charged"
                                                            class="charged_shipping">
                                                     <label for="local_charged">Charged</label>
                                                 </div>
                                                 <div class="input_block">
                                                     <label for="local_charged_value">$</label>
-                                                    <input type="text" name="shipping_local_price" id="local_charged_value"/>
+                                                    <input value="{{$product->shipping_local_price}}" type="text" name="shipping_local_price" id="local_charged_value"/>
                                                 </div>
                                             </div>
                                             <div class="delivery_block">
                                                 <label for="delivery_duration">Delivery Duration</label>
-                                                <input type="text" name="shipping_local_duration" id="delivery_duration"/>
+                                                <input type="text" value="{{$product->shipping_local_duration}}" name="shipping_local_duration" id="delivery_duration"/>
                                             </div>
                                         </div>
                                         <div class="international_block">
@@ -193,21 +197,21 @@
                                             </h4>
                                             <div class="radio_block">
                                                 <div class="radio">
-                                                    <input type="radio" name="shipping_int_price"
+                                                    <input {{ ($product->shipping_int_price == 0 ? "checked":"")}} type="radio" name="shipping_int_price"
                                                            id="international_free"
                                                            value="0">
                                                     <label for="international_free"> Free </label>
                                                 </div>
 
                                                 <div class="radio">
-                                                    <input type="radio" name="shipping_int_price"
+                                                    <input {{ ($product->shipping_int_price != 0 ? "checked":"")}} type="radio" name="shipping_int_price"
                                                            id="international_charged"
                                                            class="shipping_int_price">
                                                     <label for="international_charged"> Charged</label>
                                                 </div>
                                                 <div class="input_block">
                                                     <label for="intern_charged_value">$</label>
-                                                    <input type="text" name="shipping_int_price" id="intern_charged_value"/>
+                                                    <input value="{{$product->shipping_int_price}}" type="text" name="shipping_int_price" id="intern_charged_value"/>
                                                 </div>
                                             </div>
                                             <div class="delivery_block">
@@ -218,14 +222,12 @@
 
                                         <div class="logistic_block">
                                             <h4>LOGISTICS PROVIDER (Optional)</h4>
-                                            <input type="text" name="logistic_provider"/>
+                                            <input value="{{$product->logistic_provider}}" type="text" name="logistic_provider"/>
                                         </div>
                                     </div>
                                     <div class="buttons_block">
-                                    	<button type="submit" value="publish" class="btn_pusblish">Publish</button>
-                                        <a href="#" class="btn_pusblish">Publish</a>
-                                        <a href="add_product_step_1.html" class="btn_add_publish">Publish & Add Another
-                                            Apparel</a>
+                                    	<button type="submit" value="publish" class="btn_pusblish">Next</button>
+                                  
                                     </div>
                                 </div>
                             </div>

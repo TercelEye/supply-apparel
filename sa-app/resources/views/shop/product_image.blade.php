@@ -15,6 +15,15 @@
 </form>
 <br>
 <div class="product-image-list"></div>	
+
+<form action="{{url('seller/product/publish/'.$product->id)}}" method="post">
+ {{ csrf_field() }}
+<div class="buttons_block">
+	<button type="submit" name="submit" value="publish" class="btn_pusblish">Publish</button>
+	<button type="submit" name="submit" value="publish-and-add" class="btn_add_publish">Publish & Add Another Apparel</button>
+   
+</div>
+</form>
             </div><!-- end row -->
         </div><!--- end conteiner -->
     </section><!-- end section -->
@@ -34,6 +43,9 @@ Dropzone.options.fileploader = {
 	url:'{{ url('seller/product/imageupload/'.$product->id) }}',
   paramName: "image", // The name that will be used to transfer the file
   maxFilesize: 2, // MB
+  maxfilesreached:function(){
+	//toastr.error('Image uploaded');
+  },
   accept: function(file, done) {
    
     
@@ -66,10 +78,10 @@ function delete_image(id){
 function save_product_colour(e){
 	var product_id = $(e).data('product_id');
 	var image_id = $(e).data('image_id');
-	var colour_id = $(e).closets('.image-box').find('.color_select').val()
-	$.post( "{{ url('seller/product/image-color-add')}}/"+product_id, { colour_id:colour_id, image_id: image_id })
+	var colour_id = $(e).closest('.image-box').find('.color_select').val()
+	$.post( "{{ url('seller/store-product-color/')}}/"+image_id, { colour_id:colour_id, image_id: image_id })
 	  .done(function( data ) {
-	    	
+	    	toastr.success('Color saved for image');
 	  });
 }
 

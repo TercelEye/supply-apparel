@@ -14,7 +14,7 @@
 			<select class="color_select input-sm form-control">
 				<option></option>
 				@foreach($colurs as $colour)
-				<option style="width:5px;height:5px;background-color:{{$colour->hexa_code}}" value="{{$colour->id}}">{{$colour->name}} <div ></div></option>
+				<option {{ ($image->colours->contains($colour->id)? "selected":"") }} style="width:5px;height:5px;background-color:{{$colour->hexa_code}}" value="{{$colour->id}}">{{$colour->name}} <div ></div></option>
 				@endforeach
 			</select>
 		</div><!-- end col -->
