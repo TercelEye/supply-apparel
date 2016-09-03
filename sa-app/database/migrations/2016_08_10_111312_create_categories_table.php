@@ -18,6 +18,8 @@ class CreateCategoriesTable extends Migration
 			$table->string('title');
 			$table->integer('row_order');
 			$table->boolean('status');
+            $table->integer('user_id')->unsigned()->index();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 			$table->softDeletes();
             $table->timestamps();
         });

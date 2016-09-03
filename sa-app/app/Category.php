@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     protected $fillable  =[
-    'title','status','row_order','parent_id','updated_at','created_at'
+    'title','status','row_order','parent_id','user_id','updated_at','created_at'
     ];
 
     public function getStatusAttribute($status){

@@ -63,6 +63,10 @@ Route::group(['middleware' => 'web'], function () {
 
 // add product
 Route::resource('seller/product','CreateProductController');
+Route::get('seller/product/images/{product}','ProductImageController@index');
+Route::get('seller/product/image-list/{product}','ProductImageController@image_list');
+Route::post('seller/product/imageupload/{product}','ProductImageController@imageupload');
+Route::post('seller/product/delete-image/{image}','ProductImageController@delete_image');
 
 
 

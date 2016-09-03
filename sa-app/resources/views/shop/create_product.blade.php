@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <form action="" method="post" enctype="multipart/form-data">
+  <form action="{{ url('seller/product')}}" method="post" enctype="multipart/form-data">
 <main class="add_product_step_1">
     <section class="section_1">
         <div class="container-fluid">
@@ -10,6 +10,9 @@
                 <div class="col-sm-12">
                   
                     {{ csrf_field() }}
+                    {{ method_field('POST') }}
+
+
                     	@include("shared.errors")
 
                         <div class="row">
@@ -19,6 +22,18 @@
                                         <i class="fa fa-angle-left"></i>
                                         <span>Back to my account</span>
                                     </a>
+
+                                     <div class="form-group name_block">
+                                        <h3>SELECT CATEGORY</h3>
+                                        <select class="form-control" name="product_type_id" style="max-width:200px;">
+                                        @foreach($product_type as $row)
+                                            <OPTION value="{{$row->id}}"> {{$row->name}}</OPTION>
+                                        @endforeach
+                                        </select>
+                                        
+                                    </div>
+
+
                                     <div class="form-group name_block">
                                         <h3>PRODUCT'S NAME</h3>
                                         <input type="text" value="{{ $product->title}}" name="title" id="name"/>
@@ -37,7 +52,7 @@
                                          <select style="width: 300px;padding: 10px 12px 8px;height:50px;" name="category_id" class="form-control multiple_select" >
                                          	<option></option>
                                          	@foreach($categories as $category)
-                                         	<option  value="{{$category->id}}">{{$category->name}}</option>
+                                         	<option  value="{{$category->id}}">{{$category->title}}</option>
                                          	@endforeach
 										</select>
 										                      
@@ -69,17 +84,22 @@
                                 <div class="row">
                                     <div class="form-group size_block">
                                         <h3>SIZE</h3>
+                                        <select style="max-width:250px;" class="form-control multiple_select" name="product_size[]" multiple="">
+                                            @foreach($sizes as $size)
+                                                <option value="{{$size->id}}">{{$size->title}}</option>
+                                            @endforeach
+                                        </select>
                                         <div class="size_list">
-                                            <div class="size" data-size="1">XS</div>
+                                          {{--   <div class="size" data-size="1">XS</div>
                                             <div class="size" data-size="2">S</div>
                                             <div class="size" data-size="3">ML</div>
                                             <div class="size" data-size="4">L</div>
                                             <div class="size" data-size="5">XL</div>
                                             <div class="size" data-size="6">XXL</div>
-                                            <div class="size none" data-size="7">None</div>
+                                            <div class="size none" data-size="7">None</div> --}}
                                             <a href="#" class="btn_size_guide">Size Guide</a>
-                                            <input type="hidden" name="size" class="size_input">
-                                        </div>
+{{--                                             <input type="hidden" name="size" class="size_input">
+ --}}                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -112,14 +132,14 @@
                                         <div class="sale_block">
                                             <label class="checkbox_label">Product on sale?</label>
                                             <label class="switch">
-                                                <input type="checkbox" name="weekly_offers" class="switch-input">
-                                                <span class="switch-label" data-on="On" data-off="Off"></span>
+                                                <input type="checkbox" value="1" name="is_sale" class="switch-input">
+                                                <span class="switch-label" data-on="1" data-off="0"></span>
                                                 <span class="switch-handle"></span>
                                             </label>
                                         </div>
                                         <div class="discount_block">
                                             <label for="discount_price">Discount Price : $</label>
-                                            <input type="text" name="discount_price" id="discount_price">
+                                            <input type="text" name="discount_price" id="price_discounts">
                                         </div>
                                     </div>
                                 </div>
@@ -142,30 +162,30 @@
                                             <h4>LOCAL (For deliveries within the same country)</h4>
                                             <div class="radio_block">
                                                 <div class="radio">
-                                                    <input type="radio" name="local_choice" id="local_free"
-                                                           value="free">
+                                                    <input type="radio" name="shipping_local_price" id="local_free"
+                                                           value="0">
                                                     <label for="local_free">Free</label>
                                                 </div>
                                                 <div class="radio">
-                                                    <input type="radio" name="local_choice" id="local_charged"
-                                                           value="charged" class="charged_shipping">
+                                                    <input type="radio" name="shipping_local_price" value="0" id="local_charged"
+                                                           class="charged_shipping">
                                                     <label for="local_charged">Charged</label>
                                                 </div>
                                                 <div class="input_block">
                                                     <label for="local_charged_value">$</label>
-                                                    <input type="text" name="charged_value" id="local_charged_value"/>
+                                                    <input type="text" name="shipping_local_price" id="local_charged_value"/>
                                                 </div>
                                             </div>
                                             <div class="delivery_block">
                                                 <label for="delivery_duration">Delivery Duration</label>
-                                                <input type="text" name="delivery_duration" id="delivery_duration"/>
+                                                <input type="text" name="shipping_local_duration" id="delivery_duration"/>
                                             </div>
                                         </div>
                                         <div class="international_block">
                                             <h4>INTERNATIONAL (Deliveries to other countries)
                                                 <div class="checkbox">
                                                     <input id="intern_delivery" type="checkbox"
-                                                           class="international_shipping">
+                                                           class="shipping_int_disabled" value="1">
                                                     <label for="intern_delivery">International delivery is not available
                                                         for this product
                                                     </label>
@@ -173,32 +193,32 @@
                                             </h4>
                                             <div class="radio_block">
                                                 <div class="radio">
-                                                    <input type="radio" name="international_choice"
+                                                    <input type="radio" name="shipping_int_price"
                                                            id="international_free"
-                                                           value="free">
+                                                           value="0">
                                                     <label for="international_free"> Free </label>
                                                 </div>
 
                                                 <div class="radio">
-                                                    <input type="radio" name="international_choice"
+                                                    <input type="radio" name="shipping_int_price"
                                                            id="international_charged"
-                                                           value="charged" class="charged_shipping">
+                                                           class="shipping_int_price">
                                                     <label for="international_charged"> Charged</label>
                                                 </div>
                                                 <div class="input_block">
                                                     <label for="intern_charged_value">$</label>
-                                                    <input type="text" name="charged_value" id="intern_charged_value"/>
+                                                    <input type="text" name="shipping_int_price" id="intern_charged_value"/>
                                                 </div>
                                             </div>
                                             <div class="delivery_block">
                                                 <label for="delivery_duration">Delivery Duration</label>
-                                                <input type="text" name="delivery_duration" id="delivery_duration"/>
+                                                <input type="text" name="shipping_int_duration" id="delivery_duration"/>
                                             </div>
                                         </div>
 
                                         <div class="logistic_block">
                                             <h4>LOGISTICS PROVIDER (Optional)</h4>
-                                            <input type="text" name="logistics_provider"/>
+                                            <input type="text" name="logistic_provider"/>
                                         </div>
                                     </div>
                                     <div class="buttons_block">
