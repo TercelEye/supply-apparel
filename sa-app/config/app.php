@@ -169,11 +169,7 @@ return [
 
         Collective\Html\HtmlServiceProvider::class,
         'Webpatser\Countries\CountriesServiceProvider',
-<<<<<<< HEAD
-       
-=======
-        // Srmklive\PayPal\Providers\PayPalServiceProvider::class,
->>>>>>> 07a2781e74e98ac06cf91af711b18cba1f59e64a
+
         
         /*
          * Application Service Providers...
@@ -233,11 +229,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Countries' => 'Webpatser\Countries\CountriesFacade',
-<<<<<<< HEAD
-        
-=======
-        // 'PayPal' => Srmklive\PayPal\Facades\PayPal::class,
->>>>>>> 07a2781e74e98ac06cf91af711b18cba1f59e64a
+
     ],
 
 ];
