@@ -12,6 +12,9 @@
 */
 
 Route::get('/', function () {
+    // Cart::destroy();
+  // echo Cart::totalItems(true);
+// Let's see what we have have in there...
     return view('home');
 });
 
@@ -95,3 +98,8 @@ Route::group(['middleware' => ['web','auth']], function () {
 //products
 Route::get('product/{product}','ProductsController@single_product');
 Route::post('product/{product}/image-gallery','ProductsController@colours');
+
+//add to cart
+Route::post('add-to-cart','CartController@store');
+Route::any('my-cart','CartController@view');
+

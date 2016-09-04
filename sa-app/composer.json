@@ -9,7 +9,8 @@
         "laravel/framework": "5.3.*",
         "laravelcollective/html": "5.3.*",
         "webpatser/laravel-countries": "dev-master",
-        "cviebrock/eloquent-sluggable": "4.0"
+        "cviebrock/eloquent-sluggable": "4.0",
+        "moltin/laravel-cart": "^5.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

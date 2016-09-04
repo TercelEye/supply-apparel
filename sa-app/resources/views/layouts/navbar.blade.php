@@ -29,9 +29,12 @@
                         </ul>
                     </li>
                     <li class="icons"><a href="#"><span class="wishlist_icon" title="Wishlist"></span></a></li>
-                    <li class="icons"><a href="#"><span class="cart_icon" title="Cart"></span></a></li>
+                     <li class="icons"><a href="#" class="cart_open_trigger"><span class="cart_icon has_product"
+                                                                                  data-product="{{Cart::totalItems(true)}}"
+                                                                                  title="Cart"></span></a></li> 
                 </ul>
             </div>
+
             <div class="collapse navbar-collapse" id="website_navbar_collapse">
                 <ul class="nav navbar-nav navbar-right hidden-xs">
                     <li class="dropdown language_dropdown">
@@ -54,7 +57,9 @@
                         </ul>
                     </li>
                     <li class="icons"><a href="#"><span class="wishlist_icon" title="Wishlist"></span></a></li>
-                    <li class="icons"><a href="#"><span class="cart_icon" title="Cart"></span></a></li>
+                      <li class="icons"><a href="#" class="cart_open_trigger"><span class="cart_icon has_product"
+                                                                                  data-product="{{Cart::totalItems(true)}}"
+                                                                                  title="Cart"></span></a></li> 
                 </ul>
                 <ul class="nav navbar-nav navbar-left">
                     <li class="dropdown women_dropdown">
@@ -241,3 +246,6 @@
             </div>
         </div>
     </nav>
+        <div class="cart_block">
+        @include('products.cart')
+    </div>

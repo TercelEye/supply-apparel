@@ -108,6 +108,24 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
 });
+
+function load_cart(){
+    $('.cart_block').load('{{url('my-cart')}}',function(){
+        var cart_total_items = $('.cart_total_items').val();
+        $('.cart_icon').attr('data-product',cart_total_items)
+    });
+    
+}
+
+//Cart open
+    $('.icons .cart_open_trigger').on('click', function () {
+        $('.cart_block .cart_modal').toggleClass('open');
+    });
+
+    $('.cart_block .cart_modal .close').on('click', function () {
+        $('.cart_block .cart_modal').removeClass('open');
+    });
+
 </script>
 @stack('scripts')
 <script type="text/javascript">
@@ -201,6 +219,8 @@ if (url.match('#')) {
 $('.nav-tabs a').on('shown.bs.tab', function (e) {
     // window.location.hash = e.target.hash;
 })
+
+
 </script>
 
 

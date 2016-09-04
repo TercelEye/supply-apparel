@@ -28,6 +28,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+        
+
         $p = \App\Product::first();
         $u = \App\User::first();
         $u->favorites()->toggle($p);

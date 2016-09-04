@@ -3,64 +3,59 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use Session;
 use \App\Product;
-use App\Http\Requests;
-
+use Cart;
+use \App\Colour;
+use \App\Size;
+use Validator;
 class CartController extends Controller
 {
 
-	/*
-		 add items to cart
-	*/
-    public function add(Request $request){
-    	$product= Product::find($request->product_id)->active();
-    	if($product!=false){
-    		return response()->json([
-				    'status' => false,
-				    'message' => 'Invalid Product'
-				]);
-    	}
-    	if($this->product_exist($product->id)==false){
-    		//ad to cart 
-    		$this->add_item_to_cart($product,$request);
-    	}
-    	$cart->toArray();
+    /*
+    add items to cart
+     */
+    public function store(Request $request)
+    {
+
+        $validator = Validator::make($request->all(), [
+            'quantity' => 'required',
+            'product_id' => 'required',
+        ]);
+        if ($validator->fails()) {
+           //validation error
+            $data['error'] = $validator->errors()->all();
+            return \Response::json($data, 422 ); // Status code here
+        }
+        //validate product is correct
+        $product = Product::find($request->product_id);
+        if ($product == '') {
+           $data['error'] = 'Invalid product or inactive product please try again later';
+            return \Response::json($data, 422 ); // Status code here
+        }
+        
+        $price = ($product->is_sale == 1 ? $product->price_discounts : $product->price);
+        $items = array(
+            'id'       => $product->id,
+            'name'     => $product->title,
+            'price'    => $price,
+            'options'  => [
+                'size'  => $request->size,
+                'color' => $request->color,
+            ],
+            'quantity' => $request->quantity,
+        );
+
+        // Make the insert...
+        Cart::insert($items);
+
+        $data['message'] = $product->title." aded to your cart";
+        $data['status']=true;
+        return \Response::json($data, 200 ); // Status code here
     }
 
-    public function add_item_to_cart($product,$request){
-    	$cart = $this->get_cart();
-    	$price = ($product->is_sale==1?$product->price_discounts:$product->price);
-    	$cart [$product->id]= [
-    		'product_id'=>$product->id,
-    		'product_name'=>$product->title,
-    		'qty'=>$request->qty,
-    		'price'=>$price,
-    		'total'=>($price * $request->qty),
-    		'shipping_local_price'=>$product->shipping_local_price,
-    		'shipping_int_price'=>$product->shipping_local_price,
-    		
-    	];
+    public function view(){
+        
+        return view('products.cart');
     }
-    /*
-    	update qty
-    */
-    private function update_cart_item_qty(){
 
-    }
-    /*
-    The search method searches the collection for the given value and returns its key if found. If the item is not found, false is returned.
-    */
-    private function product_exist($product_id){
-    	$cart = $this->get_cart();
-    	return $cart->search($product_id);
-    }
-    /*
-    	get cart array 
-    	return array or false
-    */
-    private function get_cart(){
-    	return collect($request->session()->get('cart', false));
-    }
 }

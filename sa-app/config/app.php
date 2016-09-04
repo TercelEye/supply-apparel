@@ -170,7 +170,8 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         'Webpatser\Countries\CountriesServiceProvider',
         Cviebrock\EloquentSluggable\ServiceProvider::class,
-        
+        'Moltin\Cart\CartServiceProvider',
+
         /*
          * Application Service Providers...
          */
@@ -229,7 +230,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Countries' => 'Webpatser\Countries\CountriesFacade',
-
+        'Cart' => 'Moltin\Cart\Facade',
     ],
 
 ];
