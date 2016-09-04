@@ -10,7 +10,7 @@
                     <div class="row product_block_details">
 
 
-<div class="col-md-8">
+<div class="col-md-8 products_gallery">
     @include('products.image-gallery',['images'=>$product->images])
 </div><!-- end col -->
 
@@ -68,18 +68,18 @@
                                        {{ $product->description }}
                                     </div>
                                     <form action="" method="post">
+                                        @if(count($available_colours)>0)
                                         <div class="colour_block">
                                             <h4>Colour</h4>
                                             <div class="color_list product_color_list">
-                                              @foreach($product->sizes as $size)
-                                                <div class="color c1" data-color-id="1"></div>
+                                              @foreach($available_colours as $colour)
+
+                                                <div class="color" style="background:{{$colour['hexa_code']}}" data-color-id="{{$colour['id']}}"></div>
                                               @endforeach  
-                                                <div class="color c2" data-color-id="2"></div>
-                                                <div class="color c3" data-color-id="3"></div>
-                                                <div class="color c4" data-color-id="4"></div>
                                                 <input type="hidden" name="color" class="color_input"/>
                                             </div>
                                         </div>
+                                        @endif
                                         <div class="size_block">
                                             <h4>Size</h4>
                                             <div class="size_list">
@@ -561,16 +561,42 @@
 
 <!-- gallery hear End -->
 <script>
-    $(document).ready(function() {
-        $('#products_gallery').eagleGallery({
+function initialize_product_gallery(){
+     $('#products_gallery').eagleGallery({
             miniSliderArrowPos: 'inside',
             changeMediumStyle: true,
             autoPlayMediumImg: true,
             openGalleryStyle: 'transform',
             bottomControlLine: true
         });
+}
+
+    $(document).ready(function() {
+       initialize_product_gallery();
         //new WOW().init();
     });
+  $('.product_color_list .color').on('click', function () {
+    $id = $(this).data('color-id');
+    if ($(this).hasClass('active')) {
+        //show all images
+        load_products_gallery('');
+        
+    }else {
+        //show colour only
+        load_products_gallery($id);
+    }
+  }); 
+
+function load_products_gallery(id){
+    $('.products_gallery').load('{{ url('product/'.$product->slug.'/image-gallery') }}',{
+    colour_id: id} ,
+        function(){
+        initialize_product_gallery();
+    });
+    
+}
+
 </script>
+
 
 @endpush

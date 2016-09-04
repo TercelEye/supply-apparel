@@ -207,9 +207,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <a href="#" class="btn_show_more">Show More</a>
-                    </div>
+                 
                 </div>
             </div>
         </div>

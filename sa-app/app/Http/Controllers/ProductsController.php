@@ -11,9 +11,10 @@ use App\Http\Requests;
 class ProductsController extends Controller
 {
 	public function single_product($slug){
+
 		$product = Product::where('slug',$slug)->active()->first();
-		
-		return view('products.single_view',compact('product'));
+		$available_colours = $this->get_product_colours($product->id);
+		return view('products.single_view',compact('product','available_colours'));
 	}
     public function index(){
 		$ProdcutType = ProductType::where('name', '!=','All')->where('name','<>','Men')->get();
@@ -21,38 +22,51 @@ class ProductsController extends Controller
     }
 
     /* 
-    return colour list
+    return colour list uniq 
     */
     private function get_product_colours($product_id){
     	$images_lists =  ProductImage::where('product_id',$product_id)->with('colours')->get();
     	$colors = array();
 
     	foreach ($images_lists as $img) {
-    	// dd($img->colours);
-  				$colors[]= [
-  					'name'=>$img->colours->name,
-  					'hexa_code'=>$img->colours->hexa_code
-  				];
+    	   // dd($img->colours);
+        $row = $img->colours->first();
+        if($row!=""){
+    			 $colors[$row->name]= [
+            'id'=>$row->id,
+            'hexa_code'=>$row->hexa_code,
+           ];
+        }
   		}
 	
   		$collection = collect($colors);
+      
   		return $collection;
     }
 
+    /*
+      ajax load image from colour id
+      single page 
+    */
     public function colours($slug,Request $request){
     	$product = Product::where('slug',$slug)->active()->first();
     	$colour_id = $request->colour_id;
     	$images_lists =  ProductImage::where('product_id',$product->id)->with('colours')->get();
   		$images=[];
+
   		foreach ($images_lists as $img) {
-  			if($img->colours->contains($colour_id)){
-  				$images[]['name'] = $img->name;
-  			}
-  			
+        if($request->colour_id !=""){
+          //load only colour id images
+    			if($img->colours->contains($colour_id)){
+    				$images[]['name'] = $img->name;
+    			}
+        }else {
+          //load all images
+          $images[]['name'] = $img->name;
+        }
   		}
   		$object= new Images();
   		$images = $this->array_to_obj($images,$object);
-    	dd($this->get_product_colours($product->id));
     	return view('products.image-gallery',compact('images'));
     }
  private function array_to_obj($array, &$obj){

@@ -10,6 +10,7 @@
     <link href="{{ url('assets') }}/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ url('assets') }}/css/style.css" rel="stylesheet">
     <link href="{{ url('assets') }}/libs/toastr-master/build/toastr.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{{ url('lib') }}/zoom/eagle.gallery/eagle.gallery.min.css">
 
     
 
@@ -98,7 +99,6 @@
 
 
 
-<link rel="stylesheet" type="text/css" href="{{ url('lib') }}/zoom/eagle.gallery/eagle.gallery.min.css">
 
 <script src="{{ url('assets') }}/libs/toastr-master/build/toastr.min.js"></script>
 
