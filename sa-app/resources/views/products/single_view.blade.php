@@ -98,7 +98,7 @@
                                                 <div class="color" data-color-id="{{$colour['id']}}" style="background:{{$colour['hexa_code']}}">
                                                 </div>
                                                 @endforeach
-                                                <input class="color_input" name="color" type="hidden"/>
+                                                <input class="color_input" name="color" value="0" type="hidden"/>
                                             </div>
                                         </div>
                                         @endif
@@ -106,15 +106,17 @@
                                             <h4>
                                                 Size
                                             </h4>
+                                             @if(count($product)>0)
                                             <div class="size_list">
                                                 @foreach($product->sizes as $size)
                                                 <div class="size" data-size="{{$size->id}}">
                                                     {{$size->title}}
                                                 </div>
                                                 @endforeach
-                                                <input class="size_input" name="size" type="hidden">
-                                                </input>
+                                                <input class="size_input" name="size" value="0" type="hidden">
+                                                
                                             </div>
+                                            @endif
                                         </div>
                                         <div class="question_block">
                                             <a href="#">
