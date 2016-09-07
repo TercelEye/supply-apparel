@@ -103,7 +103,7 @@
 			"contents": "	<div class=\"form-group\">\n      {!! Form::label('parent_id', 'Parent ID') !!}\n      {!! Form::select('parent_id', $parent_categories,$category->parent_id ,['class' => 'form-control']) !!}\n    </div>\n\n    <div class=\"form-group\">\n      {!! Form::label('title', 'Title') !!}\n      {!! Form::text('title', $category->title, ['class' => 'form-control']) !!}\n    </div>\n\n    <div class=\"form-group\">\n      {!! Form::label('row_order', 'Order') !!}\n      {!! Form::text('row_order', $category->row_order, ['class' => 'form-control']) !!}\n    </div>\n\n    <div class=\"form-group\">\n      <input type=\"hidden\" name=\"status\" value=\"0\">\n      {!! Form::label('status', 'Status') !!}\n      {!! Form::checkbox('status','1',$category->status,['class' => 'checkbox']) !!}\n    </div>",
 			"file": "sa-app/resources/views/admin/category/form_fields.blade.php",
 			"file_size": 785,
-			"file_write_time": 131159965634560251,
+			"file_write_time": 131163693436375166,
 			"settings":
 			{
 				"buffer_size": 766,
@@ -114,8 +114,8 @@
 			"file": "sa-app/app/Category.php",
 			"settings":
 			{
-				"buffer_size": 481,
-				"line_ending": "Unix"
+				"buffer_size": 491,
+				"line_ending": "Windows"
 			}
 		},
 		{
@@ -200,6 +200,7 @@
 	},
 	"expanded_folders":
 	[
+		"/C/xampp/htdocs/projects/supply-apparel",
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app",
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app",
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources"
@@ -390,15 +391,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 481,
+						"buffer_size": 491,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								142,
-								142
+								0,
+								0
 							]
 						],
 						"settings":
@@ -560,12 +561,16 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"C:\\Users\\Tariq DMN\\Documents\\projects\\supply-apparel.sublime-project"
+			]
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"select_symbol":
 	{

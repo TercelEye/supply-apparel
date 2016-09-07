@@ -3,6 +3,7 @@ $colour = \App\Colour::pluck('name','id');
 $size = \App\Size::pluck('title','id'); 
 //dd($colour);
 ?>
+@if(Cart::totalItems(true)>0)
 <div class="container">
     <div class="cart_modal">
         <button aria-label="Close" class="close" type="button">
@@ -25,9 +26,10 @@ $size = \App\Size::pluck('title','id');
                     </span>
                 </div>
                 @foreach (Cart::contents() as $item)
-                <div class="t_body">
+                <div class="t_body" id="item_{{ $item->identifier}}">
                     <div class="name">
-                        <div class="photo">
+                        <a href="javascript:void(0)" onclick="delete_cart('{{ $item->identifier}}')" style="color:red;"><i class="glyphicon glyphicon-remove"></i></a>
+                        <div class="photo" style="background-image: url('{{url($item->image)}}');">
                         </div>
                         <div class="product_name">
                             {{$item->name}}  x ( {{ $item->quantity }} Qty )
@@ -75,4 +77,21 @@ $size = \App\Size::pluck('title','id');
         </div>
     </div>
 </div>
+@else
+    <div class="container">
+    <div class="cart_modal">
+        <button aria-label="Close" class="close" type="button">
+            <span aria-hidden="true">
+                ×
+            </span>
+        </button>
+        <div class="cart_header">
+            <i class="cart fa fa-shopping-cart">
+            </i>
+        </div>
+         <div class="cart_body" style="text-align:center;">
+          <h3 style="padding: 10px ; color:white;">your cart is empty</h3>
+    </div>
+  </div>  
+@endif
 <input class="cart_total_items" type="hidden" value="{{Cart::totalItems(true)}}"/>

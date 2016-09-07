@@ -64,4 +64,12 @@ class CartController extends Controller
         return view('products.cart');
     }
 
+    /*
+        delete cart
+    */
+    public function delete_cart(Request $request){
+        $item = Cart::item($request->item_id);
+        $item->remove();
+    }
+
 }

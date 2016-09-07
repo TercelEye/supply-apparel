@@ -19,10 +19,10 @@ Route::get('/', function () {
 });
 
 Route::auth();
-Route::get('logout', 'Auth\AuthController@getLogout');
+//Route::get('logout', 'Auth\AuthController@getLogout');
 Route::post('user/login','UserController@login');
-Route::get('auth/facebook', 'Auth\AuthController@redirectToFacebook');
-Route::get('auth/facebook/callback', 'Auth\AuthController@handleFacebookCallback');
+//Route::get('auth/facebook', 'Auth\AuthController@redirectToFacebook');
+//Route::get('auth/facebook/callback', 'Auth\AuthController@handleFacebookCallback');
 
 Route::get('/home', 'HomeController@index');
 
@@ -102,4 +102,4 @@ Route::post('product/{product}/image-gallery','ProductsController@colours');
 //add to cart
 Route::post('add-to-cart','CartController@store');
 Route::any('my-cart','CartController@view');
-
+Route::post('cart-remove-item','CartController@delete_cart');
