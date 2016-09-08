@@ -113,11 +113,12 @@ function load_cart(open_cart = false){
     $('.cart_block').load('{{url('my-cart')}}',function(){
         var cart_total_items = $('.cart_total_items').val();
         $('.cart_icon').attr('data-product',cart_total_items)
+         if(open_cart){
+             $('.cart_modal').addClass('open');
+        }
     });
 
-    if(open_cart){
-     $('.cart_modal').addClass('open');
-    }
+   
     
 }
 
