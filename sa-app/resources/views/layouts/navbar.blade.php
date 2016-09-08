@@ -62,8 +62,8 @@
                                                                                   title="Cart"></span></a></li> 
                 </ul>
                 <ul class="nav navbar-nav navbar-left">
-                    <li class="dropdown women_dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                    <li class="dropdown women_dropdown {{ (Request::is('women-clothing')?"active":"") }}">
+                        <a href="{{ url('women-clothing') }}" class="dropdown-toggle" data-toggle="dropdown" role="button"
                            aria-haspopup="true" aria-expanded="false">Women</a>
                         <ul class="dropdown-menu">
                             <li>
@@ -84,8 +84,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown men_dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                    <li class="dropdown men_dropdown {{ (Request::is('men-clothing')?"active":"") }}">
+                        <a href="{{ url('men-clothing') }}" class="dropdown-toggle" data-toggle="dropdown" role="button"
                            aria-haspopup="true" aria-expanded="false">Men</a>
                         <ul class="dropdown-menu">
                             <li>
@@ -106,8 +106,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown kids_dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                    <li class="dropdown kids_dropdown {{ (Request::is('kids-clothing')?"active":"") }}">
+                        <a href="{{ url('kids-clothing') }}" class="dropdown-toggle" data-toggle="dropdown" role="button"
                            aria-haspopup="true" aria-expanded="false">Kids</a>
                         <ul class="dropdown-menu">
                             <li>

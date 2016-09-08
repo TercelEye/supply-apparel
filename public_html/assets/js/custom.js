@@ -224,7 +224,14 @@ $(document).ready(function () {
     });
 
 
+//Cart open
+    $('.icons .cart_open_trigger').on('click', function () {
+        //$('.cart_block .cart_modal').toggleClass('open');
+    });
 
+    $('.cart_block .cart_modal .close').on('click', function () {
+       // $('.cart_block .cart_modal').removeClass('open');
+    });
 
 
 // Search input
