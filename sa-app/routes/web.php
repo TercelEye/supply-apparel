@@ -107,6 +107,6 @@ Route::any('my-cart','CartController@view');
 Route::post('cart-remove-item','CartController@delete_cart');
 
 //filter 
-Route::get('men-clothing','CartController@view');
+Route::get('men-clothing','MenProductsController@index');
 
 Route::post('favorites/{product}','FavoriteController@toggle');

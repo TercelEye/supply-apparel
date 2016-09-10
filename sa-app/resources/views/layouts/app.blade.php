@@ -117,7 +117,7 @@ function load_cart(open_cart = false){
 
         
         if(open_cart){
-             $('.cart_modal').addClass('open');    
+             $('.cart_modal').addClass('open');
         }
     });
 
