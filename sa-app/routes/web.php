@@ -103,3 +103,8 @@ Route::post('product/{product}/image-gallery','ProductsController@colours');
 Route::post('add-to-cart','CartController@store');
 Route::any('my-cart','CartController@view');
 Route::post('cart-remove-item','CartController@delete_cart');
+
+//filter 
+Route::get('men-clothing','CartController@view');
+
+Route::post('favorites/{product}','FavoriteController@toggle');

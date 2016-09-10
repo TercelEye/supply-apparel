@@ -145,7 +145,7 @@
                 <a href="{{ url('create-boutique')}}" class="btn_create_boutique">Create a boutique</a>
 
                   @if (!Auth::guest())
-                    <a href="#" class="btn_auth">{{ Auth::user()->name }}</a>
+                    <a href="{{ url('seller') }}" class="btn_auth">{{ Auth::user()->name }}</a>
                     <a href="{{ url('logout') }}"  onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();" class="btn_auth btn_logout">Logout</a>
 
