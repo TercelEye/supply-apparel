@@ -99,6 +99,8 @@ Route::group(['middleware' => ['web','auth']], function () {
 Route::get('product/{product}','ProductsController@single_product');
 Route::post('product/{product}/image-gallery','ProductsController@colours');
 
+Route::get('men-clothing','MenProductsController@index');
+
 //add to cart
 Route::post('add-to-cart','CartController@store');
 Route::any('my-cart','CartController@view');

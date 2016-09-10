@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Supply </title>
+    @yield("meta")
+    <title> @yield('title','Supply Apparel') </title>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
     <link href="{{ url('assets') }}/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ url('assets') }}/css/style.css" rel="stylesheet">
@@ -113,6 +114,7 @@ function load_cart(open_cart = false){
     $('.cart_block').load('{{url('my-cart')}}',function(){
         var cart_total_items = $('.cart_total_items').val();
         $('.cart_icon').attr('data-product',cart_total_items)
+
         
         if(open_cart){
              $('.cart_modal').addClass('open');    
@@ -133,7 +135,7 @@ function delete_cart(item){
 }
 
 //Cart open
-    $('.icons .cart_open_trigger').on('click', function () {
+    $('.cart_open_trigger').on('click', function () {
         $('.cart_block .cart_modal').toggleClass('open');
     });
  $(document.body).on('click', '.cart_modal .close ,.cart_modal .back' ,function(e){
