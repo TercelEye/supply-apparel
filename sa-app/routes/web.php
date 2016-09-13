@@ -45,9 +45,11 @@ Route::group(['prefix' => 'kids','middleware' => 'web'], function () {
 });
 
 
-
-Route::resource('category','CategoryController');
-
+Route::group(['prefix' => 'admin','middleware' => 'web'], function () {
+    Route::resource('category','CategoryController');
+    Route::any('category-load-by-type','CategoryController@load_category');
+    Route::resource('colour','ColourController');
+});
 //Seller
 Route::get('create-boutique','ShopController@landing_page');
 
@@ -108,5 +110,6 @@ Route::post('cart-remove-item','CartController@delete_cart');
 
 //filter 
 Route::get('men-clothing','MenProductsController@index');
+Route::post('men-clothing','MenProductsController@mens_filter');
 
 Route::post('favorites/{product}','FavoriteController@toggle');

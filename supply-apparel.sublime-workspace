@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"form",
+				"form_items"
+			],
+			[
+				"st",
+				"style	Tag"
+			],
+			[
 				"check",
 				"checkbox"
 			],
@@ -74,56 +82,65 @@
 			[
 				"c",
 				"class	Attr"
-			],
-			[
-				"st",
-				"style	Tag"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "sa-app/resources/views/admin/category/index.blade.php",
+			"file": "sa-app/config/app.php",
 			"settings":
 			{
-				"buffer_size": 776,
+				"buffer_size": 9448,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "sa-app/resources/views/admin/category/create.blade.php",
+			"file": "sa-app/resources/views/layouts/header.blade.php",
 			"settings":
 			{
-				"buffer_size": 968,
+				"buffer_size": 7675,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "	<div class=\"form-group\">\n      {!! Form::label('parent_id', 'Parent ID') !!}\n      {!! Form::select('parent_id', $parent_categories,$category->parent_id ,['class' => 'form-control']) !!}\n    </div>\n\n    <div class=\"form-group\">\n      {!! Form::label('title', 'Title') !!}\n      {!! Form::text('title', $category->title, ['class' => 'form-control']) !!}\n    </div>\n\n    <div class=\"form-group\">\n      {!! Form::label('row_order', 'Order') !!}\n      {!! Form::text('row_order', $category->row_order, ['class' => 'form-control']) !!}\n    </div>\n\n    <div class=\"form-group\">\n      <input type=\"hidden\" name=\"status\" value=\"0\">\n      {!! Form::label('status', 'Status') !!}\n      {!! Form::checkbox('status','1',$category->status,['class' => 'checkbox']) !!}\n    </div>",
-			"file": "sa-app/resources/views/admin/category/form_fields.blade.php",
-			"file_size": 785,
-			"file_write_time": 131163693436375166,
+			"file": "sa-app/app/Http/Controllers/MenProductsController.php",
 			"settings":
 			{
-				"buffer_size": 766,
+				"buffer_size": 957,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "sa-app/app/Category.php",
+			"file": "sa-app/resources/views/products/men.blade.php",
 			"settings":
 			{
-				"buffer_size": 491,
+				"buffer_size": 11370,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "sa-app/app/Http/Controllers/CategoryController.php",
+			"file": "sa-app/resources/views/componets/product/gridview.blade.php",
 			"settings":
 			{
-				"buffer_size": 2606,
+				"buffer_size": 3164,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "sa-app/app/Http/Controllers/SellerController.php",
+			"settings":
+			{
+				"buffer_size": 669,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sa-app/routes/web.php",
+			"settings":
+			{
+				"buffer_size": 4271,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -203,21 +220,29 @@
 		"/C/xampp/htdocs/projects/supply-apparel",
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app",
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app",
-		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources"
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app/Http",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/componets",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/componets/product"
 	],
 	"file_history":
 	[
-		"/C/Users/Tariq DMN/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/xampp/htdocs/projects/supply-apparel/public_html/assets/create_boutique_step_1.html",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/layouts/app.blade.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/database/migrations/2016_09_10_231129_product_type_fields.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app/Http/Controllers/CartController.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/admin/category/form_fields.blade.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/admin/category/index.blade.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/admin/category/create.blade.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app/Category.php",
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app/Http/Controllers/CategoryController.php",
+		"/C/Users/Tariq DMN/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/C/xampp/htdocs/projects/laravel53/public/css/app.css",
 		"/C/xampp/htdocs/projects/laravel53/public/js/app.js",
-		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/admin/category/form_fields.blade.php",
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/admin/category/edit.blade.php",
 		"/C/xampp/htdocs/projects/Freedom-Time/ftw-app/resources/views/admin/layouts/master.blade.php",
-		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app/Category.php",
-		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/admin/category/create.blade.php",
-		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/admin/category/index.blade.php",
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app/routes/web.php",
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
 		"/C/xampp/htdocs/projects/Freedom-Time/ftw-app/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
@@ -296,11 +321,11 @@
 			[
 				{
 					"buffer": 0,
-					"file": "sa-app/resources/views/admin/category/index.blade.php",
+					"file": "sa-app/config/app.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 776,
+						"buffer_size": 9448,
 						"regions":
 						{
 						},
@@ -313,73 +338,70 @@
 						],
 						"settings":
 						{
-							"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
-							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "sa-app/resources/views/admin/category/create.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 968,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
-							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 144.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "sa-app/resources/views/admin/category/form_fields.blade.php",
+					"buffer": 1,
+					"file": "sa-app/resources/views/layouts/header.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 766,
+						"buffer_size": 7675,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								766,
-								766
+								6771,
+								6771
 							]
 						],
 						"settings":
 						{
-							"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
 							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
-							"tab_size": 2,
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 920.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "sa-app/app/Http/Controllers/MenProductsController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 957,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								924,
+								924
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 471.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -387,49 +409,107 @@
 				},
 				{
 					"buffer": 3,
-					"file": "sa-app/app/Category.php",
+					"file": "sa-app/resources/views/products/men.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 491,
+						"buffer_size": 11370,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								10809,
+								10809
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3064.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "sa-app/resources/views/componets/product/gridview.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3164,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2088,
+								2101
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 956.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "sa-app/app/Http/Controllers/CategoryController.php",
+					"buffer": 5,
+					"file": "sa-app/app/Http/Controllers/SellerController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2606,
+						"buffer_size": 669,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1395,
-								1395
+								112,
+								112
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 156.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "sa-app/routes/web.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4271,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4202,
+								4202
 							]
 						],
 						"settings":
@@ -439,10 +519,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1080.0,
+						"translation.y": 2008.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -496,6 +576,38 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"we",
+				"sa-app\\routes\\web.php"
+			],
+			[
+				"cart",
+				"sa-app\\app\\Http\\Controllers\\CartController.php"
+			],
+			[
+				"",
+				"sa-app\\resources\\views\\layouts\\header.blade.php"
+			],
+			[
+				"create",
+				"public_html\\assets\\create_boutique_step_1.html"
+			],
+			[
+				"seller",
+				"sa-app\\app\\Http\\Controllers\\SellerController.php"
+			],
+			[
+				"header",
+				"sa-app\\resources\\views\\layouts\\header.blade.php"
+			],
+			[
+				"app.bla",
+				"sa-app\\resources\\views\\layouts\\app.blade.php"
+			],
+			[
+				"ap",
+				"sa-app\\config\\app.php"
+			],
 			[
 				"categ",
 				"sa-app\\app\\Http\\Controllers\\CategoryController.php"
@@ -551,10 +663,6 @@
 			[
 				"router",
 				"ftw-app\\vendor\\symfony\\routing\\Router.php"
-			],
-			[
-				"",
-				"ftw-app\\.gitignore"
 			]
 		],
 		"width": 0.0
@@ -589,7 +697,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 258.0,
+	"side_bar_width": 217.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

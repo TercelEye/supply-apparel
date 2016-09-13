@@ -24,6 +24,7 @@
                		{!! Form::model($category, ['action' => 'CategoryController@store']) !!}
                     	@include("admin.category.form_fields")
                     	<button class="btn btn-success" type="submit">Add new Category!</button>
+                        <a href="{{ url('admin/category') }}" class="btn btn-danger">Close</a>
 					{!! Form::close() !!}
                 </div>
             </div>
@@ -31,3 +32,18 @@
     </div><!--- end row -->
 </div>
 @endsection
+
+@push('scripts')
+
+<script type="text/javascript">
+  function load_category(type_id){
+
+    $(".select-category").load('{{ url('admin/category-load-by-type') }}',{ type_id: type_id} ,function(){
+      
+    });
+    
+  }
+
+</script>
+
+@endpush

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\ProductType;
+use Auth;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
-use App\Category;
 class CategoryController extends Controller
 {
     /**
@@ -15,8 +16,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories_list = \App\Category::all();
-        return view('admin.category.index',compact('categories_list'));
+        $categories_list = \App\Category::with('type')->paginate(10);
+        return view('admin.category.index', compact('categories_list'));
     }
 
     /**
@@ -26,9 +27,23 @@ class CategoryController extends Controller
      */
     public function create()
     {
-       $parent_categories = \App\Category::pluck('title'); // get parents categories   
-       $category = new \App\Category;
-       return view('admin.category.create',compact('category','parent_categories'));
+        $parent_categories = Category::pluck('title', 'id'); // get parents categories
+
+        $parent_categories = array_merge(array('' => "No parent"), $parent_categories->toArray());
+        $product_types     = ProductType::where('name', '!=', 'all')->pluck('name', 'id'); // get parents categories
+
+        $product_types = array_merge(array(0 => "Select Type"), $product_types->toArray());
+        $category      = new \App\Category;
+        return view('admin.category.create', compact('category', 'parent_categories', 'product_types'));
+    }
+
+    public function load_category(Request $request)
+    {
+        $category = Category::where('product_type_id', $request->type_id)->get()->toArray(); // get parents categories
+        echo "<option value=''>No parent</option>";
+        foreach ($category as $cat):
+            echo "<option " . ($request->id == $cat['id'] ? "selected" : "") . " value='" . $cat['id'] . "'>" . $cat['title'] . "</option>";
+        endforeach;
     }
 
     /**
@@ -40,9 +55,19 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required|unique:categories|max:255',
+            'title'           => 'required|unique:categories|max:255',
+            'product_type_id' => 'required',
+            'row_order'       => 'required',
+            'parent_id'       => 'required',
         ]);
-        $category = \App\Category::create($request->all());
+        $category                  = new Category;
+        $category->title           = $request->title;
+        $category->parent_id       = $request->parent_id;
+        $category->status          = $request->status;
+        $category->row_order       = $request->row_order;
+        $category->user_id         = Auth::user()->id;
+        $category->product_type_id = $request->product_type_id;
+        $category->save();
         return redirect()->back();
     }
 
@@ -54,7 +79,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        return redirect("category/".$id."/edit");
+        return redirect("category/" . $id . "/edit");
     }
 
     /**
@@ -64,10 +89,11 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    { 
-        $parent_categories = \App\Category::where("id",'!=',$id)->pluck('title');
-        $category = \App\Category::findOrFail($id);
-        return view('admin.category.edit',compact('category','parent_categories','id'));
+    {
+        $product_types     = ProductType::where('name', '!=', 'all')->pluck('name', 'id'); // get parents categories
+        $parent_categories = \App\Category::where("id", '!=', $id)->pluck('title', 'id');
+        $category          = \App\Category::findOrFail($id);
+        return view('admin.category.edit', compact('category', 'parent_categories', 'id', 'product_types'));
     }
 
     /**
@@ -80,7 +106,10 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'title' => 'required',
+            'title'           => 'required',
+            'product_type_id' => 'required',
+            'row_order'       => 'required',
+            'parent_id'       => 'required',
         ]);
         $category = \App\Category::find($id);
         // $category->title = $request->title;

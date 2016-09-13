@@ -30,17 +30,12 @@ class Product extends Model
     }
 
     public function sizes(){
-
-        return $this->belongsToMany(Size::class,'product_size','product_id','size_id') 
-        ->withTimestamps();
-    
+        return $this->belongsToMany(Size::class,'product_size','product_id','size_id')->withTimestamps();
 		//return $this->belongsToMany('\App\Size')->withTimestamps();	
 	}
     public function colours(){
-
-        return $this->belongsToMany(Colour::class,'product_colour_images','product_id','size_id') 
+        return $this->belongsToMany(Colour::class,'product_colour_images','product_image_id','colour_id') 
         ->withTimestamps();
-    
         //return $this->belongsToMany('\App\Size')->withTimestamps();   
     }
 	public function shop(){

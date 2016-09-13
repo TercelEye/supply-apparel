@@ -2,27 +2,61 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Auth;
-use App\User;
-use \App\Product;
-use \App\Category;
-use \App\Colour;
-use \App\Brand;
 use \App\BoutiqueType;
-
-use App\Http\Requests;
+use \App\Category;
+use \App\Brand;
+use \App\Size;
+use \App\Colour;
+use \App\Product;
+use View;
+use Request;
 
 class MenProductsController extends Controller
 {
 
-    public function index(){
-    	$BoutiqueType = BoutiqueType::all();
-    	$category = Category::all();
-    	return view('products.men');
+    public function index()
+    {
+        $boutique_types = BoutiqueType::all();
+        $categories      = Category::all();
+        $brands      = Brand::all();
+        $sizes      = Size::all();
+        $colours      = Colour::all();
+        $product_items = $this->mens_filter();
+        return view('products.men', compact(
+            'categories', 'boutique_types', 'brands','sizes','colours','product_items'
+        ));
     }
+    private function get_products(){
+    	$products = Product::active()->ofType('women');
+
+    	if(Request::input('size')){
+    		$size_ids =Request::input('size');
+   			 $products = $products->with(['sizes' => function ($query) use ($size_ids){
+			    $query->wherePivotIn('size_id',$size_ids);
+			}]);
+			// $products = $products->with('sizes')->where('product_size.size_id',20);
+    		//$products = $products->with('sizes')->sizes->contains(20);
+    	}
+
+    	//filter category
+    	if(Request::input('category')){
+    		$products = $products->whereIn('category_id',Request::input('category'));
+    	}
+    	//filter brand
+    	if(Request::input('brand')){
+    		$products = $products->whereIn('brand_id',Request::input('brand'));
+    	}
+    	//sizes 
+    
+    	return $products->paginate(1);
+    } 
 
     public function mens_filter(){
-
+    	$products = $this->get_products();
+    	$item_type = "filter";
+    	$is_pagination = true;
+        $html = View::make('componets.product.gridview',compact('products','item_type','is_pagination'));
+        $result = ['html'=>$html->render()];
+        return $result;
     }
 }

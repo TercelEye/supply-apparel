@@ -14,8 +14,8 @@ class ProductTypeFields extends Migration
     public function up()
     {
         Schema::table('categories', function ($table) {
-            $table->integer('product_type_id')->nullable();
-            $table->foreign('product_type_id')->references('id')->on('product_types');
+            $table->integer('product_type_id')->unsigned()->index()->nulable();
+            //$table->foreign('product_type_id')->references('id')->on('product_types');
         });
     }
 
