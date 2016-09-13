@@ -29,7 +29,7 @@ class CategoryController extends Controller
     {
         $parent_categories = Category::pluck('title', 'id'); // get parents categories
 
-        $parent_categories = array_merge(array('' => "No parent"), $parent_categories->toArray());
+        $parent_categories = array_merge(array(0 => "No parent"), $parent_categories->toArray());
         $product_types     = ProductType::where('name', '!=', 'all')->pluck('name', 'id'); // get parents categories
 
         $product_types = array_merge(array(0 => "Select Type"), $product_types->toArray());
@@ -40,7 +40,7 @@ class CategoryController extends Controller
     public function load_category(Request $request)
     {
         $category = Category::where('product_type_id', $request->type_id)->get()->toArray(); // get parents categories
-        echo "<option value=''>No parent</option>";
+        echo "<option value='0'>No parent</option>";
         foreach ($category as $cat):
             echo "<option " . ($request->id == $cat['id'] ? "selected" : "") . " value='" . $cat['id'] . "'>" . $cat['title'] . "</option>";
         endforeach;
