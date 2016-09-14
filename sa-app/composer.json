@@ -10,7 +10,9 @@
         "laravelcollective/html": "5.3.*",
         "webpatser/laravel-countries": "dev-master",
         "cviebrock/eloquent-sluggable": "4.0",
-        "moltin/laravel-cart": "^5.0"
+        "moltin/laravel-cart": "^5.0",
+         "paypal/adaptivepayments-sdk-php":"v3.6.106",
+        "paypal/rest-api-sdk-php": "*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
