@@ -108,7 +108,7 @@ class CreateShopController extends Controller
 	    $shop['plan_id'] = 1;
 	    $shop['status'] = 1;
 	    $shop['owner_id'] = Auth::user()->id;
-	    $shop['shop_slug'] = Str::slug($shop['shop_name']);
+	    // $shop['shop_slug'] = Str::slug($shop['shop_name']);
 	   // dd($shop);
 
 	    $shop_model = Shop::create($shop);

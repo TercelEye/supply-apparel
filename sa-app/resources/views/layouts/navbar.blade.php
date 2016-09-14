@@ -61,30 +61,36 @@
                                                                                   data-product="{{Cart::totalItems(true)}}"
                                                                                   title="Cart"></span></a></li> 
                 </ul>
+                <?php 
+$products_types = \App\ProductType::with('category')->where('name','!=','all')->get();
+?>
                 <ul class="nav navbar-nav navbar-left">
-                    <li class="dropdown women_dropdown {{ (Request::is('women-clothing')?"active":"") }}">
-                        <a href="{{ url('women-clothing') }}" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                           aria-haspopup="true" aria-expanded="false">Women</a>
+                    @foreach($products_types as $row)
+                    <li class="dropdown women_dropdown {{ (Request::is(strtolower($row->name).'-clothing')?"active":"") }}">
+                        <a href="{{ url(strtolower($row->name).'-clothing') }}" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">{{$row->name}}</a>
                         <ul class="dropdown-menu">
+
+                        @if(count($row->category->toArray())>0)
+                        <?php 
+                       $category_col = array_chunk($row->category->toArray(), ceil(count($row->category->toArray()) / 2));
+                        ?>
                             <li>
+                                @foreach($category_col as $categories)
                                 <ul class="list-unstyled">
-                                    <li><a class="" href="#">Coats & Jackets</a></li>
-                                    <li><a class="" href="#">Dresses</a></li>
-                                    <li><a class="" href="#">Jeans</a></li>
-                                    <li><a class="" href="#">Jumpsuits</a></li>
-                                    <li><a class="" href="#">Shirts & Blouses</a></li>
+                                 @foreach($categories as $cat)
+                                    <li><a class="" href="{{ url(strtolower($row->name).'-clothing?category[]='.$cat['id'])}}">{{$cat['title']}}</a></li>
+                                 @endforeach
                                 </ul>
-                                <ul class="list-unstyled">
-                                    <li><a class="" href="#">Tops & T-Shirts</a></li>
-                                    <li><a class="" href="#">Trousers & Leggings</a></li>
-                                    <li><a class="" href="#">Shorts & skirts</a></li>
-                                    <li><a class="" href="#">Lingerie & Nightware</a></li>
-                                    <li><a class="" href="#">Shoes</a></li>
-                                </ul>
+                                @endforeach
+                                
                             </li>
+                            @endif
                         </ul>
                     </li>
-                    <li class="dropdown men_dropdown {{ (Request::is('men-clothing')?"active":"") }}">
+                    @endforeach
+                  
+                  {{--   <li class="dropdown men_dropdown {{ (Request::is('men-clothing')?"active":"") }}">
                         <a href="{{ url('men-clothing') }}" class="dropdown-toggle" data-toggle="dropdown" role="button"
                            aria-haspopup="true" aria-expanded="false">Men</a>
                         <ul class="dropdown-menu">
@@ -155,7 +161,8 @@
                                 </ul>
                             </li>
                         </ul>
-                    </li>
+                    </li> --}}
+
                     <li class="dropdown boutiques_dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                            aria-haspopup="true" aria-expanded="false">Boutiques</a>

@@ -11,7 +11,7 @@ use \App\Product;
 use View;
 use Request;
 
-class MenProductsController extends Controller
+class KidsProductsController extends Controller
 {
 
     public function index()
@@ -21,13 +21,13 @@ class MenProductsController extends Controller
         $brands      = Brand::all();
         $sizes      = Size::all();
         $colours      = Colour::all();
-        $product_items = $this->mens_filter();
-        return view('products.men', compact(
+        $product_items = $this->filter();
+        return view('products.kids', compact(
             'categories', 'boutique_types', 'brands','sizes','colours','product_items'
         ));
     }
     private function get_products(){
-    	$products = Product::active()->ofType('men');
+    	$products = Product::active()->ofType('kids');
 
     	if(Request::input('size')){
     		$size_ids =Request::input('size');
@@ -51,7 +51,7 @@ class MenProductsController extends Controller
     	return $products->paginate(15);
     } 
 
-    public function mens_filter(){
+    public function filter(){
     	$products = $this->get_products();
     	$item_type = "filter";
     	$is_pagination = true;

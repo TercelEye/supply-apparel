@@ -25,7 +25,7 @@ $product_image = (isset($product->images->first()->name)? url($product->images->
 
         <div class="item_header">
 
-            <a href="#"><i
+            <a href="{{ url('store/'.$product->shop->shop_slug) }}"><i
                    class="item_icon"></i><span>{{$product->shop->shop_name }}</span></a>
      </div>
         <div class="item_body" style="background-image:url({{$product_image }})">

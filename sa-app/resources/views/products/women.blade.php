@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title','Men Clothing | Men Clothing Stores | Men Apparel')
+@section('title','Women Clothing | Women Clothing Stores | Women Apparel')
 
 @section('meta')
-    <meta name="description" content="Find the best men clothing collections and men clothing
-stores on the web at Supply Apparel.">
-    <meta name="keywords" content="men clothing, men clothing stores, men collection, men apparel">
+    <meta name="description" content="Find the latest women clothing stores and women clothing
+collections at Supply Apparel.">
+    <meta name="keywords" content="women clothing stores, women clothing, women collection,">
 @endsection
 
 @section('content')
@@ -14,8 +14,8 @@ stores on the web at Supply Apparel.">
     <section class="section_1">
         <div class="container">
             <div class="row">
-                <h2>Men</h2>
-                <h5>Style yourself with the best fashion  apparel for men</h5>
+                <h2>Women</h2>
+                <h5>Explore trendy designs from coolest around the world</h5>
             </div>
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 col-md-12 col-md-offset-0">
@@ -95,7 +95,7 @@ stores on the web at Supply Apparel.">
         $('.product_items').css({opacity: '0.5'});
         var form_items = $( ".product_filter" ).serialize();
 
-    $.post( "{{url('men-clothing')}}", form_items).done(function( json ) {
+    $.post( "{{url('women-clothing')}}", form_items).done(function( json ) {
         $('.product_items').css({opacity: '1'});
         $('.product_items').html(json.html);
     });

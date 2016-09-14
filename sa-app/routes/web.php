@@ -112,4 +112,14 @@ Route::post('cart-remove-item','CartController@delete_cart');
 Route::get('men-clothing','MenProductsController@index');
 Route::post('men-clothing','MenProductsController@mens_filter');
 
+Route::get('women-clothing','WomenProductsController@index');
+Route::post('women-clothing','WomenProductsController@filter');
+
+Route::get('kids-clothing','KidsProductsController@index');
+Route::post('kids-clothing','KidsProductsController@filter');
+
+//store
+Route::get('store/{shop}','StoreController@store');
+
+
 Route::post('favorites/{product}','FavoriteController@toggle');
