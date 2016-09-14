@@ -71,7 +71,7 @@ $size = \App\Size::pluck('title','id');
                     Continue Shopping
                 </span>
             </a>
-            <a class="btn_checkout" href="#">
+            <a class="btn_checkout" href="{{url('checkout')}}">
                 Checkout
             </a>
         </div>

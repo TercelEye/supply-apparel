@@ -134,6 +134,15 @@ Route::post('kids-clothing','KidsProductsController@filter');
 
 //store
 Route::get('store/{shop}','StoreController@store');
+Route::post('store/{shop}','StoreController@filter');
+
+//checkout
+Route::group(['middleware' => ['web','auth']], function () {
+    Route::get('checkout','CheckoutController@index');
+    Route::post('checkout','CheckoutController@save_shipping');
+
+     Route::get('payment','PaymentController@index');
+});
 
 
 Route::post('favorites/{product}','FavoriteController@toggle');

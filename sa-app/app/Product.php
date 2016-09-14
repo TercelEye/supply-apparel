@@ -60,4 +60,8 @@ class Product extends Model
     	$type_id = ProductType::where('name',$name)->first()->id;
         return $query->where('product_type_id', $type_id);
     }
+    public function scopeOfShop($query,$shop_id)
+    {
+        return $query->where('shop_id', $shop_id);
+    }
 }
