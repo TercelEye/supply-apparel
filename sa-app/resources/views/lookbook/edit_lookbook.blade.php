@@ -1,24 +1,42 @@
 @extends('layouts.app')
 @section('content')
 <main class="boutique_empty_page">
-    @include('layouts.seller_navigation')
+    <section class="section_1 owner_menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 col-md-12 col-md-offset-0">
+                    <ul class="list-inline account_menu">
+                        <li>
+                            <div class="icon"></div>
+                        </li>
+                        <li class="active"><a href="owner_boutique_page_empty.html"><i class="boutique"></i><span>Boutique</span></a></li>
+                        <li><a href="owner_boutique_page_orders.html"><i class="orders"></i><span>Orders</span></a></li>
+                        <li><a href="owner_boutique_page_messages.html"><i class="messages"></i><span>Messages</span></a></li>
+                        <li><a href="owner_boutique_page_settings.html"><i class="settings"></i><span>Settings</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="section_photo">
         <div class="container">
-            <div class="boutique_photo" style="background-image:url({{ url($shop->cover_image) }})"></div>
+            <div class="boutique_photo"></div>
         </div>
     </section>
     <section class="section_2">
         <div class="container">
             <div class="row">
-                <h2>{{ $shop->shop_name }}</h2>
-                <h5> {{ $shop->description }}</h5>
+                <h2>Bangkok TShirts</h2>
+                <h5>Bangkok TShirts is a luxury retail chain of high quality tshirts that are available to be purchased
+                    anywhere around the world <br/>
+                    The brand has won many awards and is one of the premier apparel brands in the world.</h5>
             </div>
             <div class="row">
                 <div class="social_block">
-                    @if($shop->instagram_url!="") <a target="_blank" href="{{ $shop->instagram_url }}" class="social insta"></a> @endif
-                    @if($shop->facebook_url!="")  <a target="_blank" href="{{ $shop->facebook_url }}" class="social fb"></a>@endif
-                    @if($shop->twitter_url!="") <a target="_blank" href="{{ $shop->twitter_url }}" class="social tw"></a>@endif
-                    @if($shop->pinterest_url!="") <a target="_blank" href="{{ $shop->pinterest_url }}" class="social pt"></a>@endif
+                    <a href="#" class="social insta"></a>
+                    <a href="#" class="social fb"></a>
+                    <a href="#" class="social tw"></a>
+                    <a href="#" class="social pt"></a>
                 </div>
                 <div class="followers_number">0 Followers</div>
             </div>
@@ -47,53 +65,226 @@
                             <h4>Starting by adding apparel to your collection</h4>
                             <div class="row">
                                 <div class="item empty col-md-3 col-sm-4 col-xs-6">
-                                    <a href="{{ url('seller/product/create')}}"><div class="add_item"></div></a>
+                                    <div class="add_item"></div>
                                 </div>
-
-                                @if($products)
-                                    @include('componets.product.admin_product')
-                                @endif
-                            
+                                <div class="item col-md-3 col-sm-4 col-xs-6">
+                                    <div class="item_block">
+                                        <div class="item_header">
+                                            <a href="#"><i
+                                                    class="item_icon"></i><span>Sally's Boutique</span></a>
+                                        </div>
+                                        <div class="item_body">
+                                            <div class="wishlist_add">
+                                                <span class="heart"></span>
+                                                <span class="clickable_block"
+                                                      title="Add to wishlist"></span>
+                                            </div>
+                                        </div>
+                                        <a href="#">
+                                            <div class="item_footer">
+                                                <div class="rewiew_block">
+                                                    <span class="glyphicon glyphicon-star"></span>
+                                                    <span class="glyphicon glyphicon-star"></span>
+                                                    <span class="glyphicon glyphicon-star"></span>
+                                                    <span class="glyphicon glyphicon-star"></span>
+                                                    <span class="glyphicon glyphicon-star"></span>
+                                                    <p>(39 Reviews)</p>
+                                                </div>
+                                                <div class="name_block">Olivine Heels</div>
+                                                <div class="price_block">$45</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="item_actions">
+                                        <div class="btn-group" role="group" aria-label="">
+                                            <a href="#"  class="btn_edit"><i></i></a>
+                                            <a href="#" class="btn_delete"><i></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item col-md-3 col-sm-4 col-xs-6">
+                                    <div class="item_block">
+                                        <div class="item_header">
+                                            <a href="#"><i
+                                                    class="item_icon"></i><span>Sally's Boutique</span></a>
+                                        </div>
+                                        <div class="item_body">
+                                            <div class="wishlist_add">
+                                                <span class="heart"></span>
+                                                <span class="clickable_block"
+                                                      title="Add to wishlist"></span>
+                                            </div>
+                                        </div>
+                                        <div class="item_footer">
+                                            <div class="rewiew_block">
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <p>(39 Reviews)</p>
+                                            </div>
+                                            <div class="name_block">Olivine Heels</div>
+                                            <div class="price_block">$45</div>
+                                        </div>
+                                    </div>
+                                    <div class="item_actions">
+                                        <div class="btn-group" role="group" aria-label="">
+                                            <a href="#"  class="btn_edit"><i></i></a>
+                                            <a href="#" class="btn_delete"><i></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item col-md-3 col-sm-4 col-xs-6">
+                                    <div class="item_block">
+                                        <div class="item_header">
+                                            <a href="#"><i
+                                                    class="item_icon"></i><span>Sally's Boutique</span></a>
+                                        </div>
+                                        <div class="item_body">
+                                            <div class="wishlist_add">
+                                                <span class="heart"></span>
+                                                <span class="clickable_block"
+                                                      title="Add to wishlist"></span>
+                                            </div>
+                                        </div>
+                                        <div class="item_footer">
+                                            <div class="rewiew_block">
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <p>(39 Reviews)</p>
+                                            </div>
+                                            <div class="name_block">Olivine Heels</div>
+                                            <div class="price_block">$45</div>
+                                        </div>
+                                    </div>
+                                    <div class="item_actions">
+                                        <div class="btn-group" role="group" aria-label="">
+                                            <a href="#"  class="btn_edit"><i></i></a>
+                                            <a href="#" class="btn_delete"><i></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item col-md-3 col-sm-4 col-xs-6">
+                                    <div class="item_block">
+                                        <div class="item_header">
+                                            <a href="#"><i
+                                                    class="item_icon"></i><span>Sally's Boutique</span></a>
+                                        </div>
+                                        <div class="item_body">
+                                            <div class="wishlist_add">
+                                                <span class="heart"></span>
+                                                <span class="clickable_block"
+                                                      title="Add to wishlist"></span>
+                                            </div>
+                                        </div>
+                                        <div class="item_footer">
+                                            <div class="rewiew_block">
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <p>(39 Reviews)</p>
+                                            </div>
+                                            <div class="name_block">Olivine Heels</div>
+                                            <div class="price_block">$45</div>
+                                        </div>
+                                    </div>
+                                    <div class="item_actions">
+                                        <div class="btn-group" role="group" aria-label="">
+                                            <a href="#"  class="btn_edit"><i></i></a>
+                                            <a href="#" class="btn_delete"><i></i></a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        
-
-
                         <div role="tabpanel" class="tab-pane" id="look_books">
                             <h4>Upload your Look Books for potential buyers to browse through</h4>
                             <div class="row">
                                 <div class="item empty col-md-3 col-sm-4 col-xs-6">
                                     <div class="add_item"></div>
                                 </div>
-                                
-
-                                @foreach($lookbook as $row)
                                 <div class="item col-md-3 col-sm-4 col-xs-6">
                                     <a href="look_book_page.html">
                                         <div class="look_item">
-                                            <div class="picture_block" style="background-image:url(http://4bdesign.co.uk/wp-content/uploads/2015/11/logo-adobe-pdf.jpg); border:1"></div>
+                                            <div class="picture_block"></div>
                                             <div class="name_block">
                                                 <div>
                                                     <i class="item_icon"></i>
-                                                    <span>{{$row->title}}</span>
+                                                    <span>Bangkok Tshirts</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </a>
                                     <div class="item_actions">
                                         <div class="btn-group" role="group" aria-label="">
-                                            <a href="{{url('lookbook/edit?id='.$row->id)}}"  class="btn_edit"><i></i></a>
-                                            <a href="{{url('lookbook/delete?id='.$row->id)}}" class="btn_delete"><i></i></a>
+                                            <a href="#"  class="btn_edit"><i></i></a>
+                                            <a href="#" class="btn_delete"><i></i></a>
                                         </div>
                                     </div>
                                 </div>
-                                @endforeach
-
-                              
-
-                                
-
-                                
+                                <div class="item col-md-3 col-sm-4 col-xs-6">
+                                    <a href="#">
+                                        <div class="look_item">
+                                            <div class="picture_block"></div>
+                                            <div class="name_block">
+                                                <div>
+                                                    <i class="item_icon"></i>
+                                                    <span>Bangkok Tshirts</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="item_actions">
+                                        <div class="btn-group" role="group" aria-label="">
+                                            <a href="#"  class="btn_edit"><i></i></a>
+                                            <a href="#" class="btn_delete"><i></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item col-md-3 col-sm-4 col-xs-6">
+                                    <a href="#">
+                                        <div class="look_item">
+                                            <div class="picture_block"></div>
+                                            <div class="name_block">
+                                                <div>
+                                                    <i class="item_icon"></i>
+                                                    <span>Bangkok Tshirts</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="item_actions">
+                                        <div class="btn-group" role="group" aria-label="">
+                                            <a href="#"  class="btn_edit"><i></i></a>
+                                            <a href="#" class="btn_delete"><i></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item col-md-3 col-sm-4 col-xs-6">
+                                    <a href="#">
+                                        <div class="look_item">
+                                            <div class="picture_block"></div>
+                                            <div class="name_block">
+                                                <div>
+                                                    <i class="item_icon"></i>
+                                                    <span>Bangkok Tshirts</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="item_actions">
+                                        <div class="btn-group" role="group" aria-label="">
+                                            <a href="#"  class="btn_edit"><i></i></a>
+                                            <a href="#" class="btn_delete"><i></i></a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="blog_tab">

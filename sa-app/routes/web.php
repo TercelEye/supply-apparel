@@ -97,6 +97,20 @@ Route::group(['middleware' => ['web','auth']], function () {
 	Route::post('blog/create','CreateBlogController@create');
 });
 
+
+// Look book
+Route::group(['middleware' => ['web','auth']], function () {
+    Route::get('lookbook/edit','CreateLookbookController@edit');
+    Route::post('lookbook/edit','CreateLookbookController@update');
+    Route::get('lookbook/view','CreateLookbookController@view');
+    Route::get('lookbook/delete','CreateLookbookController@delete');
+
+    Route::get('lookbook/create','CreateLookbookController@index');
+    Route::post('lookbook/create','CreateLookbookController@create');
+});
+
+
+
 //products
 Route::get('product/{product}','ProductsController@single_product');
 Route::post('product/{product}/image-gallery','ProductsController@colours');
