@@ -5,6 +5,7 @@ namespace App;
 use \App\Role;
 use \App\Product;
 use \App\Shop;
+use App\Shipping;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -40,6 +41,9 @@ class User extends Authenticatable
 
     public function shop(){
         return $this->hasOne(Shop::class,'owner_id','id');
+    }
+    public function shipping(){
+        return $this->hasOne(Shipping::class,'user_id','id');
     }
      public function scopeHasRole($query,$name)
     {
