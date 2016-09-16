@@ -406,6 +406,7 @@
 
          $.post( url, { name: "terceleye.com", })
           .done(function( response ) {
+             $('.alert-server-error').fadeOut('fast');
                 $(class_name).append( response.html);
                 $(load_more).attr('data-url', response.next_url);
                 //console.log("url -- "+url+"  ---- "+response.next_url)
@@ -413,7 +414,10 @@
                     $(load_more).fadeOut('fast');
                 }
                 $btn.button('reset');
-          });
+          }).fail(function() {
+            $(class_name).html('<div class="alert-server-error alert alert-info">Something went wrong automatic reloading in 5 second</div>')
+            setTimeout(load_products(url,class_name), 5000);
+  });
 
    }
  jQuery(document).ready(function($) {
