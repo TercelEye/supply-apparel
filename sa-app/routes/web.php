@@ -43,6 +43,7 @@ Route::group(['prefix' => 'kids','middleware' => 'web'], function () {
     Route::post('new-arrivals','HomeController@new_arrivals_kids');
     Route::post('must-haves','HomeController@must_haves_kids');
 });
+Route::post('get-shops','HomeController@shop_home');
 
 
 Route::group(['prefix' => 'admin','middleware' => 'web'], function () {
@@ -142,6 +143,7 @@ Route::group(['middleware' => ['web','auth']], function () {
     Route::post('checkout','CheckoutController@save_shipping');
 
      Route::get('payment','PaymentController@index');
+     Route::post('payment','PaymentController@charge_from_card');
 });
 
 

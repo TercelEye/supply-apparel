@@ -220,6 +220,8 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
+
+
                     <div class="row">
                         <ul class="nav nav-tabs boutiques_tabs" role="tablist">
                             <li role="presentation" class="active">
@@ -237,54 +239,39 @@
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="own_labels">
                                 <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-offset-0">
+                                   
+                                        
+                                  <div class="row Own-label-shops"></div>
+                            
                                     <div class="row">
-                                        <div class="col-xs-12">
-                                            <div class="boutique_item">
-                                                <div class="picture_block"></div>
-                                                <div class="name_block">
-                                                    <a href="#">
-                                                        <i class="item_icon"></i>
-                                                        <span>Bangkok Tshirts</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <div class="boutique_item">
-                                                <div class="picture_block"></div>
-                                                <div class="name_block">
-                                                    <a href="#">
-                                                        <i class="item_icon"></i>
-                                                        <span>Bangkok Tshirts</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <div class="boutique_item">
-                                                <div class="picture_block"></div>
-                                                <div class="name_block">
-                                                    <a href="#">
-                                                        <i class="item_icon"></i>
-                                                        <span>Bangkok Tshirts</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <a href="#" data-class-name=".Own-label-shops" data-url="" class="btn_show_more">Show More</a>
                                     </div>
+                                 
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="pre_owned">
+  <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-offset-0">
+   <div class="row Pre-owned-shops"></div>
+                            
+                                    <div class="row">
+                                        <a href="#" data-class-name=".Pre-owned-shops" data-url="" class="btn_show_more">Show More</a>
+                                    </div>
+</div>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="multi_brand">
+  <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-offset-0">
+                               <div class="row Multi-brand-shops"></div>
+                            
+                                    <div class="row">
+                                        <a href="#" data-class-name=".Multi-brand-shops" data-url="" class="btn_show_more">Show More</a>
+                                    </div>
+</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <a href="#" class="btn_show_more">Show More</a>
-            </div>
+          
         </div>
     </section>
     <section class="section_5">
@@ -442,6 +429,10 @@
         load_products("{{ url('kids/best-sellers') }} ",".best_sellers_kids");
         load_products("{{ url('kids/new-arrivals') }} ",".new_arrivals_kids");
         load_products("{{ url('kids/must-haves') }} ",".must_haves_kids");
+
+        load_products("{{ url('get-shops?type=1') }} ",".Own-label-shops");
+        load_products("{{ url('get-shops?type=2') }} ",".Pre-owned-shops");
+        load_products("{{ url('get-shops?type=3') }} ",".Multi-brand-shops");
 
     });
 </script>

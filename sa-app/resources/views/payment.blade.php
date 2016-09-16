@@ -25,17 +25,19 @@
                             <div class="col-sm-pull-6 col-sm-6 col-xs-pull-6 col-xs-6 step_block">
                                 <div class="row">
                                     <ul class="nav nav-tabs  step2_tab" role="tablist">
-                                        <li role="presentation" class="card active"><a href="#card" aria-controls="card"
+                                    {{--     <li role="presentation" class="card active"><a href="#card" aria-controls="card"
                                                                                   role="tab" data-toggle="tab"></a>
-                                        </li>
-                                        <li role="presentation" class="paypal"><a href="#paypal" aria-controls="paypal" role="tab"
-                                                                   data-toggle="tab"></a></li>
+                                        </li> --}}
+                              {{--           <li role="presentation" class="paypal"><a href="#paypal" aria-controls="paypal" role="tab"
+                                                                   data-toggle="tab"></a></li> --}}
                                     </ul>
                                     <div class="tab-content">
                                         <div role="tabpanel" class="tab-pane active" id="card">
                                             <form action="" method="post">
+                                             {{ csrf_field() }}
                                                 <fieldset class="main_field">
                                                     <legend>Card</legend>
+                                                    @include('shared/errors')
                                                     <fieldset class="field">
                                                         <legend>Name on Card</legend>
                                                         <input type="text" name="name" id="name"
@@ -43,18 +45,27 @@
                                                     </fieldset>
                                                     <fieldset class="field number_block">
                                                         <input type="text" name="card_number" id="card_number"
-                                                               placeholder="1111-1111-1111-1112"/>
+                                                               value="4539653017405448" placeholder="1111-1111-1111-1112"/>
+                                                    </fieldset>
+                                                    <fieldset class="field cvc_block" style="margin-bottom: 12px;">
+                                                        <input type="text" class="expiration" name="expiration_month"
+                                                               id="expiration"
+                                                               placeholder="MM" style="width:137px;"/>
+
+                                                               <input type="text" class="expiration" name="expiration_year"
+                                                               id="expiration"
+                                                               placeholder="YYYY" style="width:137px;"/>
+                                                       
                                                     </fieldset>
                                                     <fieldset class="field cvc_block">
-                                                        <input type="text" class="expiration" name="expiration"
-                                                               id="expiration"
-                                                               placeholder="MM/YY"/>
-                                                        <input type="text" class="cvc" name="cvc" id="cvc"
+                                                     <input type="text" style="float:left;" class="cvc" name="cvc" id="cvc"
                                                                placeholder="CVC"/>
                                                     </fieldset>
                                                     <a href="#" class="btn_info"><i></i>
                                                         <span>Your payment information is encrypted</span></a>
-                                                    <a href="checkout_step_3.html" class="btn_step">Continue</a>
+                                      
+
+                                                    <input type="submit" name="" class="btn_step" value="Continue">
                                                 </fieldset>
                                             </form>
                                         </div>

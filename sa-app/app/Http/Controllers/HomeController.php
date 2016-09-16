@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Shop;
 use App\user;
 use View;
 use Response;
@@ -99,6 +100,14 @@ class HomeController extends Controller
         $products = Product::active()->ofType('kids')->latest()->paginate(8);
         $html = View::make('componets.product.gridview',compact('products'));
         $result = ['next_url'=>$products->nextPageUrl(),'html'=>$html->render()];
+        return Response::json($result);
+    }
+
+    /** shop **/
+     public function shop_home(Request $request){
+        $shop = Shop::active()->ofType($request->type)->latest()->paginate(4)->appends(['type'=>$request->type]);
+        $html = View::make('componets.shop_grid',compact('shop'));
+        $result = ['next_url'=>$shop->nextPageUrl(),'html'=>$html->render()];
         return Response::json($result);
     }
 }

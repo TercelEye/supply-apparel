@@ -40,7 +40,16 @@ public function getRouteKeyName()
     //     return $this->belongsTo(User::class,'owner_id');
     // }
 
+   public function scopeActive($query)
+    {
+        return $query->where('status', 1);
+    }
     public function products(){
     	return $this->hasMany(Product::class,'shop_id','id');
+    }
+
+     public function scopeOfType($query,$type_id)
+    {
+        return $query->where('boutique_type', $type_id);
     }
 }
