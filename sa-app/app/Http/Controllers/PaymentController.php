@@ -26,12 +26,16 @@ use PayPal\Types\AP\PayRequest;
 use PayPal\Types\AP\Receiver;
 use PayPal\Types\AP\ReceiverList;
 
+use Cart;
+use \App\Order;
+use \App\OrderItem;
+
 class PaymentController extends Controller
 {
 	private $request;
 
-    private $clientId     = 'AYSq3RDGsmBLJE-otTkBtM-jBRd1TCQwFf9RGfwddNXWz0uFU9ztymylOhRS';
-    private $clientSecret = 'EGnHDxD_qRPdaLdZz8iCr8N7_MzF-YHPTkjs6NKYQvQSBngp4PTTVWkPZRbL';
+    private $clientId     = 'AUsRAhOKpRVUXBooLVQyAdPtfxuQ8fqLSvi5CdlPvn2bgAPB-sNbDdaJJ4X2sF0vaUo0MG7tHtx633q6';
+    private $clientSecret = 'EOAvP76bY4FryTUs0NiCmFPAFGM3Y3dM6M8oikO0lAXCDYIZYc8XI50jlFMyDfriN1ivaLBi0VtAku4w';
     private $apiContext ="";
 
     function __construct(Request $request){
@@ -167,8 +171,25 @@ class PaymentController extends Controller
             exit(1);
         }
 		// NOTE: PLEASE DO NOT USE RESULTPRINTER CLASS IN YOUR ORIGINAL CODE. FOR SAMPLE ONLY
-        ResultPrinter::printResult('Create Payment Using Credit Card', 'Payment', $payment->getId(), $request, $payment);
+        print_r('Create Payment Using Credit Card'."<br>".'Payment'."<br>".$payment->getId()."<br>" );
+        dd($payment);
 
+
+    }
+    private function add_order(){
+        $order = new Order;
+        $order->customer_id = Auth::user()->id;
+        $order->total = Cart::total();
+        $order->save();
+        foreach (Cart::contents() as $row):
+            $item = new OrderItem;
+            $item->qty =  $row->identifier;
+            $item->total =  $row->identifier;
+            $item->order_id =  $row->identifier;
+            $item->product_id =  $row->identifier;
+            $item->qty =  $row->identifier;
+           
+        endforeach;
     }
 
     public function index()

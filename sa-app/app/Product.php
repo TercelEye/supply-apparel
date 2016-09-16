@@ -7,6 +7,7 @@ use \App\Size;
 use \App\Colour;
 use \App\ProductType;
 use \App\Favorite;
+use \App\Order;
 use Illuminate\Database\Eloquent\Model;
 use \App\ProductImage;
 use Cviebrock\EloquentSluggable\Sluggable;
@@ -63,5 +64,9 @@ class Product extends Model
     public function scopeOfShop($query,$shop_id)
     {
         return $query->where('shop_id', $shop_id);
+    }
+
+    public function orders(){
+        return $this->belongsToMany(Order::class, 'items_order', 'product_id', 'order_id');
     }
 }
