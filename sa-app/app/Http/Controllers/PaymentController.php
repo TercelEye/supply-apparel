@@ -199,7 +199,7 @@ class PaymentController extends Controller
    // echo $ex->getCode(); // Prints the Error Code
     //echo $ex->getData(); // Prints the detailed error message 
       //dd($request );
-    return redirect()->back()->with(['card_error'=>'invalid credit card information'. $ex->getData()]);
+    return redirect()->back()->with(['card_error'=>'invalid credit card information']);
     die($ex);
 } 
  catch (Exception $ex) {
