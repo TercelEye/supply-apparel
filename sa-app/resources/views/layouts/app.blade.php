@@ -39,9 +39,9 @@
             <div class="col-sm-2  col-xs-4 menu_browsing">
                 <h3>Browsing Menu</h3>
                 <ul>
-                    <li><a href="#">Women</a></li>
-                    <li><a href="#">Men</a></li>
-                    <li><a href="#">Kids</a></li>
+                    <li><a href="{{url('women-clothing')}}">Women</a></li>
+                    <li><a href="{{url('men-clothing')}}">Men</a></li>
+                    <li><a href="{{url('kids-clothing')}}">Kids</a></li>
                     <li><a href="#">Boutiques</a></li>
                     <li><a href="#">Look Books</a></li>
                 </ul>

@@ -198,7 +198,7 @@ class PaymentController extends Controller
     catch (PayPalConnectionException $ex) {
    // echo $ex->getCode(); // Prints the Error Code
     //echo $ex->getData(); // Prints the detailed error message 
-      dd($request );
+      //dd($request );
     return redirect()->back()->with(['card_error'=>'invalid credit card information'. $ex->getData()]);
     die($ex);
 } 
