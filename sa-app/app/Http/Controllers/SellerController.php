@@ -13,6 +13,12 @@ use App\Http\Requests;
 class SellerController extends Controller
 {
     public function index(){
+
+        if(!$this->is_have_shop()){
+            return view('seller.landing_page');
+            // return redirect('create-boutique');
+        }
+        
     	$userid = Auth::user()->id;
         $shop_id = Auth::user()->shop->id;
     	//blog 
@@ -21,9 +27,7 @@ class SellerController extends Controller
         $lookbook  = Lookbook::where('shop_id',$shop_id)->get();
 
 		//products
-		if(!$this->is_have_shop()){
-			return redirect('create-boutique');
-		}
+
 		$shop = Auth::user()->shop;
 		$products = Auth::user()->shop->products;
 		return view('seller.dashboard',compact('blog','products','shop','lookbook'));

@@ -35,13 +35,21 @@
                                         <div role="tabpanel" class="tab-pane active" id="card">
                                             <form action="" method="post">
                                              {{ csrf_field() }}
+
+                                                    @if($card_error!="")
+                                                        <div class="alert alert-danger">{{$card_error}}</div>
+                                                    @endif
+
                                                 <fieldset class="main_field">
                                                     <legend>Card</legend>
                                                     @include('shared/errors')
+
                                                     <fieldset class="field">
+
+
                                                         <legend>Name on Card</legend>
                                                         <input type="text" name="name" id="name"
-                                                               placeholder="Full Name"/>
+                                                               placeholder="Full Name" required="" />
                                                     </fieldset>
                                                     <fieldset class="field number_block">
                                                         <input type="text" name="card_number" id="card_number"

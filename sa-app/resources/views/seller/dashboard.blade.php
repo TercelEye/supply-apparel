@@ -1,7 +1,10 @@
 @extends('layouts.app')
 @section('content')
 <main class="boutique_empty_page">
+ <section class="section_1 owner_menu">
+
     @include('layouts.seller_navigation')
+    </section>
     <section class="section_photo">
         <div class="container">
             <div class="boutique_photo" style="background-image:url({{ url($shop->cover_image) }})"></div>
@@ -63,7 +66,7 @@
                             <h4>Upload your Look Books for potential buyers to browse through</h4>
                             <div class="row">
                                 <div class="item empty col-md-3 col-sm-4 col-xs-6">
-                                    <div class="add_item"></div>
+                                    <a href="{{url('lookbook/create')}}"><div class="add_item"></div></a>
                                 </div>
                                 
 
@@ -100,12 +103,12 @@
                             <h4>Make a style statement with your outlook on fashion</h4>
                             <div class="row">
                                 <div class="item empty col-md-3 col-sm-4 col-xs-6">
-                                    <div class="add_item"><span></span></div>
+                                    <a href="{{url('blog/create')}}"><div class="add_item"><span></span></div></a>
                                 </div>
 
                                 @foreach($blog as $row)
                                 <div class="item col-md-3 col-sm-4 col-xs-6">
-                                    <a href="blog_page.html">
+                                    <a href="#">
                                         <div class="blog_item">
                                             <div class="picture_block" style="background-image:url({{url($row->photo)}})"></div>
                                             <div class="details_block">

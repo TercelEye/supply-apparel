@@ -21,7 +21,7 @@ use PayPal\Core\PPHttpConfig;
 use PayPal\Rest\ApiContext;
 use PayPal\Service\AdaptivePaymentsService;
 use PayPal\Types\AP\PayRequest;
-
+use PayPal\Exception\PayPalConnectionException;
 //auth paypal
 use PayPal\Types\AP\Receiver;
 use PayPal\Types\AP\ReceiverList;
@@ -29,6 +29,8 @@ use PayPal\Types\AP\ReceiverList;
 use Cart;
 use \App\Order;
 use \App\OrderItem;
+use Auth;
+use \App\Product;
 
 class PaymentController extends Controller
 {
@@ -41,6 +43,14 @@ class PaymentController extends Controller
     function __construct(Request $request){
     	$this->request= $request;
     	$this->apiContext= $this->getApiContext();
+
+
+    }
+    public function is_cart_empty(){
+         if(Cart::totalItems(true)==0){
+            return redirect('home');
+        }
+        return false;
     }
 
     //api contect for paypal sdk
@@ -80,10 +90,16 @@ class PaymentController extends Controller
             'expiration_month'=>'required',
             'expiration_year'=>'required',
         ]);
+
+        if($this->is_cart_empty()!=false){
+            return $this->is_cart_empty();
+        }
         // ### CreditCard
         // A resource representing a credit card that can be
         // used to fund a payment.
-    	list($fname,$lname ) = explode(' ', $this->request->name); 
+    	$name = explode(' ', $this->request->name); 
+        $fname = $name[0];
+        $lname = (isset($name[1])?$name[1]:"");
 
         $card = new CreditCard();
         $card->setType("visa")
@@ -109,37 +125,42 @@ class PaymentController extends Controller
 // ### Itemized information
         // (Optional) Lets you specify item wise
         // information
-        $item1 = new Item();
-        $item1->setName('Ground Coffee 40 oz')
-            ->setDescription('Ground Coffee 40 oz')
+    $items = "";
+    $shipping = 0;
+
+    foreach (Cart::contents() as $row):
+        $item_shipping = $this->get_shiping_price($row->id);
+        $item_totaltotal = ($row->quantity * $row->price)+$item_shipping;
+        $item = new Item();
+        $item->setName($row->name)
+            ->setDescription($row->name)
             ->setCurrency('USD')
-            ->setQuantity(1)
-            ->setTax(0.3)
-            ->setPrice(7.50);
-        $item2 = new Item();
-        $item2->setName('Granola bars')
-            ->setDescription('Granola Bars with Peanuts')
-            ->setCurrency('USD')
-            ->setQuantity(5)
-            ->setTax(0.2)
-            ->setPrice(2);
+            ->setQuantity($row->quantity)
+            ->setTax(0)
+            ->setPrice( $row->price);
+        $items[] = $item;
+       $shipping+= $item_shipping;
+    endforeach;
+
         $itemList = new ItemList();
-        $itemList->setItems(array($item1, $item2));
+        $itemList->setItems($items);
 // ### Additional payment details
         // Use this optional field to set additional
         // payment information such as tax, shipping
         // charges etc.
+         $Subtotal =Cart::total() + $shipping;
         $details = new Details();
-        $details->setShipping(1.2)
-            ->setTax(1.3)
-            ->setSubtotal(17.5);
+        $details->setShipping($shipping)
+            ->setTax(0)
+            ->setSubtotal( $Subtotal);
 // ### Amount
         // Lets you specify a payment amount.
         // You can also specify additional details
         // such as shipping, tax.
+       
         $amount = new Amount();
         $amount->setCurrency("USD")
-            ->setTotal(20)
+            ->setTotal(Cart::total())
             ->setDetails($details);
 // ### Transaction
         // A transaction defines the contract of a
@@ -148,7 +169,7 @@ class PaymentController extends Controller
         $transaction = new Transaction();
         $transaction->setAmount($amount)
             ->setItemList($itemList)
-            ->setDescription("Payment description")
+            ->setDescription("Customer ".Auth::user()->email)
             ->setInvoiceNumber(uniqid());
 // ### Payment
         // A Payment Resource; create one using
@@ -165,36 +186,80 @@ class PaymentController extends Controller
         // The return object contains the state.
         try {
             $payment->create($this->apiContext);
-        } catch (Exception $ex) {
+             //dd($payment);
+             if($payment->state == "approved"){
+                //if payment approved
+                $this->add_order();
+                return $this->completed();
+                exit;
+
+             }
+        }
+    catch (PayPalConnectionException $ex) {
+   // echo $ex->getCode(); // Prints the Error Code
+    //echo $ex->getData(); // Prints the detailed error message 
+      dd($request );
+    return redirect()->back()->with(['card_error'=>'invalid credit card information'. $ex->getData()]);
+    die($ex);
+} 
+ catch (Exception $ex) {
+            return redirect()->back()->with(['card_error'=>"We couldn't charge from your  card"]);
             // NOTE: PLEASE DO NOT USE RESULTPRINTER CLASS IN YOUR ORIGINAL CODE. FOR SAMPLE ONLY
             ResultPrinter::printError('Create Payment Using Credit Card. If 500 Exception, try creating a new Credit Card using <a href="https://www.paypal-knowledge.com/infocenter/index?page=content&widgetview=true&id=FAQ1413">Step 4, on this link</a>, and using it.', 'Payment', null, $request, $ex);
             exit(1);
         }
 		// NOTE: PLEASE DO NOT USE RESULTPRINTER CLASS IN YOUR ORIGINAL CODE. FOR SAMPLE ONLY
         print_r('Create Payment Using Credit Card'."<br>".'Payment'."<br>".$payment->getId()."<br>" );
-        dd($payment);
+       
 
 
     }
+
+    private function get_shiping_price($product_id=0){
+        $product = Product::find($product_id);
+        if($product==""){
+            return 0;
+        }
+        if($product->shop->country_id == Auth::user()->shipping->country_id){
+            //local shipping
+            return $product->shipping_local_price;
+        }
+
+       return $product->shipping_int_price; 
+        
+    }
+
     private function add_order(){
         $order = new Order;
         $order->customer_id = Auth::user()->id;
         $order->total = Cart::total();
+        $order->discount = 0;
+        $order->items_count =Cart::totalItems(true);
         $order->save();
         foreach (Cart::contents() as $row):
             $item = new OrderItem;
-            $item->qty =  $row->identifier;
-            $item->total =  $row->identifier;
-            $item->order_id =  $row->identifier;
-            $item->product_id =  $row->identifier;
-            $item->qty =  $row->identifier;
-           
+            $item->qty =  $row->quantity;
+            $item->total =  $row->price;
+            $item->amount =  $row->price;
+            $item->discount =  0;
+            $item->order_id =  $order->id;
+            $item->product_id =  $row->id;
+            $item->save();
         endforeach;
+        Cart::destroy();
     }
 
     public function index()
     {
-    	//$this->charge_from_card();
-        return view('payment');
+        
+    	if($this->is_cart_empty()){
+            return $this->is_cart_empty();
+        }
+        $card_error = $this->request->session()->get('card_error', '');
+        return view('payment',compact('card_error'));
+    }
+
+    public function completed(){
+         return view('payment_completed');
     }
 }

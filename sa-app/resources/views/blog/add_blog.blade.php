@@ -12,7 +12,7 @@
                             @include('shared.errors')
                                 <form action="" method="post" enctype="multipart/form-data">
                                 {{ csrf_field() }}
-                                    <a href="owner_boutique_page_empty.html" class="back">
+                                    <a href="{{url('seller')}}" class="back">
                                         <i class="fa fa-angle-left"></i>
                                         <span>Back to my account</span>
                                     </a>

@@ -147,4 +147,11 @@ Route::group(['middleware' => ['web','auth']], function () {
 });
 
 
+//my order
+Route::get('my-order','MyOrderController@index');
+//my messages
+Route::get('my-messages','MyMessagesController@index');
+//my accoutn 
+Route::get('my-account','MyAccountController@index');
+
 Route::post('favorites/{product}','FavoriteController@toggle');

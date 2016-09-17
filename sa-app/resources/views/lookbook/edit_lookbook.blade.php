@@ -9,7 +9,7 @@
                         <li>
                             <div class="icon"></div>
                         </li>
-                        <li class="active"><a href="owner_boutique_page_empty.html"><i class="boutique"></i><span>Boutique</span></a></li>
+                        <li class="active"><a href="{{url('seller')}}"><i class="boutique"></i><span>Boutique</span></a></li>
                         <li><a href="owner_boutique_page_orders.html"><i class="orders"></i><span>Orders</span></a></li>
                         <li><a href="owner_boutique_page_messages.html"><i class="messages"></i><span>Messages</span></a></li>
                         <li><a href="owner_boutique_page_settings.html"><i class="settings"></i><span>Settings</span></a></li>
