@@ -22,7 +22,7 @@ $product_image = (isset($row->product->images->first()->name)? url($row->product
                                         <tr>
                                             <td class="product_block">
                                                 <div class="product_item">
-                                                    <div class="photo" style="background-image:url({{$product_image }})"></div>
+                                        <div class="photo" style="background-image:url({{$product_image }})"></div>
                                                     <div class="details">
                                                         <div class="name">{{$row->product->title}}</div>
                                                         <div class="type">Reverse Denim + Brown Leather</div>

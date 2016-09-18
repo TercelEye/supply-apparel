@@ -31,7 +31,7 @@ use \App\Order;
 use \App\OrderItem;
 use Auth;
 use \App\Product;
-
+use \Webpatser\Countries\Countries;
 class PaymentController extends Controller
 {
 	private $request;
@@ -189,7 +189,7 @@ class PaymentController extends Controller
              //dd($payment);
              if($payment->state == "approved"){
                 //if payment approved
-                $this->add_order();
+                $this->add_order($payment->id);
                 return $this->completed();
                 exit;
 
@@ -228,20 +228,60 @@ class PaymentController extends Controller
        return $product->shipping_int_price; 
         
     }
+    /**
+     * get commission from product id
+     * @param int $product_id 
+     * @param int $price 
+     * @return int
+     */
+    
+    public function get_commission($product_id,$price){
+        $percentage = $this->get_commission_percentage($product_id);
+        if($percentage==0){
+            return 0;
+        }
+        return $price * ($percentage /100);
+    }
+     public function get_commission_percentage($product_id){
+        $product = Product::find($product_id);
+        return  $product->shop->plan->commission;
+    }
 
-    private function add_order(){
+/**
+ * create order 
+ * @param string $transaction_id 
+ * @return type
+ */
+    private function add_order($transaction_id=""){
+        $user  = Auth::user();
+        $shipping = $user->shipping;
+        $country = Countries::find($shipping->country_id)->name;
+        $shipping_address = $shipping->street.','.$shipping->city.','.$country;
+
         $order = new Order;
-        $order->customer_id = Auth::user()->id;
+        $order->customer_id = $user->id;
         $order->total = Cart::total();
         $order->discount = 0;
+        $order->shipping_address = $shipping_address;
+        $order->transaction_id = $transaction_id;
         $order->items_count =Cart::totalItems(true);
         $order->save();
         foreach (Cart::contents() as $row):
+            $total_price = $row->quantity * $row->price;
+            $commission =  $this->get_commission($row->id,$total_price);
+            $shipping_price = $this->get_shiping_price($row->id);
+            $commission_percentage = $this->get_commission_percentage($row->id);
+            
             $item = new OrderItem;
             $item->qty =  $row->quantity;
-            $item->total =  $row->price;
+            $item->total = $total_price +$shipping_price;
             $item->amount =  $row->price;
             $item->discount =  0;
+            $item->colour =  ($row->options['color']!=""?$row->options['color']:"");
+            $item->size =  ($row->options['size']!=""?$row->options['size']:"");
+            $item->commission =  $commission;
+            $item->commission_percentage =  $commission_percentage;
+            $item->shipping_price =  $shipping_price;
             $item->order_id =  $order->id;
             $item->product_id =  $row->id;
             $item->save();

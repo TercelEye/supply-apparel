@@ -8,7 +8,7 @@
                         <li class="{{ (Request::is('seller')?"active":"")}}"><a href="{{url('seller')}}"><i class="boutique"></i><span>Boutique</span></a></li>
                         <li class="{{ (Request::is('my-order')?"active":"")}}"><a href="{{url('my-order')}}"><i class="orders"></i><span>Orders</span></a></li>
                         <li class="{{ (Request::is('my-messages')?"active":"")}}"><a href="{{url('my-messages')}}"><i class="messages"></i><span>Messages</span></a></li>
-                        <li class="{{ (Request::is('my-account')?"active":"")}}"><a href="{{url('my-account')}}">><i class="settings"></i><span>Settings</span></a></li>
+                        <li class="{{ (Request::is('my-account')?"active":"")}}"><a href="{{url('my-account')}}"><i class="settings"></i><span>Settings</span></a></li>
                     </ul>
                 </div>
             </div>

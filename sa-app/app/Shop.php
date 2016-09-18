@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use \App\User;
 use \App\Product;
+use \App\Plan;
 use Cviebrock\EloquentSluggable\Sluggable;
 
 class Shop extends Model
@@ -52,4 +53,9 @@ public function getRouteKeyName()
     {
         return $query->where('boutique_type', $type_id);
     }
+
+   public function plan()
+   {
+    return $this->belongsTo(Plan::class,'plan_id','id');
+   }
 }
