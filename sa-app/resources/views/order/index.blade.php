@@ -1,27 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div id="shipped_modal" class="modal fade shipped_modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <form action="" method="post" enctype="multipart/form-data">
-            <div class="form-group title_block">
-                <span>View Details</span>
-            </div>
-            <div class="form-group first_block">
-                <h4>Shipping Date</h4>
-                <input type="text" name="shipping_date" value="04 - November - 2015">
-            </div>
-            <div class="form-group">
-                <h4>Tracking Number</h4>
-                <input type="text" name="tracking_number" value="0189902990384">
-            </div>
-            <div class="form-group">
-                <h4>Logistics Provider</h4>
-                <input type="text" name="logistics_provider" value="DedEX">
-            </div>
-        </form>
-    </div>
-</div>
+
 <div id="delivered_modal" class="modal fade delivered_modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <form action="" method="post" enctype="multipart/form-data">

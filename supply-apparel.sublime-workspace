@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"c",
+				"class	Attr"
+			],
+			[
+				"Sess",
+				"Session::get	Retrieve an Item from the Session or Default Value"
+			],
+			[
+				"pr",
+				"Product"
+			],
+			[
+				"ite",
+				"item"
+			],
+			[
+				"Or",
+				"OrderItem"
+			],
+			[
+				"A",
+				"Auth::user	Get the currently authenticated user."
+			],
+			[
 				"fade",
 				"fadeOut	.fadeOut()"
 			],
@@ -73,10 +97,6 @@
 			],
 			[
 				"co",
-				"colour"
-			],
-			[
-				"c",
 				"colour"
 			],
 			[
@@ -156,75 +176,115 @@
 	"buffers":
 	[
 		{
-			"file": "sa-app/app/Http/Controllers/PaymentController.php",
+			"file": "sa-app/resources/views/seller/landing_page.blade.php",
 			"settings":
 			{
-				"buffer_size": 6651,
+				"buffer_size": 5464,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "sa-app/resources/views/payment.blade.php",
+			"file": "public_html/assets/owner_page_index_no_created_boutique.html",
 			"settings":
 			{
-				"buffer_size": 6484,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "sa-app/resources/views/home.blade.php",
-			"settings":
-			{
-				"buffer_size": 22590,
-				"line_ending": "Windows"
+				"buffer_size": 33255,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "sa-app/routes/web.php",
 			"settings":
 			{
-				"buffer_size": 5699,
+				"buffer_size": 5899,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "sa-app/app/Http/Middleware/VerifyCsrfToken.php",
+			"file": "sa-app/app/Http/Controllers/MyAccountController.php",
 			"settings":
 			{
-				"buffer_size": 376,
+				"buffer_size": 213,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sa-app/resources/views/account/index.blade.php",
+			"settings":
+			{
+				"buffer_size": 19351,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "sa-app/app/Http/Controllers/HomeController.php",
+			"file": "sa-app/app/Http/Controllers/SellerController.php",
 			"settings":
 			{
-				"buffer_size": 4067,
+				"buffer_size": 895,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "sa-app/app/Shop.php",
+			"file": "sa-app/resources/views/messages/index.blade.php",
 			"settings":
 			{
-				"buffer_size": 1220,
+				"buffer_size": 13248,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "sa-app/resources/views/componets/shop_grid.blade.php",
+			"file": "sa-app/app/Http/Controllers/MyMessagesController.php",
 			"settings":
 			{
-				"buffer_size": 491,
+				"buffer_size": 215,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sa-app/resources/views/layouts/seller_navigation.blade.php",
+			"settings":
+			{
+				"buffer_size": 1056,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "sa-app/app/Product.php",
+			"file": "sa-app/app/Http/Controllers/PaymentController.php",
 			"settings":
 			{
-				"buffer_size": 1752,
+				"buffer_size": 9136,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "sa-app/resources/views/seller/dashboard.blade.php",
+			"settings":
+			{
+				"buffer_size": 21279,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "sa-app/resources/views/layouts/app.blade.php",
+			"settings":
+			{
+				"buffer_size": 7960,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "sa-app/database/migrations/2016_09_17_205103_create_order_details.php",
+			"settings":
+			{
+				"buffer_size": 751,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public_html/assets/owner_boutique_page_messages.html",
+			"settings":
+			{
+				"buffer_size": 33967,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -304,20 +364,48 @@
 		"/C/xampp/htdocs/projects/supply-apparel",
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app",
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app",
-		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app/Http",
-		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app/Http/Middleware",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/database",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/database/migrations",
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources",
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views",
-		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/componets"
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/componets/product",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/vendor/paypal",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/vendor/paypal/rest-api-sdk-php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/vendor/paypal/rest-api-sdk-php/sample"
 	],
 	"file_history":
 	[
-		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app/Shop.php",
-		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app/Product.php",
-		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app/Http/Controllers/MembershipPaymentController.php",
-		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/componets/shop_grid.blade.php",
-		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/home.blade.php",
+		"/C/xampp/htdocs/projects/supply-apparel/public_html/assets/owner_boutique_page_settings.html",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/order/products_bought.blade.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/seller/dashboard.blade.php",
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app/routes/web.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app/Http/Controllers/MyOrderController.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/layouts/seller_navigation.blade.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/order/index.blade.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/order/products_sold.blade.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/componets/product/gridview.blade.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app/OrderItem.php",
+		"/C/xampp/htdocs/projects/supply-apparel/public_html/assets/owner_boutique_page_orders.html",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app/Http/Controllers/PaymentController.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/payment_completed.blade.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/payment.blade.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/products/cart.blade.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app/Product.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/lookbook/add_lookbook.blade.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/lookbook/edit_lookbook.blade.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/blog/add_blog.blade.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app/Http/Controllers/CartController.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app/Http/Controllers/CheckoutController.php",
+		"/C/xampp/htdocs/projects/supply-apparel/public_html/assets/checkout_step_3.html",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/layouts/header.blade.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app/Order.php",
+		"/C/xampp/htdocs/projects/supply-apparel/PayPal.log",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/home.blade.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app/Http/Middleware/VerifyCsrfToken.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app/Http/Controllers/HomeController.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app/Shop.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/componets/shop_grid.blade.php",
+		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app/Http/Controllers/MembershipPaymentController.php",
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app/Http/Controllers/CreateProductController.php",
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/admin/category/form_fields.blade.php",
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/componets/filter/category.blade.php",
@@ -335,17 +423,14 @@
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app/Colour.php",
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/admin/colour/create.blade.php",
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/admin/colour/form_fields.blade.php",
-		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/componets/product/gridview.blade.php",
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/admin/sidebar.blade.php",
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/layouts/admin.blade.php",
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/products/men.blade.php",
-		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/layouts/header.blade.php",
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app/config/app.php",
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app/Http/Controllers/SellerController.php",
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/vendor/pagination/default.blade.php",
 		"/C/xampp/htdocs/projects/supply-apparel/public_html/assets/create_boutique_step_1.html",
 		"/C/xampp/htdocs/projects/supply-apparel/sa-app/resources/views/layouts/app.blade.php",
-		"/C/xampp/htdocs/projects/supply-apparel/sa-app/app/Http/Controllers/CartController.php",
 		"/C/Users/Tariq DMN/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/C/xampp/htdocs/projects/laravel53/public/css/app.css",
 		"/C/xampp/htdocs/projects/laravel53/public/js/app.js",
@@ -383,7 +468,7 @@
 	],
 	"find":
 	{
-		"height": 31.0
+		"height": 106.0
 	},
 	"find_in_files":
 	{
@@ -421,112 +506,84 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 9,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "sa-app/app/Http/Controllers/PaymentController.php",
+					"file": "sa-app/resources/views/seller/landing_page.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6651,
+						"buffer_size": 5464,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2303,
-								2303
+								181,
+								181
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 210.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "sa-app/resources/views/payment.blade.php",
+					"file": "public_html/assets/owner_page_index_no_created_boutique.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6484,
+						"buffer_size": 33255,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2551,
-								2551
+								25188,
+								25197
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 630.0,
+						"translation.y": 315.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "sa-app/resources/views/home.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 22590,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								20961,
-								20961
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 6263.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "sa-app/routes/web.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5699,
+						"buffer_size": 5899,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1735,
-								1744
+								5814,
+								5814
 							]
 						],
 						"settings":
@@ -536,27 +593,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 525.0,
+						"translation.y": 2835.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "sa-app/app/Http/Middleware/VerifyCsrfToken.php",
+					"buffer": 3,
+					"file": "sa-app/app/Http/Controllers/MyAccountController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 376,
+						"buffer_size": 213,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								363,
-								363
+								204,
+								204
 							]
 						],
 						"settings":
@@ -567,24 +624,52 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "sa-app/app/Http/Controllers/HomeController.php",
+					"buffer": 4,
+					"file": "sa-app/resources/views/account/index.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4067,
+						"buffer_size": 19351,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3836,
-								3836
+								45,
+								45
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "sa-app/app/Http/Controllers/SellerController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 895,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								383,
+								383
 							]
 						],
 						"settings":
@@ -594,62 +679,208 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1890.0,
+						"translation.y": 210.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "sa-app/resources/views/messages/index.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13248,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								181,
+								83
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 4289.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "sa-app/app/Http/Controllers/MyMessagesController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 215,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								206,
+								206
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "sa-app/resources/views/layouts/seller_navigation.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1056,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1056,
+								1056
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "sa-app/app/Http/Controllers/PaymentController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9136,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6956,
+								6956
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4095.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "sa-app/resources/views/seller/dashboard.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 21279,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								176,
+								176
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "sa-app/app/Shop.php",
+					"buffer": 11,
+					"file": "sa-app/resources/views/layouts/app.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1220,
+						"buffer_size": 7960,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1209,
-								1209
+								1741,
+								1741
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
+							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 840.0,
+						"translation.y": 609.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "sa-app/resources/views/componets/shop_grid.blade.php",
+					"buffer": 12,
+					"file": "sa-app/database/migrations/2016_09_17_205103_create_order_details.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 491,
+						"buffer_size": 751,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								16,
-								16
+								512,
+								512
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
@@ -661,33 +892,33 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "sa-app/app/Product.php",
+					"buffer": 13,
+					"file": "public_html/assets/owner_boutique_page_messages.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1752,
+						"buffer_size": 33967,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1361,
-								1457
+								31168,
+								16993
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1050.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 13,
 					"type": "text"
 				}
 			]
@@ -742,12 +973,68 @@
 		"selected_items":
 		[
 			[
-				"shop",
-				"sa-app\\app\\Shop.php"
+				"pay",
+				"sa-app\\app\\Http\\Controllers\\PaymentController.php"
+			],
+			[
+				"landig",
+				"sa-app\\resources\\views\\seller\\landing_page.blade.php"
+			],
+			[
+				"sellec",
+				"sa-app\\app\\Http\\Controllers\\SellerController.php"
+			],
+			[
+				"sell",
+				"sa-app\\resources\\views\\layouts\\seller_navigation.blade.php"
+			],
+			[
+				"myc",
+				"sa-app\\app\\Http\\Controllers\\MyAccountController.php"
+			],
+			[
+				"sellerna",
+				"sa-app\\resources\\views\\layouts\\seller_navigation.blade.php"
+			],
+			[
+				"mym",
+				"sa-app\\app\\Http\\Controllers\\MyMessagesController.php"
 			],
 			[
 				"we",
 				"sa-app\\routes\\web.php"
+			],
+			[
+				"sellernav",
+				"sa-app\\resources\\views\\layouts\\seller_navigation.blade.php"
+			],
+			[
+				"cart",
+				"sa-app\\resources\\views\\products\\cart.blade.php"
+			],
+			[
+				"produ",
+				"sa-app\\app\\Product.php"
+			],
+			[
+				"checkoutc",
+				"sa-app\\app\\Http\\Controllers\\CheckoutController.php"
+			],
+			[
+				"header",
+				"sa-app\\resources\\views\\layouts\\header.blade.php"
+			],
+			[
+				"paypal",
+				"PayPal.log"
+			],
+			[
+				"payme",
+				"sa-app\\app\\Http\\Controllers\\PaymentController.php"
+			],
+			[
+				"shop",
+				"sa-app\\app\\Shop.php"
 			],
 			[
 				"pr",
@@ -786,10 +1073,6 @@
 				"sa-app\\resources\\views\\payment.blade.php"
 			],
 			[
-				"payme",
-				"sa-app\\app\\Http\\Controllers\\PaymentController.php"
-			],
-			[
 				"composer",
 				"sa-app\\composer.json"
 			],
@@ -810,10 +1093,6 @@
 				"sa-app\\resources\\views\\componets\\product\\gridview.blade.php"
 			],
 			[
-				"cart",
-				"sa-app\\app\\Http\\Controllers\\CartController.php"
-			],
-			[
 				"",
 				"sa-app\\resources\\views\\layouts\\header.blade.php"
 			],
@@ -824,10 +1103,6 @@
 			[
 				"seller",
 				"sa-app\\app\\Http\\Controllers\\SellerController.php"
-			],
-			[
-				"header",
-				"sa-app\\resources\\views\\layouts\\header.blade.php"
 			],
 			[
 				"app.bla",
@@ -864,10 +1139,6 @@
 			[
 				"route",
 				"sa-app\\app\\Http\\routes.php"
-			],
-			[
-				"pay",
-				"ftw-app\\app\\Payment.php"
 			],
 			[
 				"invi",

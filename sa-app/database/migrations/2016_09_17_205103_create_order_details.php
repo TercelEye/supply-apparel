@@ -19,8 +19,8 @@ class CreateOrderDetails extends Migration
             $table->string('transaction_id')->nullable();
         });
         Schema::table('items_order', function (Blueprint $table) {
-            $table->integer('size')->nullable();
-            $table->integer('colour')->nullable();
+            $table->integer('size')->unsigned()->nullable();
+            $table->integer('colour')->unsigned()->nullable();
             $table->date('shipping_date')->nullable();
             $table->string('tracking_no')->nullable();
             $table->string('logistic_provider')->nullable();
@@ -29,6 +29,10 @@ class CreateOrderDetails extends Migration
             $table->decimal('commission', 16, 2)->nullable();
             $table->decimal('tax', 16, 2)->nullable();
             $table->boolean('refunded')->default(0);
+
+
+            $table->foreign('colour')->references('id')->on('colours');
+            $table->foreign('size')->references('id')->on('sizes');
         });
     }
 
@@ -50,7 +54,6 @@ class CreateOrderDetails extends Migration
                 'tracking_no',
                 'logistic_provider',
                 'shipping_price',
-                'commission_percentage',
                 'commission_percentage',
                 'commission',
                 'tax',

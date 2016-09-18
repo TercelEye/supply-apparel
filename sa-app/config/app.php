@@ -171,7 +171,7 @@ return [
         'Webpatser\Countries\CountriesServiceProvider',
         Cviebrock\EloquentSluggable\ServiceProvider::class,
         'Moltin\Cart\CartServiceProvider',
-
+         Cmgmyr\Messenger\MessengerServiceProvider::class,
         /*
          * Application Service Providers...
          */

@@ -15,6 +15,6 @@ class MyOrderController extends Controller
     }
 
     private function products_bought(){
-    	return Order::where('customer_id',Auth::user()->id)->get();
+    	return Order::where('customer_id',Auth::user()->id)->with('items')->get();
     }
 }
