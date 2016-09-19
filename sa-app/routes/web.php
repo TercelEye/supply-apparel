@@ -166,3 +166,4 @@ Route::group(['prefix' => 'messages','middleware' => ['web','auth']], function (
 });
 
 Route::post('product/{product}/contact-seller','MessagesController@store');
+Route::post('withdrawal/request','WithdrawalController@store');

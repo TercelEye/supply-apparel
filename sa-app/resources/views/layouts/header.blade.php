@@ -142,7 +142,9 @@
             <div class="container">
                 <a href="{{ url('')}}"><div class="logo"></div></a>
                 <div class="auth_section">
-                <a href="{{ url('create-boutique')}}" class="btn_create_boutique">Create a boutique</a>
+
+    <a href="{{ url('create-boutique')}}" class="btn_create_boutique" 
+    style="{{ (!Auth::guest() && Auth::user()->shop!=""?"visibility: hidden;":"") }}">Create a boutique</a>
 
                   @if (!Auth::guest())
 
@@ -153,13 +155,15 @@
    
     padding: 15px 19px 13px 10px;
     }
-   
+   .top_notification:hover {
+     color: #b0a379;
+   }
 
 </style>
                  
 
                 <a href="{{URL::to('messages')}}" class="top_notification">Messages @include('messenger.unread-count')</a>
-                    <a href="{{ url('seller') }}" class="btn_auth">{{ Auth::user()->name }}</a>
+                    <a href="{{ url('seller') }}" class="btn_auth">Hi, {{ Auth::user()->name }}</a>
                     <a href="{{ url('logout') }}"  onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();" class="btn_auth btn_logout">Logout</a>
 

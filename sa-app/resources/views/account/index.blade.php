@@ -26,6 +26,11 @@
                                     <a href="#membership" aria-controls="membership" role="tab"
                                        data-toggle="tab"><span>Membership Plan</span><i class="icon"></i></a>
                                 </li>
+
+                                 <li role="presentation">
+                                    <a href="#withdrawal" aria-controls="withdrawal" role="tab"
+                                       data-toggle="tab"><span>Withdrawal</span><i class="icon"></i></a>
+                                </li>
                                 <li role="presentation">
                                     <a href="#delete" aria-controls="delete" role="tab"
                                        data-toggle="tab"><span>Delete Account</span><i class="icon"></i></a>
@@ -248,6 +253,9 @@
                                         </div>
                                     </div>
                                 </div>
+                                 <div role="tabpanel" class="tab-pane" id="withdrawal">
+                                    @include('withdrawal.index')
+                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="delete">
                                     <h4>
                                         Deleting your account will result in the loss of your transaction history,
