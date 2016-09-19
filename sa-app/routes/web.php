@@ -157,10 +157,12 @@ Route::get('my-account','MyAccountController@index');
 Route::post('favorites/{product}','FavoriteController@toggle');
 
 //messages
-Route::group(['prefix' => 'messages'], function () {
+Route::group(['prefix' => 'messages','middleware' => ['web','auth']], function () {
     Route::get('/', ['as' => 'messages', 'uses' => 'MessagesController@index']);
-    Route::get('create', ['as' => 'messages.create', 'uses' => 'MessagesController@create']);
+    //Route::get('create', ['as' => 'messages.create', 'uses' => 'MessagesController@create']);
     Route::post('/', ['as' => 'messages.store', 'uses' => 'MessagesController@store']);
     Route::get('{id}', ['as' => 'messages.show', 'uses' => 'MessagesController@show']);
     Route::put('{id}', ['as' => 'messages.update', 'uses' => 'MessagesController@update']);
 });
+
+Route::post('product/{product}/contact-seller','MessagesController@store');

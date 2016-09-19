@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('content')
+
+@include('messages.create_message_modal',compact('product'))
+
 <main class="product_page">
     <section class="section_1">
         <div class="container">
@@ -119,13 +122,16 @@
                                             @endif
                                         </div>
                                         <div class="question_block">
-                                            <a href="#">
-                                                <i>
-                                                </i>
-                                                <span>
-                                                    Ask the seller a question
-                                                </span>
+                                            
+                                            
+                                        @if(Auth::guest())
+                                        
+ <a href="#" data-toggle="modal" data-target="#loginModal"><i></i><span> Ask  seller a question</span>
                                             </a>
+                                        @else     
+                                <a href="#" data-toggle="modal" data-target="#contact_seller"><i></i><span>Ask  seller a question</span></a>
+
+                                          @endif  
                                         </div>
                                         <div class="quantity_block">
                                             <input class="quantity_input_val" name="quantity" type="hidden" value="1"/>

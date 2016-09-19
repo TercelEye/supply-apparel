@@ -16,6 +16,13 @@ class Product extends Model
 {
     use Sluggable;
 
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+    
+
     /**
      * Return the sluggable configuration array for this model.
      *

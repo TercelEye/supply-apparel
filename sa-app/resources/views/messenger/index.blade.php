@@ -13,7 +13,7 @@
             <h4 class="media-heading">{!! link_to('messages/' . $thread->id, $thread->subject) !!}</h4>
             <p>{{ $thread->latestMessage->body }}</p>
             <p><small><strong>Creator:</strong> {{ $thread->creator()->name }}</small></p>
-            <p><small><strong>Participants:</strong> {{ $thread->participantsString(Auth::id()) }}</small></p>
+            <p><small><strong>Participants:</strong> {{ $thread->participantsString(Auth::id()) }} {{ Auth::id()}}</small></p>
         </div>
         @endforeach
     @else

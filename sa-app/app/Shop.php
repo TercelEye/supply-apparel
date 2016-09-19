@@ -58,4 +58,8 @@ public function getRouteKeyName()
    {
     return $this->belongsTo(Plan::class,'plan_id','id');
    }
+
+   public function owner(){
+    return $this->belongsTo(User::class,'owner_id','id');
+   }
 }

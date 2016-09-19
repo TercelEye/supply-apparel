@@ -1,16 +1,24 @@
 <?php
 namespace App\Http\Controllers;
+use Illuminate\Http\Request;
+use App\Http\Requests;
 use App\User;
+use Auth;
+use App\Product;
 use Carbon\Carbon;
 use Cmgmyr\Messenger\Models\Message;
 use Cmgmyr\Messenger\Models\Participant;
 use Cmgmyr\Messenger\Models\Thread;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
+use Validator;
 class MessagesController extends Controller
 {
+
+    private function get_threads($currentUserId){
+        return Thread::forUser($currentUserId)->latest('updated_at')->get();
+    }
     /**
      * Show all of the message threads to the user.
      *
@@ -22,10 +30,11 @@ class MessagesController extends Controller
         // All threads, ignore deleted/archived participants
         //$threads = Thread::getAllLatest()->get();
         // All threads that user is participating in
-        $threads = Thread::forUser($currentUserId)->latest('updated_at')->get();
+        $threads = $this->get_threads($currentUserId);
         // All threads that user is participating in, with new messages
         // $threads = Thread::forUserWithNewMessages($currentUserId)->latest('updated_at')->get();
-        return view('messenger.index', compact('threads', 'currentUserId'));
+         $thread_id = 0;
+        return view('messages.index', compact('threads', 'thread_id'));
     }
     /**
      * Shows a message thread.
@@ -45,9 +54,19 @@ class MessagesController extends Controller
         // $users = User::whereNotIn('id', $thread->participantsUserIds())->get();
         // don't show the current user in list
         $userId = Auth::user()->id;
+        //validate user 
+        try {
+            $thread->getParticipantFromUser($userId);
+        } catch (ModelNotFoundException $e) {
+              return redirect('messages');
+        }
+       //$users = User::whereNotIn('id', $thread->participantsUserIds($userId))->get();
         $users = User::whereNotIn('id', $thread->participantsUserIds($userId))->get();
+       // dd($users);
         $thread->markAsRead($userId);
-        return view('messenger.show', compact('thread', 'users'));
+        $threads = $this->get_threads($userId);
+        $thread_id = $id;
+        return view('messages.chat', compact('threads','thread','thread_id', 'users'));
     }
     /**
      * Creates a new message thread.
@@ -64,12 +83,35 @@ class MessagesController extends Controller
      *
      * @return mixed
      */
-    public function store()
+    public function store(Request $request,\App\Product $product)
     {
-        $input = Input::all();
+        $data['status']  = false;
+        $seller_id=$product->shop->owner->id;
+
+        if(Auth::guest()){
+            $data['error'][] = "You must login to contact seller";
+            return \Response::json($data, 422); // Status code here
+        }
+        if($seller_id == Auth::user()->id){
+            $data['error'][] = "You can't send messages to your self ";
+            return \Response::json($data, 422); // Status code here
+        }
+      
+         $validator = Validator::make($request->all(), [
+            'subject'   => 'required:min:4',
+            'message' => 'required|min:10',
+        ]);
+        if ($validator->fails()) {
+            //validation error
+            $data['error'] = $validator->errors()->all();
+            return \Response::json($data, 422); // Status code here
+        }
+      
+
+       // $input = Input::all();
         $thread = Thread::create(
             [
-                'subject' => $input['subject'],
+                'subject' => $request->subject,
             ]
         );
         // Message
@@ -77,7 +119,7 @@ class MessagesController extends Controller
             [
                 'thread_id' => $thread->id,
                 'user_id'   => Auth::user()->id,
-                'body'      => $input['message'],
+                'body'      => $request->message,
             ]
         );
         // Sender
@@ -89,10 +131,13 @@ class MessagesController extends Controller
             ]
         );
         // Recipients
-        if (Input::has('recipients')) {
-            $thread->addParticipant($input['recipients']);
-        }
-        return redirect('messages');
+        $thread->addParticipant([$seller_id]);
+
+        $data['message'] = "Your message send successfully";
+        $data['status']  = true;
+        return \Response::json($data, 200); // Status code here
+
+        // return redirect('messages');
     }
     /**
      * Adds a new message to a current thread.
