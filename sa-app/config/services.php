@@ -12,15 +12,15 @@ return [
     | default location for this type of information, allowing packages
     | to have a conventional place to find your various credentials.
     |
-    */
+     */
 
-    'mailgun' => [
+    'mailgun'   => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),
     ],
 
-    'ses' => [
-        'key' => env('SES_KEY'),
+    'ses'       => [
+        'key'    => env('SES_KEY'),
         'secret' => env('SES_SECRET'),
         'region' => 'us-east-1',
     ],
@@ -29,10 +29,20 @@ return [
         'secret' => env('SPARKPOST_SECRET'),
     ],
 
-    'stripe' => [
-        'model' => App\User::class,
-        'key' => env('STRIPE_KEY'),
+    'stripe'    => [
+        'model'  => App\User::class,
+        'key'    => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
+    ],
+    'facebook'    => [
+        'client_id'     => '1103481236394749',
+        'client_secret' => '208703b4a74afebf1be42f236a5769f6',
+        'redirect'      => 'http://supplyapparel.com/auth/facebook/callback',
+    ],
+    'twitter'    => [
+        'client_id'     => 'your-github-app-id',
+        'client_secret' => 'your-github-app-secret',
+        'redirect'      => 'http://your-callback-url',
     ],
 
 ];

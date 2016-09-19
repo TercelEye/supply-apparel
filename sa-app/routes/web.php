@@ -21,8 +21,9 @@ Route::get('/', function () {
 Route::auth();
 //Route::get('logout', 'Auth\AuthController@getLogout');
 Route::post('user/login','UserController@login');
-//Route::get('auth/facebook', 'Auth\AuthController@redirectToFacebook');
-//Route::get('auth/facebook/callback', 'Auth\AuthController@handleFacebookCallback');
+
+Route::get('auth/facebook', 'FacebookController@redirectToProvider');
+Route::get('auth/facebook/callback', 'FacebookController@handleProviderCallback');
 
 Route::get('/home', 'HomeController@index');
 

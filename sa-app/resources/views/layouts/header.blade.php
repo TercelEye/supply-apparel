@@ -83,7 +83,7 @@
 </div>
 <div id="register_mail_Modal" class="modal fade register_mail_modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="{{url('register')}}" method="post" enctype="multipart/form-data">
             <div class="form-group first_block">
                 <p>
                     Sign up with
@@ -112,12 +112,18 @@
                     <div class="input-group-addon"><i class="password_icon"></i></div>
                 </div>
             </div>
-            <div class="form-group date_block">
+              <div class="form-group password_block">
+                <div class="input-group">
+                    <input type="password" class="form-control" placeholder="Confirm Password" name="password_confirmation">
+                    <div class="input-group-addon"><i class="password_icon"></i></div>
+                </div>
+            </div>
+          {{--   <div class="form-group date_block">
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Data of Birth" name="birthdate">
                     <div class="input-group-addon"><i class="date_icon"></i></div>
                 </div>
-            </div>
+            </div> --}}
             <div class="form-group agrement_block">
                 <p>
                     By signing up, I agree to Supply Apparel’s
@@ -126,7 +132,7 @@
                 </p>
             </div>
             <div class="form-group submit_block">
-                <button type="submit" class="btn_login">Sign up with email</button>
+                <button type="submit" id="email_register_submit" class="btn_login">Sign up with email</button>
             </div>
 
             <div class="form-group sign_up_block">
@@ -184,3 +190,48 @@
     </div>
    @include("layouts.navbar")
 </header>
+
+
+@push('scripts')
+<!-- gallery hear End -->
+<script>
+    $("#email_register_submit").click(function(e) {
+        e.preventDefault();
+        var form = $(this).closest('form');
+         var $btn = $(this).button('loading')
+
+      
+    $.ajax({
+        url     : form.attr("action"),
+        type    : form.attr("method"),
+        data    : form.serialize(),
+        dataType: "json",
+        success : function ( json ) {
+            $btn.button('reset')
+           location.reload();
+        },
+        error   : function ( jqXhr, json, errorThrown ) 
+        {
+            $btn.button('reset')
+             if(jqXhr.status  ==0) {
+                  toastr.error( 'could not connect to server' , "Connection Error " );
+             }
+            var errors = $.parseJSON(jqXhr.responseText);
+            var errorsHtml= '';
+            $.each( errors, function( key, value ) {
+                errorsHtml += ''+ value + '<br>'; 
+            });
+ 
+          
+
+            toastr.error( errorsHtml , "Validation Error " );
+        }
+    })
+    .done(function(response){})
+    .fail(function( jqXHR, json ) {});
+
+       
+      
+});
+</script>
+@endpush

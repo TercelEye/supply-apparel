@@ -13,7 +13,8 @@
         "moltin/laravel-cart": "^5.0",
          "paypal/adaptivepayments-sdk-php":"v3.6.106",
         "paypal/rest-api-sdk-php": "*",
-        "cmgmyr/messenger": "~2.0"
+        "cmgmyr/messenger": "~2.0",
+        "laravel/socialite": "^2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

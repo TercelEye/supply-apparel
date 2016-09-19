@@ -3,8 +3,75 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
+        <div class="col-md-6 col-md-offset-3">
+
+<style>
+
+
+</style>
+
+        <div id="login_form" class="login_form">
+    <div class="modal-dialog" role="document">
+        <form action="{{ url('login') }}" method="post" id="losssgin-form" enctype="multipart/form-data">
+         {{ csrf_field() }}
+            <div class="form-group">
+                <a href="{{ url('auth/facebook') }}" class="btn_facebook">
+                    <i></i>
+                    <span>Log in with Facebook</span>
+                </a>
+            </div>
+            <div class="form-group">
+                <a href="#" class="btn_google">
+                    <i></i>
+                    <span>Log in with Google</span>
+                </a>
+            </div>
+            <div class="form-group">
+                <div class="divider_line">or</div>
+            </div>
+            <div class="form-group email_block {{ $errors->has('email') ? ' has-error' : '' }}">
+                <div class="input-group">
+                    <input type="text" class="form-control" value="{{ old('email') }}" placeholder="Email Address" name="email">
+                    <div class="input-group-addon"><i class="email_icon"></i></div>
+
+                </div>
+                  @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                
+            </div>
+            <div class="form-group password_block">
+                <div class="input-group">
+                    <input type="password" class="form-control" placeholder="Password" name="password">
+                    <div class="input-group-addon"><i class="password_icon"></i></div>
+                     
+                </div>
+                 @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+            </div>
+            <div class="form-group forgot_pass_block">
+                <div class="checkbox">
+                    <input name="remember" id="check_item" type="checkbox">
+                    <label for="check_item">Remember me</label>
+                </div>
+                <a href="{{ url('/password/reset') }}" class="btn_forgot_pass">Forgot password?</a>
+            </div>
+            <div class="form-group submit_block">
+                <button type="submit" class="btn_login">Log In</button>
+            </div>
+            <div class="form-group sign_up_block">
+                <p>Don't have an account?</p>
+                <a href="#" class="btn_signup seconds_modal open_modal" data-modal="loginModal">Sign Up</a>
+            </div>
+        </form>
+    </div>
+</div>
+{{--             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
                 
@@ -70,7 +137,10 @@
                         </div>
                     </form>
                 </div>
-            </div>
+            </div> --}}
+
+<br>
+<br><br>
         </div>
     </div>
 </div>

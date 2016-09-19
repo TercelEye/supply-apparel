@@ -172,6 +172,7 @@ return [
         Cviebrock\EloquentSluggable\ServiceProvider::class,
         'Moltin\Cart\CartServiceProvider',
          Cmgmyr\Messenger\MessengerServiceProvider::class,
+          Laravel\Socialite\SocialiteServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -231,6 +232,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Countries' => 'Webpatser\Countries\CountriesFacade',
         'Cart' => 'Moltin\Cart\Facade',
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ],
 
 ];
