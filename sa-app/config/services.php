@@ -40,9 +40,14 @@ return [
         'redirect'      => 'http://supplyapparel.com/auth/facebook/callback',
     ],
     'twitter'    => [
-        'client_id'     => 'your-github-app-id',
-        'client_secret' => 'your-github-app-secret',
-        'redirect'      => 'http://your-callback-url',
+        'client_id'     => 'T0dygFmg5KiqXl8GOYa5XKwBO',
+        'client_secret' => 'AdmrLOF3BqpUghBSsSHUdCYfqKN6uExvuYoG135kztltFrJZGC',
+        'redirect'      => 'http://supplyapparel.com/auth/twitter/callback',
+    ],
+    'google'    => [
+        'client_id'     => '597595601992-g1iqqihgacb5dirte7tur5etg1483cpp.apps.googleusercontent.com',
+        'client_secret' => 'QdYXjT3oSMZsBD-uqpDrbrYj',
+        'redirect'      => 'http://supplyapparel.com/auth/google/callback',
     ],
 
 ];

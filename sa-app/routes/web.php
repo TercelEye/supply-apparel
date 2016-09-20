@@ -25,6 +25,13 @@ Route::post('user/login','UserController@login');
 Route::get('auth/facebook', 'FacebookController@redirectToProvider');
 Route::get('auth/facebook/callback', 'FacebookController@handleProviderCallback');
 
+Route::get('auth/twitter', 'TwitterController@redirectToProvider');
+Route::get('auth/twitter/callback', 'TwitterController@handleProviderCallback');
+
+Route::get('auth/google', 'GoogleController@redirectToProvider');
+Route::get('auth/google/callback', 'GoogleController@handleProviderCallback');
+
+
 Route::get('/home', 'HomeController@index');
 
 

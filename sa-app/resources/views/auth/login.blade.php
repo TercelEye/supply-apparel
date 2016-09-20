@@ -21,7 +21,7 @@
                 </a>
             </div>
             <div class="form-group">
-                <a href="#" class="btn_google">
+                <a href="{{ url('auth/google') }}" class="btn_google">
                     <i></i>
                     <span>Log in with Google</span>
                 </a>

@@ -9,7 +9,7 @@
                 </a>
             </div>
             <div class="form-group">
-                <a href="#" class="btn_google">
+                <a href="{{ url('auth/google') }}" class="btn_google">
                     <i></i>
                     <span>Log in with Google</span>
                 </a>
@@ -50,13 +50,13 @@
     <div class="modal-dialog" role="document">
         <form action="" method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <a href="#" class="btn_facebook">
+                <a href="{{ url('auth/facebook') }}" class="btn_facebook">
                     <i></i>
                     <span>Log in with Facebook</span>
                 </a>
             </div>
             <div class="form-group">
-                <a href="#" class="btn_google">
+                <a href="{{ url('auth/google') }}" class="btn_google">
                     <i></i>
                     <span>Log in with Google</span>
                 </a>
@@ -87,8 +87,8 @@
             <div class="form-group first_block">
                 <p>
                     Sign up with
-                    <a href="#">Facebook</a> or
-                    <a href="#">Google</a>
+                    <a href="{{ url('auth/facebook') }}">Facebook</a> or
+                    <a href="{{ url('auth/google') }}">Google</a>
                 </p>
             </div>
             <div class="form-group">
