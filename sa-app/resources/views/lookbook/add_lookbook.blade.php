@@ -17,6 +17,14 @@
                                         <span>Back to my account</span>
                                     </a>
                                     <div class="form-group name_block">
+                                        <h3>LOOKBOOK GENDER</h3>
+                                        <select name="product_type_id" class="form-control" style="max-width:380px;">
+                                            @foreach($product_type as $row )
+                                                <option {{($row->id == $lookbook->product_type_id?"selected":"")}} value="{{$row->id}}">{{$row->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group name_block">
                                         <h3>GIVE YOUR LOOK BOOK A NAME</h3>
                                         <input type="text" value="{{$lookbook->title or ''}}" name="title" id="name"/>
                                     </div>
@@ -34,10 +42,22 @@
                                             <input type="file" name="pdf" value="ss"  id="photo">
                                         </div>
                                     </div>
+                                    <div class="form-group file_block">
+                                        <h3>Upload Look Thumbnail</h3>
+                                        <div class="file_input">
+                                            <label title="Upload photo" for="image"><i></i></label>
+                                            <input type="file" name="image" value="ss"  id="image">
+                                        </div>
+
+                                        @if($lookbook->image!="")
+                                            <img src="{{url($lookbook->image)}}" style="max-height:150px;">
+                                        @endif
+                                    </div>
 
                                     <div class="buttons_block">
-                                        <button type="submit" class="btn_pusblish" value="Publish">Publish</button>
-                                        <a href="add_blog_post.html" class="btn_add_publish">Publish & Add Another Blog Post</a>
+                                <button type="submit" class="btn_pusblish" name="publish" value="Publish">Publish</button>
+                                <button type="submit" class="btn_add_publish" name="publish_add" value="Publish">Publish & Add Another Blog Post</button>
+                                     
                                     </div>
                                 </form>
 

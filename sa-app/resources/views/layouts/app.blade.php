@@ -11,9 +11,13 @@
     <link href="{{ url('assets') }}/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ url('assets') }}/css/style.css" rel="stylesheet">
     <link href="{{ url('assets') }}/libs/toastr-master/build/toastr.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="{{ url('lib') }}/zoom/eagle.gallery/eagle.gallery.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url('lib') }}/zoom/eagle.gallery/eagle.gallery.min.css">
 
-    
+
+     @stack("head")
+   
+
+
 
     <style type="text/css">
         .wishlist_add.active {
@@ -88,7 +92,8 @@
 
 
 {{-- <script src="{{ url('assets') }}/libs/jquery/jquery.min.js"></script> --}}
-<script src="{{ url('lib') }}/jquery-1.10.2.js"></script>
+
+    <script src="{{ url('lib') }}/jquery-1.10.2.js"></script>
 <script src="{{ url('lib') }}/zoom/eagle.gallery/eagle.gallery.min.js"></script>
 
 <script src="{{ url('assets') }}/libs/jquery_ui/jquery-ui.min.js"></script>

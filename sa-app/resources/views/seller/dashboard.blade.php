@@ -72,9 +72,9 @@
 
                                 @foreach($lookbook as $row)
                                 <div class="item col-md-3 col-sm-4 col-xs-6">
-                                    <a href="look_book_page.html">
+                                    <a href="{{url('lookbook/'.$row->id)}}">
                                         <div class="look_item">
-                                            <div class="picture_block" style="background-image:url(http://4bdesign.co.uk/wp-content/uploads/2015/11/logo-adobe-pdf.jpg); border:1"></div>
+                                            <div class="picture_block" style="background-image:url({{$row->image}}); border:1"></div>
                                             <div class="name_block">
                                                 <div>
                                                     <i class="item_icon"></i>

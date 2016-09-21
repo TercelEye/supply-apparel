@@ -52,6 +52,9 @@ Route::group(['prefix' => 'kids','middleware' => 'web'], function () {
     Route::post('must-haves','HomeController@must_haves_kids');
 });
 Route::post('get-shops','HomeController@shop_home');
+Route::post('get-lookbooks','HomeController@lookbook_home');
+
+Route::get('lookbook/{lookbook}','LookbookController@show');
 
 
 Route::group(['prefix' => 'admin','middleware' => 'web'], function () {

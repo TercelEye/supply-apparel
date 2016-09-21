@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Shop;
-use App\user;
+use App\User;
+use App\Lookbook;
 use View;
 use Response;
 use App\Http\Requests;
@@ -108,6 +109,15 @@ class HomeController extends Controller
         $shop = Shop::active()->ofType($request->type)->latest()->paginate(4)->appends(['type'=>$request->type]);
         $html = View::make('componets.shop_grid',compact('shop'));
         $result = ['next_url'=>$shop->nextPageUrl(),'html'=>$html->render()];
+        return Response::json($result);
+    }
+
+     /** lookbok **/
+     public function lookbook_home(Request $request){
+        if($request->type=="")return false;
+        $lookbooks = Lookbook::where('product_type_id',$request->type)->latest()->paginate(4)->appends(['type'=>$request->type]);
+        $html = View::make('componets.lookbook_grid',compact('lookbooks'));
+        $result = ['next_url'=>$lookbooks->nextPageUrl(),'html'=>$html->render()];
         return Response::json($result);
     }
 }

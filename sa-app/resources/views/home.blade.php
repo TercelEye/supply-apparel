@@ -299,87 +299,43 @@
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="women_tab">
                                 <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-offset-0">
-                                    <div class="row">
-                                        <div class="col-md-4 col-sm-6">
-                                            <div class="look_item">
-                                                <div class="picture_block"></div>
-                                                <div class="name_block">
-                                                    <a href="#">
-                                                        <i class="item_icon"></i>
-                                                        <span>Bangkok Tshirts</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-sm-6">
-                                            <div class="look_item">
-                                                <div class="picture_block"></div>
-                                                <div class="name_block">
-                                                    <a href="#">
-                                                        <i class="item_icon"></i>
-                                                        <span>Bangkok Tshirts</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-sm-6">
-                                            <div class="look_item">
-                                                <div class="picture_block"></div>
-                                                <div class="name_block">
-                                                    <a href="#">
-                                                        <i class="item_icon"></i>
-                                                        <span>Bangkok Tshirts</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-sm-6">
-                                            <div class="look_item">
-                                                <div class="picture_block"></div>
-                                                <div class="name_block">
-                                                    <a href="#">
-                                                        <i class="item_icon"></i>
-                                                        <span>Bangkok Tshirts</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-sm-6">
-                                            <div class="look_item">
-                                                <div class="picture_block"></div>
-                                                <div class="name_block">
-                                                    <a href="#">
-                                                        <i class="item_icon"></i>
-                                                        <span>Bangkok Tshirts</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-sm-6">
-                                            <div class="look_item">
-                                                <div class="picture_block"></div>
-                                                <div class="name_block">
-                                                    <a href="#">
-                                                        <i class="item_icon"></i>
-                                                        <span>Bangkok Tshirts</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="row lookbooks_women">
+                                        
                                     </div>
+                                      <div class="row">
+                                        <a href="#" data-class-name=".lookbooks_women" data-url="" class="btn_show_more">Show More</a>
+                                    </div>
+</div>
                                 </div>
-                            </div>
+                         
                             <div role="tabpanel" class="tab-pane" id="men_tab">
+                             <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-offset-0">
+                                    <div class="row lookbooks_men">
+                                        
+                                    </div>
+                                      <div class="row">
+                                        <a href="#" data-class-name=".lookbooks_men" data-url="" class="btn_show_more">Show More</a>
+                                    </div>
+</div>
+
                             </div>
                             <div role="tabpanel" class="tab-pane" id="kids_tab">
+
+                             <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-offset-0">
+                                    <div class="row lookbooks_kids">
+                                        
+                                    </div>
+                                      <div class="row">
+                                        <a href="#" data-class-name=".lookbooks_kids" data-url="" class="btn_show_more">Show More</a>
+                                    </div>
+</div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <a href="#" class="btn_show_more">Show More</a>
-            </div>
+           
         </div>
     </section>
 </main>
@@ -437,6 +393,10 @@
         load_products("{{ url('get-shops?type=1') }} ",".Own-label-shops");
         load_products("{{ url('get-shops?type=2') }} ",".Pre-owned-shops");
         load_products("{{ url('get-shops?type=3') }} ",".Multi-brand-shops");
+
+        load_products("{{ url('get-lookbooks?type=2') }} ",".lookbooks_women");
+        load_products("{{ url('get-lookbooks?type=1') }} ",".lookbooks_men");
+        load_products("{{ url('get-lookbooks?type=3') }} ",".lookbooks_kids");
 
     });
 </script>
