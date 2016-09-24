@@ -84,18 +84,28 @@ Route::post('membership/plans/{plan}','MembershipPlansController@store');
 
 
 
-// add product
-Route::resource('seller/product','CreateProductController');
-Route::get('seller/product/images/{product}','ProductImageController@index');
-Route::get('seller/product/image-list/{product}','ProductImageController@image_list');
-Route::post('seller/product/imageupload/{product}','ProductImageController@imageupload');
-Route::post('seller/product/delete-image/{image}','ProductImageController@delete_image');
-Route::post('seller/store-product-color/{image}','ProductImageController@store_product_color');
-Route::post('seller/product/publish/{product}','ProductImageController@publish_product');
-
 
 Route::group(['middleware' => ['web','auth']], function () {
 	Route::get('seller','SellerController@index'); //dashboard
+
+    // add product
+    Route::resource('seller/product','CreateProductController');
+    Route::get('seller/product/images/{product}','ProductImageController@index');
+    Route::get('seller/product/image-list/{product}','ProductImageController@image_list');
+    Route::post('seller/product/imageupload/{product}','ProductImageController@imageupload');
+    Route::post('seller/product/delete-image/{image}','ProductImageController@delete_image');
+    Route::post('seller/store-product-color/{image}','ProductImageController@store_product_color');
+    Route::post('seller/product/publish/{product}','ProductImageController@publish_product');
+
+    //my order
+    Route::get('my-order','MyOrderController@index');
+    Route::post('order/accept/{item}','MyOrderController@update_order');
+    //my messages
+    Route::get('my-messages','MyMessagesController@index');
+    //my accoutn 
+    Route::get('my-account','MyAccountController@index');
+
+
 });
 
 // Blog functions
@@ -158,12 +168,7 @@ Route::group(['middleware' => ['web','auth']], function () {
 });
 
 
-//my order
-Route::get('my-order','MyOrderController@index');
-//my messages
-Route::get('my-messages','MyMessagesController@index');
-//my accoutn 
-Route::get('my-account','MyAccountController@index');
+
 
 Route::post('favorites/{product}','FavoriteController@toggle');
 
