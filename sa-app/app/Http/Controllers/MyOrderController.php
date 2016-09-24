@@ -14,7 +14,9 @@ class MyOrderController extends Controller
     	return view('order.index',compact('products_bought'));
     }
 
+    //get buy products
     private function products_bought(){
     	return Order::where('customer_id',Auth::user()->id)->with('items')->get();
     }
+
 }

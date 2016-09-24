@@ -53,7 +53,7 @@ class CreateLookbookController extends Controller
 public function edit(Request $request)
 	{
 		$shopid = Auth::user()->shop->id;
-		$lookbook  = \App\Lookbook::where('id',$request->id)
+		$lookbook  = Lookbook::where('id',$request->id)
 						  ->where('shop_id',$shopid)
 						  ->first();
 		$product_type = ProductType::all()->where('name','!=','All');
