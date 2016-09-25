@@ -8,11 +8,24 @@ use \App\ProductImage;
 
 class ProductsController extends Controller
 {
+    /**
+     * same seller products 
+     * @return type
+     */
+    private function take_same_seller_products($slug,$shop_id){
+        return Product::where('slug','!=', $slug)
+                        ->where('shop_id',$shop_id)
+                        ->inRandomOrder()
+                        ->active()
+                        ->take(8)
+                        ->get();
+    }
     public function single_product($slug)
     {
         $product           = Product::where('slug', $slug)->active()->first();
         $available_colours = $this->get_product_colours($product->id);
-        return view('products.single_view', compact('product', 'available_colours'));
+        $seller_products = $this->take_same_seller_products($slug,$product->shop_id);
+        return view('products.single_view', compact('product', 'available_colours','seller_products'));
     }
     public function index()
     {
