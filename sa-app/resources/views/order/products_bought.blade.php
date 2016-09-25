@@ -38,36 +38,43 @@ $product_image = (isset($row->product->images->first()->name)? url($row->product
                                             </td>
                                             <td>{{$row->product->shop->shop_name}}</td>
                                             <td>{{$order->shipping_address}}</td>
-                                            <td class="status"><!--  shipped |  decision    -->
-                                                Purchased
+                                            <td class="status {{ ($row->order_status == "Shipped"?"shipped":"decision" )}}"><!--   |      -->
 
-<span>Shipped</span>
+                                            
+                                           
+                                                
+        @if($row->order_status == "Shipped")
+        <span>Shipped</span>
+        <a data-toggle="modal" data-id="3" data-target="#shipped_modal_{{$row->id}}" class="btn_view">View Details</a>
+
+        <div id="shipped_modal_{{$row->id}}" class="modal fade shipped_modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <form action="" method="post" enctype="multipart/form-data">
+                    <div class="form-group title_block">
+                        <span>View Details</span>
+                    </div>
+                    <div class="form-group first_block">
+                        <h4>Shipping Date</h4>
+                        <input type="text" name="shipping_date" value="04 - November - 2015">
+                    </div>
+                    <div class="form-group">
+                        <h4>Tracking Number</h4>
+                        <input type="text" name="tracking_number" value="0189902990384">
+                    </div>
+                    <div class="form-group">
+                        <h4>Logistics Provider</h4>
+                        <input type="text" name="logistics_provider" value="DedEX">
+                    </div>
+                </form>
+            </div>
+        </div><!-- end modal -->
+
+        @else 
+         {{$row->order_status}}
+        @endif
 
 
-                                                 <a data-toggle="modal" data-id="3" data-target="#shipped_modal_{{$row->id}}"
-                                                   class="btn_view">View Details</a>
 
-<div id="shipped_modal_{{$row->id}}" class="modal fade shipped_modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <form action="" method="post" enctype="multipart/form-data">
-            <div class="form-group title_block">
-                <span>View Details</span>
-            </div>
-            <div class="form-group first_block">
-                <h4>Shipping Date</h4>
-                <input type="text" name="shipping_date" value="04 - November - 2015">
-            </div>
-            <div class="form-group">
-                <h4>Tracking Number</h4>
-                <input type="text" name="tracking_number" value="0189902990384">
-            </div>
-            <div class="form-group">
-                <h4>Logistics Provider</h4>
-                <input type="text" name="logistics_provider" value="DedEX">
-            </div>
-        </form>
-    </div>
-</div>
                                             </td>
                                         </tr>
                                           @endforeach 

@@ -1,7 +1,7 @@
 @foreach($lookbooks as $row)
 <div class="col-md-4 col-sm-6">
     <div class="look_item">
-      <a href="{{url('lookbook/'.$row->id)}}">
+      <a href="{{url('book/'.$row->id)}}">
         <div class="picture_block" style="background-image:url('{{url($row->image)}}');">
         </div>
       
