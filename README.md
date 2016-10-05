@@ -154,68 +154,68 @@ Metatags: lookbook, fashion lookbook, clothing lookbook, brand lookbook
 
 -----------------------------------------------------------------------------------
 
-Product upload image guidline 
-create seller missing images
-size guid : values 
-loobook remove bg nav bottom
+-Product upload image guidline 
+-create seller missing images
+-size guid : values 
+-loobook remove bg nav bottom
 
-seller remove : 6 hour 
-product remove : 6 hour 
-lookbook featured : 3 hours
-Boutiques featured : 3 hours 
-Refund return : 1 day
-Emails templates : 2 days
+-seller remove : 6 hour 
+-product remove : 6 hour 
+-lookbook featured : 3 hours
+-Boutiques featured : 3 hours 
+-Refund return : 1 day
+-Emails templates : 2 days
 
-Product Orders : 2 days
+-Product Orders : 2 days
 
-search : category - color - product (2 days )
-currency : 2 complete
-languges : 3 hours
-whishlist : 4 hours
-cart remove 0 : 1 hour 
-facebook : cancel url 
-signup fullname : first name , last name (2 days )
-forget password design ( 3 hours )
-homepage create shop remove gap ()
-product image clickable (15 min )
-homepage boutiques (15 min)
-myaccount link
-size guide remove 
-terms and condition
-return and exchange
-contact us (simple form , name and address message subject  )
-tracking orders my order page
-FAQ's category ( aded backend 2 days ) http://answers.teespring.com/customer/en/portal/articles
-Newsletter ( 1day )
-Filter ( ALL , NEW , TOP RATED ) 
-Country filter 
-Seller Invoice payouts 
-
-
-
-Reviews modal and working (2 days)
-ask seller submit btn css as create seller 
-
-design 
-filter Search
-filter colour  big
-filter all new top rated
+-search : category - color - product (2 days )
+-currency : 2 complete
+-languges : 3 hours
+-whishlist : 4 hours
+-cart remove 0 : 1 hour 
+-facebook : cancel url 
+-signup fullname : first name , last name (2 days )
+-forget password design ( 3 hours )
+-homepage create shop remove gap ()
+-product image clickable (15 min )
+-homepage boutiques (15 min)
+-myaccount link
+-size guide remove 
+-terms and condition
+-return and exchange
+-contact us (simple form , name and address message subject  )
+-tracking orders my order page
+-FAQ's category ( aded backend 2 days ) http://answers.teespring.com/customer/en/portal/articles
+-Newsletter ( 1day )
+-Filter ( ALL , NEW , TOP RATED ) 
+-Country filter 
+-Seller Invoice payouts 
 
 
-payment packages 5 ;
-minimum 3 product for go for live
+
+-Reviews modal and working (2 days)
+-ask seller submit btn css as create seller 
+
+-design 
+-filter Search
+-filter colour  big
+-filter all new top rated
 
 
-price: 0 usd
-# of products: 15 products
-com: 20% commission per sale
-look book: branded look book
-number of look book: 1
-blog: yes
+-payment packages 5 ;
+-minimum 3 product for go for live
+
+
+-price: 0 usd
+--# of products: 15 products
+--com: 20% commission per sale
+--look book: branded look book
+--number of look book: 1
+--blog: yes
 
 ----------------------------------------------
 
-price: 9 usd
-# of products: unlimited
-com: 15% commission per sale
-look book:  not branded
+-price: 9 usd
+--# of products: unlimited
+--com: 15% commission per sale
+--look book:  not branded
