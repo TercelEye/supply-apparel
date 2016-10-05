@@ -207,15 +207,15 @@ Metatags: lookbook, fashion lookbook, clothing lookbook, brand lookbook
 
 
 - price: 0 usd
- -- # of products: 15 products
- -- com: 20% commission per sale
- -- look book: branded look book
- -- number of look book: 1
- -- blog: yes
+  * # of products: 15 products
+  * com: 20% commission per sale
+  * look book: branded look book
+  * number of look book: 1
+  * blog: yes
 
 ----------------------------------------------
 
 - price: 9 usd
- -- # of products: unlimited
- -- com: 15% commission per sale
- -- look book:  not branded
+  * # of products: unlimited
+  * com: 15% commission per sale
+  * look book:  not branded
