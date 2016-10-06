@@ -16,7 +16,7 @@ $product_image = (isset($product->images->first()->name)? url($product->images->
         <div class="item_body" style="background-image:url({{$product_image }})">
             <div class="wishlist_add {{ ($product->user_favorites->contains($product->id)?"active":"") }}">
                 <span class="heart"></span>
-                <a data-id="{{ $product->id }}" class="clickable_block"
+                <a data-id="{{ $product->slug }}" class="clickable_block"
                       title="Add to wishlist"></a>
             </div>
         </div>

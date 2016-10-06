@@ -54,7 +54,9 @@
                         </ul>
                     </li>
                     <li class="icons"><a href="#"><span class="wishlist_icon" title="Wishlist"></span></a></li>
-                     <li class="icons"><a href="#" class="cart_open_trigger"><span class="cart_icon has_product"
+                     <li class="icons"><a href="#" class="cart_open_trigger">
+
+                     <span class="cart_icon {{(Cart::totalItems(true)>0?"has_product":"")}}"
                                                                                   data-product="{{Cart::totalItems(true)}}"
                                                                                   title="Cart"></span></a></li> 
                 </ul>
@@ -89,9 +91,12 @@ function googleTranslateElementInit() {
                         </ul>
                     </li>
                     <li class="icons"><a href="#"><span class="wishlist_icon" title="Wishlist"></span></a></li>
-                      <li class="icons"><a href="#" class="cart_open_trigger"><span class="cart_icon has_product"
-                                                                                  data-product="{{Cart::totalItems(true)}}"
-                                                                                  title="Cart"></span></a></li> 
+
+                      <li class="icons">
+                        <a href="#" class="cart_open_trigger">
+            <span class="cart_icon {{(Cart::totalItems(true)>0?"has_product":"")}}" data-product="{{Cart::totalItems(true)}}" title="Cart"></span>
+                        </a>
+                    </li> 
                 </ul>
                 <?php 
 $products_types = \App\ProductType::with('category')->where('name','!=','all')->get();
