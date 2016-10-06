@@ -8,7 +8,7 @@
 - Social Media Link Integration on the footer (10 minutes)
 - Multiple Language Integration (3 Hours)  
 
- ##Prabsh we both try to finish the above list.. but I sent the following list to customer     
+ ###Prabsh we both try to finish the above list.. but I sent the following list to customer     
  
 - Wishlist Page (4 hours)
 - FAQ Page - Can add questions, answers and topics from the backend. Design + HTML + PHP needed: (3 Days)
