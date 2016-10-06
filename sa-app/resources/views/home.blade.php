@@ -371,8 +371,8 @@
                 }
                 $btn.button('reset');
           }).fail(function() {
-            $(class_name).html('<div class="alert-server-error alert alert-info">Something went wrong automatic reloading in 5 second</div>')
-            setTimeout(load_products(url,class_name), 5000);
+           // $(class_name).html('<div class="alert-server-error alert alert-info">Something went wrong automatic reloading in 5 second</div>')
+            //setTimeout(load_products(url,class_name), 5000);
   });
 
    }

@@ -8,8 +8,33 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+
+           
+
+
+
+<style type="text/css">
+
+    .goog-te-gadget img ,.skiptranslate .goog-logo-link img {
+        display: none;
+    }
+    /*.goog-te-menu-value */
+    .goog-te-gadget-simple{
+           margin: -3px;
+        border: none;
+    }
+    .goog-te-menu-value span:nth-child(1) {
+        border: none;
+        margin-right: 10px;
+    }
+</style>
+
                 <ul class="mobile_right_nav visible-xs">
-                    <li class="dropdown language_dropdown">
+
+                 
+                  {{--   <li class="dropdown language_dropdown">
+
+
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                            aria-haspopup="true" aria-expanded="false">English <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -18,7 +43,7 @@
                             <li><a href="#">German</a></li>
                             <li><a href="#">Arabian</a></li>
                         </ul>
-                    </li>
+                    </li> --}}
                     <li class="dropdown currency_dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                            aria-haspopup="true" aria-expanded="false">USD <span class="caret"></span></a>
@@ -38,14 +63,21 @@
             <div class="collapse navbar-collapse" id="website_navbar_collapse">
                 <ul class="nav navbar-nav navbar-right hidden-xs">
                     <li class="dropdown language_dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+
+                    <div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar,de,en,fr', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+               {{--          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                            aria-haspopup="true" aria-expanded="false">English <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">French</a></li>
                             <li><a href="#">English</a></li>
                             <li><a href="#">German</a></li>
                             <li><a href="#">Arabian</a></li>
-                        </ul>
+                        </ul> --}}
                     </li>
                     <li class="dropdown currency_dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
