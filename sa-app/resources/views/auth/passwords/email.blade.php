@@ -2,6 +2,57 @@
 
 <!-- Main Content -->
 @section('content')
+
+
+<main class="index_page">
+
+
+    <section class="section_reset_password">
+        <div class="container">
+            <div class="row">
+                <div class="modal_block" role="document">
+
+
+
+                  <form role="form" method="POST" action="{{ url('/password/email') }}">
+                        {{ csrf_field() }}
+
+                    
+  
+                        <div class="form-group title_block">
+                            <span>Reset Password</span>
+                        </div>
+                        <br><br>
+                        <br><br>
+                            @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }} confirm_block">
+                            <input type="email" class="form-control" placeholder="E-Mail Address" name="email" value="{{ $email or old('email') }}">
+                             @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                        </div>
+
+                      
+                        <div class="form-group save_block">
+                            <button type="submit" class="btn_login"> Send Password Reset Link</button>
+                        </div>
+                      
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+{{-- 
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -43,5 +94,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 @endsection

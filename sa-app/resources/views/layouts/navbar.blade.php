@@ -53,7 +53,7 @@
                             <li><a href="#">GBP</a></li>
                         </ul>
                     </li>
-                    <li class="icons"><a href="#"><span class="wishlist_icon" title="Wishlist"></span></a></li>
+                    <li class="icons"><a href="{{url('my-wishlist')}}"><span class="wishlist_icon" title="Wishlist"></span></a></li>
                      <li class="icons"><a href="#" class="cart_open_trigger">
 
                      <span class="cart_icon {{(Cart::totalItems(true)>0?"has_product":"")}}"
@@ -90,7 +90,7 @@ function googleTranslateElementInit() {
                             <li><a href="#">GBP</a></li>
                         </ul>
                     </li>
-                    <li class="icons"><a href="#"><span class="wishlist_icon" title="Wishlist"></span></a></li>
+                    <li class="icons"><a href="{{url('my-wishlist')}}"><span class="wishlist_icon" title="Wishlist"></span></a></li>
 
                       <li class="icons">
                         <a href="#" class="cart_open_trigger">

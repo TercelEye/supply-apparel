@@ -17,6 +17,7 @@ Route::get('/', function () {
 // Let's see what we have have in there...
     return view('home');
 });
+Route::post('favorites/{product}','FavoriteController@toggle');
 
 Route::auth();
 //Route::get('logout', 'Auth\AuthController@getLogout');
@@ -87,6 +88,9 @@ Route::post('membership/plans/{plan}','MembershipPlansController@store');
 
 Route::group(['middleware' => ['web','auth']], function () {
 	Route::get('seller','SellerController@index'); //dashboard
+
+    //wish list 
+    Route::get('my-wishlist','MyWishlistController@index'); //dashboard
 
     // add product
     Route::resource('seller/product','CreateProductController');
@@ -170,7 +174,6 @@ Route::group(['middleware' => ['web','auth']], function () {
 
 
 
-Route::post('favorites/{product}','FavoriteController@toggle');
 
 //messages
 Route::group(['prefix' => 'messages','middleware' => ['web','auth']], function () {

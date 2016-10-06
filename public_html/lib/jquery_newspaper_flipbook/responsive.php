@@ -485,15 +485,13 @@
                             
                     <!-- icon arrow left -->
                     <li>
-                        <a title="prev page" class="fb5-arrow-left"><i class="fa fa-chevron-left"></i>
-    </a>
+                        <a title="prev page" class="fb5-arrow-left"><i class="fa fa-chevron-left"></i></a>
                     </li>
                                     
                     
                       <!-- icon arrow right -->
                     <li>
-                        <a title="next page" class="fb5-arrow-right"><i class="fa fa-chevron-right"></i>
-    </a>
+                        <a title="next page" class="fb5-arrow-right"><i class="fa fa-chevron-right"></i></a>
                     </li>
                                     
                     
