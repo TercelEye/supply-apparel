@@ -1,3 +1,14 @@
+###  pending 3 days
+- loobook remove bg nav bottom
+- admin
+ * product remove 
+ * lookbook featured 
+ * Boutiques featured
+- signup fullname
+- homepage create shop remove gap
+- product image clickable
+- contact us (simple form , name and address message subject )
+
 
 
 - Add First Name and Last Name on the sign-up form for email + Facebook & Google Login Integration. (1 Day)
