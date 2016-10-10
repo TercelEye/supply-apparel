@@ -62,6 +62,11 @@ Route::group(['prefix' => 'admin','middleware' => 'web'], function () {
     Route::resource('category','CategoryController');
     Route::any('category-load-by-type','CategoryController@load_category');
     Route::resource('colour','ColourController');
+
+    //Featured Product
+    Route::get('featured-product','FeaturedProductController@index');
+    Route::get('ajax/get-products','FeaturedProductController@get_products');
+
 });
 //Seller
 Route::get('create-boutique','ShopController@landing_page');
@@ -162,9 +167,14 @@ Route::post('kids-clothing','KidsProductsController@filter');
 Route::get('store/{shop}','StoreController@store');
 Route::post('store/{shop}','StoreController@filter');
 
+
+
 //checkout
 Route::group(['middleware' => ['web','auth']], function () {
+
+
     Route::get('checkout','CheckoutController@index');
+    
     Route::post('checkout','CheckoutController@save_shipping');
 
      Route::get('payment','PaymentController@index');
