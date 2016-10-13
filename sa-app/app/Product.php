@@ -54,6 +54,7 @@ class Product extends Model
         return $this->belongsToMany(Product::class,'favorites')->where('user_id',$user_id);
     }
 
+
     public function images(){
     	return $this->hasMany(ProductImage::class,'product_id','id');
     }
@@ -76,4 +77,5 @@ class Product extends Model
     public function orders(){
         return $this->belongsToMany(Order::class, 'items_order', 'product_id', 'order_id');
     }
+
 }

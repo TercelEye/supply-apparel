@@ -238,7 +238,7 @@ $(document.body).on('click', '.wishlist_add .clickable_block' ,function(){
                 $("#loginModal").modal('show');
               }else{
                 //alert($(icon).parent('.wishlist_add').attr('class'))
-                //$(icon).parent('.wishlist_add').toggleClass('active');
+                $(icon).parent('.wishlist_add').toggleClass('active');
              }
           });
     });

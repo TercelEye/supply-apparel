@@ -1,3 +1,8 @@
+### day 4
+- CSS Margin Corrections
+- Newsletter Integration - Frontend and Backend (Mailchimp)
+- Multiple Currencies Integration 
+
 ###  pending 3 days
 - loobook remove bg nav bottom
 - admin

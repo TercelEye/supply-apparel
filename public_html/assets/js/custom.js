@@ -363,7 +363,7 @@ $(document).ready(function () {
             // product was NOT in wishlist and added
             title = 'Remove from Wishlist';
         }
-        $(this).attr('title', title).parent('.wishlist_add').toggleClass('added', '');
+       // $(this).attr('title', title).parent('.wishlist_add').toggleClass('added', '');
     });
 
     $("#country_prefix_dropdown").dropdown({
