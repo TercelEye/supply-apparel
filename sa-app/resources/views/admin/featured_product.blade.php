@@ -1,28 +1,83 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+@section('admin_content')
+
         <h2>Featured Product</h2>
             <div class="panel panel-default">
-                <div class="panel-heading">Make Product Featured</div>
+                <div class="panel-heading">Product</div>
 
                 <div class="panel-body">
                 		<form method="post">
+
+                     {{ csrf_field() }}
+
                 			<div class="form-group">
                 				<label>Product</label>
-                				<input type="text" name="product_id" class="product_id">
+                				<input type="text" class="form-control product_select" required>
+                        <input type="hidden" name="product_id" class="product_id">
                 			</div>
+                      <div class="form-group">
+                      <input type="submit" name="save" class="btn btn-success" value="Mark as Featured
+">
+                      </div>
 
-                			<div id="log"></div>
+                			
                 		</form>
-	        
+	                 <div id="log"></div>
+
+
+                   <table class="table table-bordered table-striped product_details" style="display: none;">
+
+  <tr>
+    <td>Product ID </td>
+    <td>:</td>
+    <td id="pd_id">#</td>
+  </tr>
+  
+  <tr>
+    <td>Title </td>
+    <td>:</td>
+    <td id="pd_title"></td>
+  </tr>
+
+  <tr>
+    <td>Shop </td>
+    <td>:</td>
+    <td id="pd_seller"></td>
+  </tr>
+
+
+</table>
+
+
                 </div>
-            </div>
-        </div>
-    </div><!--- end row -->
-</div>
+            </div><!-- end panel -->
+
+            <table class="table table-bordered table-striped">
+                  <tr>
+                    <td>#</td>
+                    <td>Product Title</td>
+                    <td>Shop</td>
+                    <td></td>
+                  </tr>
+                @foreach($featured_products as $row)
+                  <tr>
+                    <td>{{$row->id}}</td>
+                    <td><a href="{{url('product/'.$row->product->slug)}}" target="_blank"> {{$row->product->title}}</a></td>
+                    <td>{{$row->product->shop->shop_name}}</td>
+                    <td>
+                    <form method="post" action="{{url('admin/featured-product/delete')}}">
+                     {{ csrf_field() }}
+                      <input type="hidden" value="{{$row->id}}"  name="id">
+                      <input type="submit" name="delete" value="Remove" class="btn btn-danger btn-sm">
+                    </form>
+                    </td>
+                  </tr>
+                @endforeach
+            </table>
+
+
+
 @stop
 
 
@@ -30,21 +85,23 @@
 
 <script>
   $( function() {
-    function log( message ) {
-      $( "<div>" ).text( message ).prependTo( "#log" );
-      $( "#log" ).scrollTop( 0 );
+    function genarate_table( item ) {
+      $('#pd_id').html(item.id)
+      $('#pd_title').html(item.value)
+      $('#pd_seller').html(item.seller)
+      $('.product_details').fadeIn('slow');
     }
- 
-    $( ".product_id" ).autocomplete({
+  // $('.product_details').fadeOut('fast');
+    $( ".product_select" ).autocomplete({
+
       source: "{{ url('admin/ajax/get-products')}}",
       minLength: 2,
       select: function( event, ui ) {
-        log( "Selected: " + ui.item.value + " aka " + ui.item.id );
+        $('.product_id').val(ui.item.id)
+        genarate_table(ui.item);
       }
     });
   } );
   </script>
 
   @endpush
-
-  [{"id":"Podiceps nigricollis","label":"Black-necked Grebe","value":"Black-necked Grebe"},{"id":"Nycticorax nycticorax","label":"Black-crowned Night Heron","value":"Black-crowned Night Heron"},{"id":"Tetrao tetrix","label":"Black Grouse","value":"Black Grouse"},{"id":"Limosa limosa","label":"Black-tailed Godwit","value":"Black-tailed Godwit"},{"id":"Chlidonias niger","label":"Black Tern","value":"Black Tern"},{"id":"Lanius collurio","label":"Red-backed Shrike","value":"Red-backed Shrike"},{"id":"Branta leucopsis","label":"Barnacle Goose","value":"Barnacle Goose"},{"id":"Larus marinus","label":"Great Black-backed Gull","value":"Great Black-backed Gull"},{"id":"Corvus monedula","label":"Western Jackdaw","value":"Western Jackdaw"},{"id":"Larus fuscus","label":"Lesser Black-backed Gull","value":"Lesser Black-backed Gull"},{"id":"Larus ridibundus","label":"Black-headed Gull","value":"Black-headed Gull"},{"id":"Turdus merula","label":"Common Blackbird","value":"Common Blackbird"}]

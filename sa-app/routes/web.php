@@ -65,6 +65,8 @@ Route::group(['prefix' => 'admin','middleware' => 'web'], function () {
 
     //Featured Product
     Route::get('featured-product','FeaturedProductController@index');
+    Route::post('featured-product','FeaturedProductController@store');
+    Route::post('featured-product/delete','FeaturedProductController@destroy');
     Route::get('ajax/get-products','FeaturedProductController@get_products');
 
 });
