@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-
+<style type="text/css">
+    main.index_page section.section_2 {
+    margin-top: 40px !importent;
+}
+</style>
 
 <main class="index_page">
     <section class="section_1">
