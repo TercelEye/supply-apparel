@@ -46,7 +46,7 @@ class FeaturedShopController extends Controller
                 'owner'=>$row->owner->name,
     			'link'=>url('store/'.$row->shop_slug),
     			'value'=>$row->shop_name,
-    			'cover_image'=>$row->cover_image,
+    			'cover_image'=>url($row->cover_image),
     			'email_address'=>$row->email_address,
     			'description'=>$row->description,
     			'contact_number'=>$row->contact_number,

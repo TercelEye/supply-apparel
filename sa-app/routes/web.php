@@ -75,6 +75,12 @@ Route::group(['prefix' => 'admin','middleware' => 'web'], function () {
     Route::post('featured-shop/delete','FeaturedShopController@destroy');
     Route::get('ajax/get-shops','FeaturedShopController@get_shops');
 
+    //Featured Lookbook
+    Route::get('featured-lookbook','FeaturedLookbookController@index');
+    Route::post('featured-lookbook','FeaturedLookbookController@store');
+    Route::post('featured-lookbook/delete','FeaturedLookbookController@destroy');
+    Route::get('ajax/get-lookbooks','FeaturedLookbookController@get_lookbooks');
+
 });
 //Seller
 Route::get('create-boutique','ShopController@landing_page');
