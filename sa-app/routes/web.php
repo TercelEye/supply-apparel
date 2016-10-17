@@ -17,7 +17,18 @@ Route::get('/', function () {
 // Let's see what we have have in there...
     return view('home');
 });
-Route::post('favorites/{product}','FavoriteController@toggle');
+Route::group(['middleware' => 'web'], function () {
+    Route::post('favorites/{product}','FavoriteController@toggle');
+
+    Route::post('get-shops','HomeController@shop_home');
+    Route::post('get-lookbooks','HomeController@lookbook_home');
+    Route::get('book/{lookbook}','LookbookController@show');
+    
+    Route::get('search/advance','SearchController@ajax_search');
+    Route::get('search','SearchController@index');
+
+});
+
 
 Route::auth();
 //Route::get('logout', 'Auth\AuthController@getLogout');
@@ -52,10 +63,6 @@ Route::group(['prefix' => 'kids','middleware' => 'web'], function () {
     Route::post('new-arrivals','HomeController@new_arrivals_kids');
     Route::post('must-haves','HomeController@must_haves_kids');
 });
-Route::post('get-shops','HomeController@shop_home');
-Route::post('get-lookbooks','HomeController@lookbook_home');
-Route::get('book/{lookbook}','LookbookController@show');
-
 
 
 Route::group(['prefix' => 'admin','middleware' => 'web'], function () {

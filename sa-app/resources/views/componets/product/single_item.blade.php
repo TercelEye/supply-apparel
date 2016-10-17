@@ -12,7 +12,8 @@ $product_image = (isset($product->images->first()->name)? url($product->images->
             <a href="{{ url('store/'.$product->shop->shop_slug) }}"><i
                    class="item_icon"></i><span>{{$product->shop->shop_name }}</span></a>
      </div>
-        <div class="item_body" style="background-image:url({{$product_image }})">
+        <div class="item_body" {{-- style="background-image:url({{$product_image }})" --}}>
+             <a href="{{ url('product/'.$product->slug) }}"><img src="{{$product_image }}" style="width: 100%;height: 220px;" /></a>
             <div class="wishlist_add {{ ($product->user_favorites->contains($product->id)?"active":"") }}">
                 <span class="heart"></span>
                 <a data-id="{{ $product->slug }}" class="clickable_block"

@@ -1,5 +1,33 @@
 @extends('layouts.app')
 
+
+
+@push('scripts')
+<script>
+  $( function() {
+    function genarate_table( item ) {
+      $('#pd_id').html(item.id)
+      $('#pd_title').html(item.value)
+      $('#pd_owner').html(item.owner)
+      $('#pd_shop').html(item.shop)
+      $('#pd_cover_image').html('<img src="'+item.cover_image+'" class="img-responsive" />')
+
+      $('.product_details').fadeIn('slow');
+    }
+  // $('.product_details').fadeOut('fast');
+    $( ".teye_search" ).autocomplete({
+
+      source: "{{ url('search/advance')}}",
+      minLength: 2,
+      select: function( event, ui ) {
+        //$('.lookbook_id').val(ui.item.id)
+        //genarate_table(ui.item);
+      }
+    });
+  } );
+  </script>
+@endpush
+
 @section('content')
 <style type="text/css">
     main.index_page section.section_2 {
@@ -12,7 +40,7 @@
         <div class="container">
             <div class="row image">
                 <div class="search_input">
-                    <input type="text" name="q" placeholder="What are you looking for? eg: women's jaket or skirt"/>
+                    <input type="text" class="teye_search" name="q" placeholder="What are you looking for? eg: women's jaket or skirt"/>
                 </div>
             </div>
         </div>
