@@ -23,6 +23,9 @@
         .wishlist_add.active {
             opacity: 1 !important;
         }
+.tab-content .boutique_item .name_block {
+    padding: 16px;
+}
     </style>
 </head> 
 <body>
