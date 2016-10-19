@@ -25,7 +25,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" id="contact_seller_submit" class="btn btn-primary">Send Message</button>
+        <button type="button" id="contact_seller_submit" class="btn  btn-red">Send Message</button>
       </div>
       </form>
     </div>

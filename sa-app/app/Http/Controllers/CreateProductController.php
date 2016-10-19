@@ -125,7 +125,7 @@ class CreateProductController extends Controller
         $sizes_array = $request->product_size;
         $product->sizes()->sync($sizes_array);
 
-        return redirect('seller/product/images/'.$product->id);
+        return redirect('seller/product/images/'.$product->slug);
     }
 
     /**
@@ -184,7 +184,7 @@ class CreateProductController extends Controller
         $sizes_array = $request->product_size;
         $product->sizes()->sync($sizes_array);
 
-        return redirect('seller/product/images/'.$product->id);
+        return redirect('seller/product/images/'.$product->slug);
     }
 
     /**

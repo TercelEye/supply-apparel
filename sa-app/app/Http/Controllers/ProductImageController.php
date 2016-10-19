@@ -14,7 +14,7 @@ class ProductImageController extends Controller
     /**
     product images 
     */
-    public function index(\App\Product $product){
+    public function index(Product $product){
     	return view('shop/product_image',compact('product'));
     }
  	public function imageupload(Request $request,\App\Product $product){

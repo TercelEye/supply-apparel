@@ -26,6 +26,13 @@
 .tab-content .boutique_item .name_block {
     padding: 16px;
 }
+.btn-red {
+          background: #fa5a60;
+          color: white;
+    }
+    .btn-red:hover {
+         color: white;
+    } 
     </style>
 </head> 
 <body>

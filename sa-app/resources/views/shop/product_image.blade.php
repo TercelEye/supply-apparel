@@ -16,7 +16,7 @@
 <br>
 <div class="product-image-list"></div>	
 
-<form action="{{url('seller/product/publish/'.$product->id)}}" method="post">
+<form action="{{url('seller/product/publish/'.$product->slug)}}" method="post">
  {{ csrf_field() }}
 <div class="buttons_block">
 	<button type="submit" name="submit" value="publish" class="btn_pusblish">Publish</button>
@@ -40,7 +40,7 @@
 <script type="text/javascript">
 
 Dropzone.options.fileploader = {
-	url:'{{ url('seller/product/imageupload/'.$product->id) }}',
+	url:'{{ url('seller/product/imageupload/'.$product->slug) }}',
   paramName: "image", // The name that will be used to transfer the file
   maxFilesize: 2, // MB
   maxfilesreached:function(){
