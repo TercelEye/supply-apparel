@@ -28,8 +28,13 @@ class FacebookController extends Controller
      */
     public function handleProviderCallback()
     {
-        $user = Socialite::driver('facebook')->user();
-
+        $user = Socialite::driver('facebook')
+        		->fields([
+                    'name', 
+                    'first_name', 
+                    'last_name', 
+                    'email',          
+                ])->user();
         // $user->token;
         // All Providers
 		$user->getId();

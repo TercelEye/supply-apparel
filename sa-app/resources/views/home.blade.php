@@ -18,13 +18,22 @@
     $( ".teye_search" ).autocomplete({
 
       source: "{{ url('search/advance')}}",
-      minLength: 2,
+      minLength: 1,
       select: function( event, ui ) {
         //$('.lookbook_id').val(ui.item.id)
         //genarate_table(ui.item);
+        window.location.href = ui.item.link;
+
       }
     });
   } );
+
+$(".teye_search").on('keyup', function (e) {
+    if (e.keyCode == 13) {
+        window.location.href = "{{url("search")}}?q="+$(this).val();
+    }
+});
+
   </script>
 @endpush
 
