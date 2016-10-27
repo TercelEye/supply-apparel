@@ -14,7 +14,8 @@
          "paypal/adaptivepayments-sdk-php":"v3.6.106",
         "paypal/rest-api-sdk-php": "*",
         "cmgmyr/messenger": "~2.0",
-        "laravel/socialite": "^2.0"
+        "laravel/socialite": "^2.0",
+        "spatie/laravel-newsletter": "^3.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

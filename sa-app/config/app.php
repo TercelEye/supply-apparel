@@ -173,6 +173,7 @@ return [
         'Moltin\Cart\CartServiceProvider',
          Cmgmyr\Messenger\MessengerServiceProvider::class,
           Laravel\Socialite\SocialiteServiceProvider::class,
+          Spatie\Newsletter\NewsletterServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -233,6 +234,7 @@ return [
         'Countries' => 'Webpatser\Countries\CountriesFacade',
         'Cart' => 'Moltin\Cart\Facade',
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'Newsletter' => Spatie\Newsletter\NewsletterFacade::class,
     ],
 
 ];

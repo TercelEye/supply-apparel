@@ -17,6 +17,8 @@ Route::get('/', function () {
 // Let's see what we have have in there...
     return view('home');
 });
+
+Route::get('news','NewsLetterController@store');
 Route::group(['middleware' => 'web'], function () {
     Route::post('favorites/{product}','FavoriteController@toggle');
 
