@@ -4,14 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Newsletter;
+use Validator;
+
 
 class NewsLetterController extends Controller
 {
-    public function store(){
-    	$t = Newsletter::subscribe('rincewind@discworld.com');
-    	//echo Newsletter::getLastError();
+    public function store(Request $request){
 
-    	dd(Newsletter::getApi()->getLastResponse());
-    	echo "DDDD";
+ 		$validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+        ]);
+
+    	if ($validator->fails()) {
+            return ['status'=>false];
+        }
+
+    	Newsletter::subscribe($request->email);
+    	return ['status'=>true];
     }
 }
