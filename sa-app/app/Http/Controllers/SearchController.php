@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Category;
 use App\Product;
+use App\ProductType;
 use App\Http\Requests;
 
 class SearchController extends Controller
@@ -34,15 +35,34 @@ class SearchController extends Controller
 
 		return view('search',compact('products'));
 	}
+
+    private function higlighter_search($title,$term){
+        $title = strtolower($title);
+        $term = strtolower($term);
+        return str_replace($term,"<b>".$term."</b>", $title);
+    }
+
     //get ajax_search 
     public function ajax_search(Request $request){
     	$return = array();
+        //ProductType
+        $ptype = ProductType::where('name','like','%'.$request->term.'%')->with('category')->first();
+        if(count($ptype)>0){
+            foreach ($ptype->category as $row) {
+                $return[]=[
+                    'id'=>$row->id, 
+                    'label'=>$this->higlighter_search($ptype->name,$request->term).' <i>in</i> '.$row->title,
+                    'link'=>url('search?category='.$row->id.'&q='.str_slug($row->title)),
+                    'value'=>$row->title,
+                ];
+            }
+         }
     	//category
     	$category = Category::where('title','like','%'.$request->term.'%')->get();
     	foreach ($category as $row) {
     		$return[]=[
     			'id'=>$row->id, 
-                'label'=>$row->title,
+                'label'=>$this->higlighter_search($row->title,$request->term),
                 'link'=>url('search?category='.$row->id.'&q='.str_slug($row->title)),
     			'value'=>$row->title,
     		];
