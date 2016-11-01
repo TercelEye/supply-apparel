@@ -3,6 +3,7 @@
 
 
 @push('scripts')
+
 <script>
 
 

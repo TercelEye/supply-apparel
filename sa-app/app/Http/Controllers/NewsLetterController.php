@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Newsletter;
 use Validator;
 
-
 class NewsLetterController extends Controller
 {
     public function store(Request $request){
@@ -16,10 +15,16 @@ class NewsLetterController extends Controller
         ]);
 
     	if ($validator->fails()) {
-            return ['status'=>false];
+            return [
+            	'status'=>false,
+            	'message'=>$validator->errors()->first(),
+            	];
         }
 
     	Newsletter::subscribe($request->email);
-    	return ['status'=>true];
+    	return [
+    		'status'=>true,
+    		'message'=>"thank you for subscribing to our newsletter",
+    		];
     }
 }

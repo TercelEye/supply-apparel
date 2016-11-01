@@ -85,8 +85,8 @@
                 <div class="newsletter_block">
                     <p>Subscribe to our newsletter to get the latest news about
                         our sales and promotions</p>
-                    <form action="" method="post">
-                        <input type="email" name="email" placeholder="Your Email Address"/>
+                    <form id="newsleter-form" action="{{url('newsletter')}}" method="post">
+                        <input style="color: white;" type="email" name="email" placeholder="Your Email Address"/>
                         <input type="submit" value="Submit"/>
                     </form>
                 </div>
@@ -271,6 +271,51 @@ $('.nav-tabs a').on('shown.bs.tab', function (e) {
 </script>
 
 
+<script type="text/javascript">
+    $('#newsleter-form input[type=submit]').click(function(e){
+ 
+
+    var $btn = $(this).button('loading');
+
+    e.preventDefault();
+
+    var form = jQuery(this).parents("form:first");
+    var dataString = form.serialize();
+    var formAction = form.attr('action');
+
+    $.ajax({
+        type: "POST",
+        url : formAction,
+        data : dataString,
+        success : function(json){
+            $btn.button('reset');
+            if(json.status == true){
+                //login success
+                toastr.success(json.message)
+                
+           }else {
+                //login failed
+                toastr.error(json.message,'Error!');                    
+           }
+
+        },
+        error : function(data){
+         
+
+            setTimeout(
+                function()
+                {
+
+                    $btn.button('reset');
+
+                }, 1500);
+
+        }
+
+    },"json");
+});
+
+</script>
   
 </body>
 </html>
